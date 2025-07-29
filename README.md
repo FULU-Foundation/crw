@@ -1,4 +1,4 @@
-# wiki
+# Consumer Rights Wiki
 
 This monorepository contains the codebase and container setup for the Consumer Rights Wiki, a sister project to Repair.Wiki.
 
