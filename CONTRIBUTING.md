@@ -24,7 +24,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 Consumer Rights Wiki uses two separate issue trackers for different purposes:
 
 - [consumer-rights-wiki](https://github.com/Consumer-Rights-Wiki-Org/wiki) – For code-related issues and technical discussions.
-- [consumer-rights-wiki-issues](https://github.com/Consumer-Rights-Wiki-Org/wiki-issues) – For non-code issues, content suggestions, and feature requests.
+- [consumer-rights-wiki-issues](https://github.com/Consumer-Rights-Wiki-Org/wiki-issues/issues) – For non-code issues, content suggestions, and feature requests.
 
 These trackers are combined into a shared [GitHub project view](https://github.com/orgs/Consumer-Rights-Wiki-Org/projects/1).
 
