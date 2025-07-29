@@ -139,7 +139,7 @@ Please write clear, descriptive commit messages:
 
 ## Join the Project Team
 
-We maintain a small team of core developers who guide the direction of the project, review contributions, and handle infrastructure.
+We maintain a small team of core developers who review contributions, and handle infrastructure.
 
 ### Core Developers
 - [@Unto](https://github.com/Unto)
