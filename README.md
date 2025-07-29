@@ -25,7 +25,7 @@ Check out the following resources:
   
 ## Contributing
 
-See the [CONTRIBUTING.md](https://github.com/Consumer-Rights-Wiki-Org/wiki) file for more information.
+See the [CONTRIBUTING.md](https://github.com/Consumer-Rights-Wiki-Org/wiki/blob/main/CONTRIBUTING.md) file for more information.
 
 ## Licensing
 
