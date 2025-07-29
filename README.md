@@ -1,6 +1,6 @@
 # wiki
 
-This mono-repository contains the code and containers for the Repair Preservation Group wiki.
+This monorepository contains the codebase and container setup for the Consumer Rights Wiki, a sister project to Repair.Wiki.
 
 ## Structure
 - conf/
@@ -20,12 +20,12 @@ This mono-repository contains the code and containers for the Repair Preservatio
 
 Check out the following resources:
 
-- [Instructions for setting up a development environment](https://github.com/repair-wiki/wiki/wiki/Setting-up-a-development-environment)
-- [Helpful resources](https://github.com/repair-wiki/wiki/wiki/Resources)
+- [Instructions for setting up a development environment](https://github.com/Consumer-Rights-Wiki-Org/wiki)
+- [Helpful resources](https://github.com/Consumer-Rights-Wiki-Org/wiki)
   
 ## Contributing
 
-See the [CONTRIBUTING.md](https://github.com/repair-wiki/wiki/blob/main/CONTRIBUTING.md) file for more information.
+See the [CONTRIBUTING.md](https://github.com/Consumer-Rights-Wiki-Org/wiki) file for more information.
 
 ## Licensing
 
