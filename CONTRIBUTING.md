@@ -1,9 +1,9 @@
 <!-- omit in toc -->
 # Contributing to Consumer Rights Wiki
 
-First off, thanks for taking the time to contribute! ❤️
+Thank you for your interest in contributing to this project.
 
-All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and how this project manages contributions. Please read the relevant section before getting started — it'll make things smoother for everyone. The community appreciates your involvement. 🎉
+All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and how this project manages contributions. Please read the relevant section before getting started — it'll make things smoother for everyone. The community values your contributions and support.
 
 <!-- omit in toc -->
 ## Table of Contents
