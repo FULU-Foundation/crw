@@ -139,10 +139,6 @@ Please write clear, descriptive commit messages:
 
 ## Join the Project Team
 
-We’re open to recurring contributors becoming core team members.
-
-If you’ve made several useful contributions and want to help maintain or guide the project, reach out via an issue or email to discuss joining the team.
-
 <!-- omit in toc -->
 ## Attribution
 
