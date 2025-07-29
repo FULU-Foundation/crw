@@ -38,6 +38,7 @@ If you still need help:
 
 - Open an issue in the appropriate [issue tracker](#issue-trackers).
 - Provide as much context as possible.
+- Please make sure to use the `question` tag.
 
 We'll do our best to get back to you quickly.
 
