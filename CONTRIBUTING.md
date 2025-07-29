@@ -141,11 +141,11 @@ Please write clear, descriptive commit messages:
 
 We maintain a small team of core developers who guide the direction of the project, review contributions, and handle infrastructure.
 
-### 👥 Core Developers
+### Core Developers
 - [@Unto](https://github.com/Unto)
 - [@codedbyjake](https://github.com/codedbyjake)
 
-### 🌟 Valuable Contributors
+### Valuable Contributors
 These individuals have made meaningful contributions through code, feedback, or community support:
 
 - [@exampleuser1](https://github.com/exampleuser1)
