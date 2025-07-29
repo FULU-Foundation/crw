@@ -142,7 +142,7 @@ Please write clear, descriptive commit messages:
 We maintain a small team of core developers who review contributions, and handle infrastructure.
 
 ### Core Developers
-- [@Unto](https://github.com/Unto)
+- [@Unto](https://github.com/untocodes)
 - [@codedbyjake](https://github.com/codedbyjake)
 
 ### Valuable Contributors
