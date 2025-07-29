@@ -139,6 +139,20 @@ Please write clear, descriptive commit messages:
 
 ## Join the Project Team
 
+We maintain a small team of core developers who guide the direction of the project, review contributions, and handle infrastructure.
+
+### 👥 Core Developers
+- [@Unto](https://github.com/Unto)
+- [@codedbyjake](https://github.com/codedbyjake)
+
+### 🌟 Valuable Contributors
+These individuals have made meaningful contributions through code, feedback, or community support:
+
+- [@exampleuser1](https://github.com/exampleuser1)
+- [@exampleuser2](https://github.com/exampleuser2)
+
+Want to be listed here? Start contributing! We notice and appreciate all helpful involvement.
+
 <!-- omit in toc -->
 ## Attribution
 
