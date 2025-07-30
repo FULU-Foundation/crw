@@ -66,7 +66,7 @@ To help us address bugs efficiently, please:
 <!-- omit in toc -->
 #### How to Submit a Good Bug Report
 
-> Do **not** report security issues publicly. Instead, email sensitive bugs to: **unto@fighttorepair.org**
+> Do **not** report security issues publicly. Instead, email sensitive bugs to: **example@fulu.foundation**
 
 To submit a bug:
 
