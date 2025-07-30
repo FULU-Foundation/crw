@@ -2,6 +2,10 @@
 
 This monorepository contains the codebase and container setup for the Consumer Rights Wiki, a sister project to Repair.Wiki.
 
+**Please ensure you are contributing to the correct repository:**  
+- [repair.wiki](https://github.com/repair-wiki/wiki)  
+- [Consumer Rights Wiki](https://github.com/Consumer-Rights-Wiki-Org/wiki)
+
 ## Structure
 - conf/
   - Configuration files
