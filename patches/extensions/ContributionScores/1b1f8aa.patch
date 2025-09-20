@@ -1,0 +1,42 @@
+From 1b1f8aad009ac38a76789bc85cb6ba4c16f72495 Mon Sep 17 00:00:00 2001
+From: Edward Chernenko <edwardspec@gmail.com>
+Date: Tue, 07 Jan 2025 03:28:08 +0300
+Subject: [PATCH] Update for MediaWiki 1.43
+
+1) replaced use of "ipblocks" table (removed from MediaWiki core).
+2) removed unnecessary GROUP BY (user_name is already unique),
+which was causing errors in MySQL strict mode.
+
+Bug: T379715
+Bug: T309096
+Change-Id: Ib3e9dd01a52466aa19b20e1f7fbfe9bb0f5dd02f
+---
+
+diff --git a/src/ContributionScores.php b/src/ContributionScores.php
+index 6d5683f..c09faed 100644
+--- a/src/ContributionScores.php
++++ b/src/ContributionScores.php
+@@ -121,7 +121,21 @@
+ 
+ 		if ( $wgContribScoreIgnoreBlockedUsers ) {
+ 			$sqlWhere[] = "{$revUser} NOT IN " .
+-				$dbr->buildSelectSubquery( 'ipblocks', 'ipb_user', 'ipb_user <> 0', __METHOD__ );
++				$dbr->buildSelectSubquery(
++					[
++						'block',
++						'block_target'
++					],
++					'bt_user',
++					'bt_user <> 0',
++					__METHOD__,
++					[],
++					[
++						'block_target' => [ 'JOIN', [
++							'bl_target=bt_id'
++						] ]
++					]
++				);
+ 		}
+ 
+ 		if ( $wgContribScoreIgnoreBots ) {
+
