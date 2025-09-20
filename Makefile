@@ -14,3 +14,10 @@ run:
 
 run-bg:
 	docker compose --file=./docker-compose.dev.yml up --build -d
+
+build-deploy:
+	docker build . -t registry.digitalocean.com/crw-wiki/wiki:latest
+	docker push registry.digitalocean.com/crw-wiki/wiki:latest
+
+bash:
+	docker compose --file=./docker-compose.dev.yml exec -i crw-local bash
