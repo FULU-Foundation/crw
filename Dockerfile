@@ -1,4 +1,4 @@
-ARG mediawiki_version=1.41.2-fpm
+ARG mediawiki_version=1.44.0-fpm
 ARG composer_version=2.7.1
 
 # Trick to allow for COPY from for composer image
@@ -9,10 +9,6 @@ FROM mediawiki:${mediawiki_version}
 # Create script directory
 RUN mkdir /wiki/
 
-# Apply custom patches
-COPY ./patches/ /var/www/html/patches/
-RUN for i in /var/www/html/patches/*.patch; do patch -p1 < $i; done
-
 # Copy extensions to the image
 COPY ./extensions/ /var/www/html/extensions/
 
@@ -21,6 +17,7 @@ COPY ./skins/ /var/www/html/skins/
 
 # Copy custom LocalSettings.php
 COPY ./conf/LocalSettings.php /var/www/html/LocalSettings.php
+COPY ./conf/LocalSettings /var/www/html/LocalSettings
 
 # Composer
 RUN apt update
@@ -66,8 +63,27 @@ RUN crontab -l | { cat; echo "0 * * * * bash /wiki/cron/run_jobs.sh"; } | cronta
 # Imagemagick
 RUN apt-get install -y imagemagick --no-install-recommends
 
+# PHP Extensions
+RUN apt-get install -y libcurl4-openssl-dev
+RUN docker-php-ext-install -j "$(nproc)" curl
+
 # Image directory
 RUN chmod 766 /var/www/html/images
+
+# Patches
+# Apply patches, fail on any error
+RUN --mount=type=bind,source=patches,target=/wiki/patches,readonly \
+    set -eux; \
+    find /wiki/patches -type f -name '*.patch' | while read -r patchfile; do \
+        rel="${patchfile#/wiki/patches/}"; \
+        targetdir="/var/www/html/$(dirname "$rel")"; \
+        echo "Patching $patchfile -> $targetdir"; \
+        if [ ! -d "$targetdir" ]; then \
+            echo "Target directory not found: $targetdir" >&2; \
+            exit 1; \
+        fi; \
+        (cd "$targetdir" && patch --verbose -p1 < "$patchfile"); \
+    done
 
 # Custom entrypoint
 COPY entrypoint.sh /etc/entrypoint.sh
