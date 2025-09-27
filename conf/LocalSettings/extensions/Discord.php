@@ -3,7 +3,7 @@
 wfLoadExtension( 'mw-discord' );
 
 # Discord Webhook Configuration
-$wgDiscordWebhookURL = [''];
+$wgDiscordWebhookURL = getenv('DISCORD_HOOK');
 // Webhook URL for sending messages to Discord.
 
 # Bot Appearance

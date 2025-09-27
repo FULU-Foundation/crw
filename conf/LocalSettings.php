@@ -82,7 +82,7 @@ require_once './LocalSettings/extensions/UserMerge.php';
 require_once './LocalSettings/extensions/PageImages.php';
 require_once './LocalSettings/extensions/Cite.php';
 
-#require_once './LocalSettings/extensions/Discord.php';
+require_once './LocalSettings/extensions/Discord.php';
 require_once './LocalSettings/extensions/CRWHooks.php';
 
 # Customizations
