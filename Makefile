@@ -10,14 +10,14 @@ run-jobs:
 	sh scripts/run-jobs.sh
 	
 run:
-	docker compose --file=./docker-compose.dev.yml up --build
+	docker compose up --build
 
 run-bg:
-	docker compose --file=./docker-compose.dev.yml up --build -d
+	docker compose up --build -d
 
 build-deploy:
 	docker build . -t registry.digitalocean.com/crw-wiki/wiki:latest
 	docker push registry.digitalocean.com/crw-wiki/wiki:latest
 
 bash:
-	docker compose --file=./docker-compose.dev.yml exec -i crw-local bash
+	docker compose exec -i crw-local bash
