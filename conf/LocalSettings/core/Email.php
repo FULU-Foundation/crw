@@ -5,9 +5,9 @@ $wgEnableEmail = true; // Activate email functionality in the wiki.
 $wgEnableUserEmail = true; // Allow users to send emails to each other via the wiki interface.
 
 # Administrative email addresses
-$wgEmergencyContact = '';
-$wgPasswordSender = '';
-$wgEmailFrom = '';
+$wgEmergencyContact = 'wiki@rossmanngroup.com';
+$wgPasswordSender = 'wiki@rossmanngroup.com';
+$wgEmailFrom = 'wiki@rossmanngroup.com';
 
 # Email notification preferences
 $wgEnotifUserTalk = false; // Disable email notifications for user talk page changes (reduces server load).
@@ -16,11 +16,11 @@ $wgEmailAuthentication = true; // Require email address verification for additio
 
 # Configure Postmark SMTP for sending emails.
 $wgSMTP = [
-    'host' => '',
+    'host' => getenv("EMAIL_HOST"),
     'port' => 587,
     'auth' => true,
-    'username' => '',
-    'password' => ''
+    'username' => getenv("EMAIL_USER"),
+    'password' => getenv("EMAIL_PASS")
 ];
 
 # Enable email functionality and user communication features.
