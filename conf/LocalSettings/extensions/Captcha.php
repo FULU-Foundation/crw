@@ -1,6 +1,8 @@
 <?php
 wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/hCaptcha' ]);
 
+$wgCaptchaClass = MediaWiki\Extension\ConfirmEdit\hCaptcha\HCaptcha::class;
+
 # hCaptcha Configuration
 $wgHCaptchaSiteKey = getenv('CAPTCHA_SITEKEY');
 $wgHCaptchaSecretKey = getenv('CAPTCHA_SECRETKEY');
