@@ -15,6 +15,8 @@ jobs:
 
       - name: Checkout the repo 
         uses: actions/checkout@v5
+        with:
+            submodules: recursive
         
       - name: Build container image
         run: docker build -t registry.digitalocean.com/crw-wiki/wiki:$(echo $GITHUB_SHA) -t registry.digitalocean.com/crw-wiki/wiki:latest .
