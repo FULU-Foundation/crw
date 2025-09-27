@@ -51,9 +51,6 @@ require_once './LocalSettings/core/CDN.php';
 require_once './LocalSettings/core/Debug.php';
 require_once './LocalSettings/core/Sessions.php';
 
-# Hacks
-require_once './LocalSettings/Hacks.php';
-
 # Extensions
 require_once './LocalSettings/extensions/Scribunto.php';
 require_once './LocalSettings/extensions/TimezoneConverter.php';
