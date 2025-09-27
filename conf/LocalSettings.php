@@ -49,6 +49,7 @@ require_once './LocalSettings/core/Copyright.php';
 require_once './LocalSettings/core/Security.php';
 require_once './LocalSettings/core/CDN.php';
 require_once './LocalSettings/core/Debug.php';
+require_once './LocalSettings/core/Sessions.php';
 
 # Hacks
 require_once './LocalSettings/Hacks.php';
