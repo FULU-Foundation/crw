@@ -5,7 +5,7 @@ ini_set('memory_limit', '512M'); // Increase memory limit to handle large operat
 
 
 # Exception and Error Details
-$wgShowExceptionDetails = true;    // Display detailed exception information for easier troubleshooting.
+$wgShowExceptionDetails = false;    // Display detailed exception information for easier troubleshooting.
 $wgShowDBErrorBacktrace = false;    // Show backtraces for database errors to assist with debugging complex queries.
 $wgDevelopmentWarnings = false;     // Enable development-related warnings to identify potential issues in code.
 

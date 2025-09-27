@@ -47,6 +47,8 @@ require_once './LocalSettings/core/Uploads.php';
 require_once './LocalSettings/core/Email.php';
 require_once './LocalSettings/core/Copyright.php';
 require_once './LocalSettings/core/Security.php';
+require_once './LocalSettings/core/CDN.php';
+require_once './LocalSettings/core/Debug.php';
 
 # Hacks
 require_once './LocalSettings/Hacks.php';
