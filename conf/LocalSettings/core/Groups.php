@@ -23,7 +23,10 @@ $wgGroupPermissions['user']['movefile'] = false;              // Prevent moving 
 $wgGroupPermissions['user']['move-categorypages'] = false;    // Prevent moving category pages.
 
 // Automatically confirmed 
-$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = false; // Autoconfirmed users are still required to complete CAPTCHA.
+$wgAutoConfirmAge = 86400*7; // seven days
+$wgAutoConfirmCount = 10;
+
+$wgGroupPermissions['autoconfirmed']['skipcaptcha'] = true; // Allow skipping captcha
 $wgGroupPermissions['autoconfirmed']['templateeditor'] = true;
 $wgGroupPermissions['autoconfirmed']['edit'] = true;
 $wgGroupPermissions['autoconfirmed']['move'] = true;          // Allow moving normal pages.
