@@ -6,12 +6,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
-
-## Shared memory settings
-$wgMainCacheType = CACHE_ACCEL;
-$wgMemCachedServers = [];
-
-
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
@@ -37,6 +31,7 @@ $wgAuthenticationTokenVersion = "1";
 $wgDiff3 = "/usr/bin/diff3";
 
 # Core
+require_once './LocalSettings/core/Cache.php';
 require_once './LocalSettings/core/Logs.php';
 require_once './LocalSettings/core/Brand.php';
 require_once './LocalSettings/core/Paths.php';

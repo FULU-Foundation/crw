@@ -26,8 +26,11 @@ services:
       - MEDIAWIKI_SECRET
       - WIKI_CAPTCHA_KEY
       - WIKI_CAPTCHA_SITE
+      - REDIS_SERVER=crw-local-cache:6379
     depends_on:
       crw-local-db:
+        condition: service_started
+      crw-local-cache:
         condition: service_started
   crw-local-db:
     image: mariadb:lts
@@ -41,3 +44,6 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     volumes:
       - ./data/db:/var/lib/mysql
+  crw-local-cache:
+    image: redis:8-bookworm
+    restart: always
