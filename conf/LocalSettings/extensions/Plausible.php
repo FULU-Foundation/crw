@@ -2,9 +2,9 @@
 # Load the Plausible MediaWiki extension.
 # This adds a lightweight, privacy-respecting analytics system to track traffic,
 # useful for monitoring spikes and understanding user engagement.
-
-wfLoadExtension( 'Plausible' );
-
+if(getenv('WIKI_ENV') != "Dev") {
+    wfLoadExtension( 'Plausible' );
+}
 # Core configuration for your self-hosted Plausible instance.
 # This ensures the extension knows where to send analytics events.
 $wgPlausibleDomain = "https://analytics.consumerrights.wiki";   // 🔐 Your Plausible base URL
