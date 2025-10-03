@@ -1,0 +1,28 @@
+name: CD
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use DigitalOcean CTL
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+
+      - name: Checkout the repo 
+        uses: actions/checkout@v5
+        with:
+            submodules: recursive
+        
+      - name: Build container image
+        run: docker build -t registry.digitalocean.com/crw-wiki/wiki:$(echo $GITHUB_SHA) -t registry.digitalocean.com/crw-wiki/wiki:latest .
+
+      - name: Log in
+        run: doctl registry login --expiry-seconds 600
+
+      - name: Push
+        run: docker push registry.digitalocean.com/crw-wiki/wiki:$(echo $GITHUB_SHA)

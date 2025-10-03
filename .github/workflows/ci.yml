@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo 
+        uses: actions/checkout@v5
+        with:
+            submodules: recursive
+
+      - name: Build container image
+        run: docker build .

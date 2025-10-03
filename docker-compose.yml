@@ -1,13 +1,12 @@
 services:
-  wiki:
+  crw-local:
     build: .
     volumes:
       - ./data/images:/var/www/html/images
       # Extensions with customizations, others are copied on image build
-      - ./extensions/PageForms:/var/www/html/extensions/PageForms
-      - ./extensions/ConfirmEdit:/var/www/html/extensions/ConfirmEdit
       # Settings
       - ./conf/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./conf/LocalSettings:/var/www/html/LocalSettings
       # Semantics Configuration
       - ./data/semantics:/var/www/html/semantics_config
       # Nginx configuration
@@ -17,7 +16,7 @@ services:
     environment:
       - WIKI_ENV=Dev
       - DB_TYPE=mysql
-      - DB_SERVER=db
+      - DB_SERVER=crw-local-db
       - DB_NAME
       - DB_USER
       - DB_PASSWORD
@@ -27,9 +26,17 @@ services:
       - MEDIAWIKI_SECRET
       - WIKI_CAPTCHA_KEY
       - WIKI_CAPTCHA_SITE
-  db:
-    image: mariadb:10.6.13
+      - REDIS_SERVER=crw-local-cache:6379
+    depends_on:
+      crw-local-db:
+        condition: service_started
+      crw-local-cache:
+        condition: service_started
+  crw-local-db:
+    image: mariadb:lts
     restart: always
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: "${DB_NAME}"
       MYSQL_USER: "${DB_USER}"
@@ -37,3 +44,6 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     volumes:
       - ./data/db:/var/lib/mysql
+  crw-local-cache:
+    image: redis:8-bookworm
+    restart: always
