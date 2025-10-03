@@ -1,6 +1,166 @@
+[submodule "extensions/JSONConfig"]
+	path = extensions/JSONConfig
+	url = git@github.com:wikimedia/mediawiki-extensions-JSONConfig.git
+	branch = REL1_44
+
+[submodule "extensions/SmiteSpam"]
+	path = extensions/SmiteSpam
+	url = git@github.com:wikimedia/mediawiki-extensions-SmiteSpam.git
+	branch = REL1_44
+
+[submodule "extensions/VisualEditor"]
+	path = extensions/VisualEditor
+	url = git@github.com:wikimedia/mediawiki-extensions-VisualEditor.git
+	branch = REL1_44
+
+[submodule "extensions/PageForms"]
+	path = extensions/PageForms
+	url = git@github.com:wikimedia/mediawiki-extensions-PageForms.git
+	branch = REL1_44
+
+[submodule "extensions/Cargo"]
+	path = extensions/Cargo
+	url = git@github.com:wikimedia/mediawiki-extensions-Cargo.git
+	branch = REL1_44
+
+[submodule "extensions/EmbedVideo"]
+	path = extensions/EmbedVideo
+	url =git@github.com:StarCitizenWiki/mediawiki-extensions-EmbedVideo.git
+
+[submodule "extensions/StopForumSpam"]
+	path = extensions/StopForumSpam
+	url = git@github.com:wikimedia/mediawiki-extensions-StopForumSpam.git
+	branch = REL1_44
+
+[submodule "extensions/SpamBlacklist"]
+	path = extensions/SpamBlacklist
+	url = git@github.com:wikimedia/mediawiki-extensions-SpamBlacklist.git
+	branch = REL1_44
+
+[submodule "extensions/Cite"]
+	path = extensions/Cite
+	url = git@github.com:wikimedia/mediawiki-extensions-Cite.git
+	branch = REL1_44
+
+[submodule "extensions/Plausible"]
+	path = extensions/Plausible
+	url = git@github.com:FULU-Foundation/mediawiki-extension-Plausible.git
+	branch = REL1_44
+
+[submodule "extensions/DiscussionTools"]
+	path = extensions/DiscussionTools
+	url = git@github.com:wikimedia/mediawiki-extensions-DiscussionTools.git
+	branch = REL1_44
+
+[submodule "extensions/TemplateStyles"]
+	path = extensions/TemplateStyles
+	url = git@github.com:wikimedia/mediawiki-extensions-TemplateStyles.git
+	branch = REL1_44
+
+[submodule "extensions/ParserFunctions"]
+	path = extensions/ParserFunctions
+	url = git@github.com:wikimedia/mediawiki-extensions-ParserFunctions.git
+	branch = REL1_44
+
+[submodule "extensions/InputBox"]
+	path = extensions/InputBox
+	url = git@github.com:wikimedia/mediawiki-extensions-InputBox.git
+	branch = REL1_44
+
+[submodule "extensions/Linter"]
+	path = extensions/Linter
+	url = git@github.com:wikimedia/mediawiki-extensions-Linter.git
+	branch = REL1_44
+
+[submodule "extensions/PageImages"]
+	path = extensions/PageImages
+	url = git@github.com:wikimedia/mediawiki-extensions-PageImages.git
+	branch = REL1_44
+
+[submodule "extensions/ConfirmEdit"]
+	path = extensions/ConfirmEdit
+	url = git@github.com:wikimedia/mediawiki-extensions-ConfirmEdit.git
+	branch = REL1_44
+
+[submodule "extensions/TimezoneConverter"]
+	path = extensions/TimezoneConverter
+	url = git@github.com:samwilson/TimezoneConverter.git
+
+[submodule "extensions/Echo"]
+	path = extensions/Echo
+	url = git@github.com:wikimedia/mediawiki-extensions-Echo.git
+	branch = REL1_44
+
+[submodule "extensions/AbuseFilter"]
+	path = extensions/AbuseFilter
+	url = git@github.com:wikimedia/mediawiki-extensions-AbuseFilter.git
+	branch = REL1_44
+
+[submodule "extensions/Scribunto"]
+	path = extensions/Scribunto
+	url = git@github.com:wikimedia/mediawiki-extensions-Scribunto.git
+	branch = REL1_44
+
+[submodule "extensions/ContributionScores"]
+	path = extensions/ContributionScores
+	url = git@github.com:wikimedia/mediawiki-extensions-ContributionScores.git
+	branch = REL1_44
+
+[submodule "extensions/Gadgets"]
+	path = extensions/Gadgets
+	url = git@github.com:wikimedia/mediawiki-extensions-Gadgets.git
+	branch = REL1_44
+
+[submodule "extensions/Nuke"]
+	path = extensions/Nuke
+	url = git@github.com:wikimedia/mediawiki-extensions-Nuke.git
+	branch = REL1_44
+
+[submodule "extensions/ApprovedRevs"]
+	path = extensions/ApprovedRevs
+	url = git@github.com:wikimedia/mediawiki-extensions-ApprovedRevs.git
+	branch = REL1_44
+
+[submodule "extensions/BulkBlock"]
+	path = extensions/BulkBlock
+	url = git@github.com:wikimedia/mediawiki-extensions-BulkBlock.git
+	branch = REL1_44
+
+[submodule "extensions/DarkMode"]
+	path = extensions/DarkMode
+	url = git@github.com:wikimedia/mediawiki-extensions-DarkMode.git
+	branch = REL1_44
+
+[submodule "extensions/MobileFrontend"]
+	path = extensions/MobileFrontend
+	url = git@github.com:wikimedia/mediawiki-extensions-MobileFrontend.git
+	branch = REL1_44
+
+[submodule "extensions/TemplateData"]
+	path = extensions/TemplateData
+	url = git@github.com:wikimedia/mediawiki-extensions-TemplateData.git
+	branch = REL1_44
+
+[submodule "extensions/CategoryTree"]
+	path = extensions/CategoryTree
+	url = git@github.com:wikimedia/mediawiki-extensions-CategoryTree.git
+	branch = REL1_44
+
+[submodule "extensions/UserMerge"]
+	path = extensions/UserMerge
+	url = git@github.com:wikimedia/mediawiki-extensions-UserMerge.git
+	branch = REL1_44
+
+[submodule "extensions/mw-discord"]
+	path = extensions/mw-discord
+	url = git@github.com:utdrwiki/discord.git
+	branch = fix-1.44
+
 [submodule "extensions/CRWHooks"]
 	path = extensions/CRWHooks
 	url = https://github.com/codedbyjake/CRWHooks.git
+
 [submodule "extensions/Citoid"]
 	path = extensions/Citoid
 	url = https://github.com/wikimedia/mediawiki-extensions-Citoid
+	branch = REL1_44
