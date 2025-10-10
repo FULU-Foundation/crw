@@ -13,27 +13,24 @@ $wgCdnServers = [];
 # Trusted proxy servers and IP ranges that should not be purged.
 # These ranges include local servers, Docker bridge networks, and Cloudflare's IP ranges.
 $wgCdnServersNoPurge = [
-// Local server and Docker bridge network.
-    '127.0.0.1',        // Nginx running on localhost.
-    '172.18.0.1/16',    // Docker bridge network (required to avoid misidentifying all users as the Docker IP).
+    '172.18.0.0/16',    // Docker bridge network (required to avoid misidentifying all users as the Docker IP).
 
     // Cloudflare IPv4 ranges (required if using Cloudflare as a CDN or proxy).
+    '173.245.48.0/20',
     '103.21.244.0/22',
     '103.22.200.0/22',
     '103.31.4.0/22',
-    '104.16.0.0/13',
-    '104.24.0.0/14',
-    '108.162.192.0/18',
-    '131.0.72.0/22',
     '141.101.64.0/18',
-    '162.158.0.0/15',
-    '172.64.0.0/13',
-    '173.245.48.0/20',
-    '188.114.96.0/20',
+    '108.162.192.0/18',
     '190.93.240.0/20',
+    '188.114.96.0/20',
     '197.234.240.0/22',
     '198.41.128.0/17',
-
+    '162.158.0.0/15',
+    '104.16.0.0/13',
+    '104.24.0.0/14',
+    '172.64.0.0/13',
+    '131.0.72.0/22',
     // Cloudflare IPv6 ranges.
     '2400:cb00::/32',
     '2606:4700::/32',
