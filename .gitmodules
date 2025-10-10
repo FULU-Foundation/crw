@@ -149,7 +149,7 @@
 [submodule "extensions/UserMerge"]
 	path = extensions/UserMerge
 	url = git@github.com:wikimedia/mediawiki-extensions-UserMerge.git
-	branch = REL1_44
+	branch = master
 
 [submodule "extensions/mw-discord"]
 	path = extensions/mw-discord
@@ -163,4 +163,14 @@
 [submodule "extensions/Citoid"]
 	path = extensions/Citoid
 	url = https://github.com/wikimedia/mediawiki-extensions-Citoid
+	branch = REL1_44
+
+[submodule "extensions/NewUserMessage"]
+	path = extensions/NewUserMessage
+	url = git@github.com:wikimedia/mediawiki-extensions-NewUserMessage.git
+	branch = REL1_44
+
+[submodule "extensions/TwoColConflict"]
+	path = extensions/TwoColConflict
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/TwoColConflict
 	branch = REL1_44

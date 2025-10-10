@@ -81,6 +81,13 @@ require_once './LocalSettings/extensions/Plausible.php';
 require_once './LocalSettings/extensions/Discord.php';
 require_once './LocalSettings/extensions/CRWHooks.php';
 
+require_once './LocalSettings/extensions/WikiEditor.php';
+require_once './LocalSettings/extensions/Thanks.php';
+require_once './LocalSettings/extensions/CodeEditor.php';
+require_once './LocalSettings/extensions/NewUserMessage.php';
+require_once './LocalSettings/extensions/TwoColConflict.php';
+
+
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';
 
