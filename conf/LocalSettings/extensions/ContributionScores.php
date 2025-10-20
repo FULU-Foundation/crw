@@ -16,7 +16,7 @@ $wgContribScoreReports = [
 ];
 
 # Contribution scoring rules
-$wgContribScoreIgnoreBots = false;           // Include bot accounts in contribution scores.
+$wgContribScoreIgnoreBots = true;
 $wgContribScoreIgnoreBlockedUsers = true;    // Exclude blocked users from scoring to avoid highlighting disruptive accounts.
 $wgContribScoresUseRealName = false;         // Use usernames instead of real names for contributor display.
 
