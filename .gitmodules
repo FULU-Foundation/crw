@@ -174,3 +174,8 @@
 	path = extensions/TwoColConflict
 	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/TwoColConflict
 	branch = REL1_44
+
+[submodule "extensions/CodeMirror"]
+	path = extensions/CodeMirror
+	url = git@github.com:wikimedia/mediawiki-extensions-CodeMirror.git
+	branch = REL1_44
