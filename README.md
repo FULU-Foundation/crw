@@ -1,38 +1,55 @@
 # Consumer Rights Wiki
 
-This monorepository contains the codebase and container setup for the Consumer Rights Wiki, a sister project to Repair.Wiki.
+## Introduction
 
-## Structure
-- conf/
-  - Configuration files
-- extensions/
-  - Mediawiki extensions
-- patches/
-  - Patches for the default Mediawiki container, run at container build
-- scripts/
-  - Development scripts
-- Dockerfile
-  - Docker configuration
-- docker-compose.dev.yml
-  - Docker development container configuration
+This repository contains the docker container, software configuration and development tools for the Consumer Rights Wiki.
 
-## Usage (Development)
+## Development usage
 
-Check out the following resources:
+### Required software
+- Docker
+- make
 
-- [Instructions for setting up a development environment](https://github.com/Consumer-Rights-Wiki-Org/wiki)
-- [Helpful resources](https://github.com/Consumer-Rights-Wiki-Org/wiki)
-  
-## Contributing
+For Windows users we recommend using the Windows Subsystem for Linux (WSL).
 
-**Please ensure you are contributing to the correct repository:**  
-- [repair.wiki](https://github.com/repair-wiki/wiki)  
-- [Consumer Rights Wiki](https://github.com/Consumer-Rights-Wiki-Org/wiki)
+### Initial setup
+1. Clone submodules
+    ```sh
+    git submodule init
+    git submodule update
+    ```
+2. Configure a .env file (see .env.example for reference).
+3. Start the development instance 
+    ```sh
+    make run
+    ```
+4. Initiate the database 
+    ```sh
+    make init
+    ```
 
-See the [CONTRIBUTING.md](https://github.com/Consumer-Rights-Wiki-Org/wiki/blob/main/CONTRIBUTING.md) file for more information.
+### Manual update
+Mediawiki requires you to run a update script occasionally (with changes to extensions or other database updates).
 
+You can run this maintanance script manually by running the following command:
+```sh
+make update
+```
+
+### Manually running the job-queue
+Mediawiki uses a job-queue based system for specific maintanance tasks, this command is automatically run inside the container by a cron-job. However you can manually run the maintanance script by running the following command:
+```sh
+make run-jobs
+```
+
+## Structure of repository
+- docker-compose.yml - Docker compose configuration for development
+- Dockerfile - Docker container build instructions
+- conf/* - Software configuration files
+- conf/LocalSettings.php - Main Mediawiki configuration file
+- conf/LocalSettings/* - Additional Mediawiki configuration
+- extensions/* - Mediawiki extensions (Git submodules)
 ## Licensing
-
 ```
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
