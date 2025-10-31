@@ -15,7 +15,12 @@ $wgUsePathInfo = true;
 
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = getenv('FULL_URL');
-$wgCanonicalServer = getenv('CANONICAL_URL');
+
+# Enable canonical link, use "CANONICAL_URL" env parameter if provided
+$wgEnableCanonicalServerLink = true;
+if(getenv("CANONICAL_URL")) {
+    $wgCanonicalServer = getenv('CANONICAL_URL');
+}
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
