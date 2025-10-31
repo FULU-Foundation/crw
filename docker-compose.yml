@@ -27,6 +27,7 @@ services:
       - WIKI_CAPTCHA_KEY
       - WIKI_CAPTCHA_SITE
       - REDIS_SERVER=crw-local-cache:6379
+      - CITOID_URL=http://localhost:${CITOID_PORT}
     depends_on:
       crw-local-db:
         condition: service_started
@@ -47,3 +48,7 @@ services:
   crw-local-cache:
     image: redis:8-bookworm
     restart: always
+  crw-citoid:
+    image: docker-registry.wikimedia.org/wikimedia/mediawiki-services-citoid:2025-10-28-154741-production
+    ports:
+      - "${CITOID_PORT}:1970"
