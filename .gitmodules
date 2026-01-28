@@ -179,3 +179,13 @@
 	path = extensions/CodeMirror
 	url = git@github.com:wikimedia/mediawiki-extensions-CodeMirror.git
 	branch = REL1_44
+
+[submodule "extensions/WikiSEO"]
+	path = extensions/WikiSEO
+	url = git@github.com:wikimedia/mediawiki-extensions-WikiSEO.git
+	branch = REL1_44
+
+[submodule "extensions/TextExtracts"]
+	path = extensions/TextExtracts
+	url = git@github.com:wikimedia/mediawiki-extensions-TextExtracts.git
+	branch = wmf/1.44.0-wmf.28

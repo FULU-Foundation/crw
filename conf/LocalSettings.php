@@ -88,6 +88,9 @@ require_once './LocalSettings/extensions/NewUserMessage.php';
 require_once './LocalSettings/extensions/TwoColConflict.php';
 require_once './LocalSettings/extensions/CodeMirror.php';
 
+require_once './LocalSettings/extensions/TextExtracts.php';
+require_once './LocalSettings/extensions/WikiSEO.php';
+
 
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';
