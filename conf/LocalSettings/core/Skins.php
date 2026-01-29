@@ -8,11 +8,16 @@ wfLoadSkin( 'Vector' );       // Current Wikipedia-style skin.
 
 # Skin configuration.
 $wgDefaultSkin = "Vector-2022";  // Set the default skin to "Vector" (classic Wikipedia-style interface).
+# Default to light mode
+$wgDefaultUserOptions['vector-theme'] = 'day';
+# Use Minerva for mobile devices
 $wgDefaultMobileSkin = 'minerva'; // Use Minerva for mobile devices
 
 $wgMinervaAdvancedMainMenu['base'] = true; // Advanced main menu
 
 # Default wide mode for all users
 $wgDefaultUserOptions['vector-limited-width'] = 0;
-# Disable sidebar
+# Enable sidebar
+# This must be disabled in FeatureManagerFactory.php
+# // Constants::REQUIREMENT_LOGGED_IN,
 $wgVectorDefaultSidebarVisibleForAnonymousUser = true;
