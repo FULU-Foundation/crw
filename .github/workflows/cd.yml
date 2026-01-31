@@ -3,7 +3,10 @@ name: CD
 on:
   push:
     branches: ['main', 'release']
-
+    
+env:
+  IMAGE_NAME: ghcr.io/fulu-foundation/crw
+  
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
@@ -17,12 +20,9 @@ jobs:
             submodules: recursive
         
       - name: Build container image
-        run: docker build -t > ghcr.io/FULU-Foundation/crw:${GITHUB_SHA} -t ghcr.io/FULU-Foundation/crw:${GITHUB_REF_NAME} .
-
-      - name: Log in
-        run: doctl registry login --expiry-seconds 600
-
+        run: |
+          docker build -t $IMAGE:${GITHUB_SHA} -t $IMAGE:${GITHUB_REF_NAME} .
       - name: Push
         run: |
-          docker push ghcr.io/FULU-Foundation/crw:${GITHUB_SHA}
-          docker push ghcr.io/FULU-Foundation/crw:${GITHUB_REF_NAME}
+          docker push $IMAGE:${GITHUB_SHA}
+          docker push $IMAGE:${GITHUB_REF_NAME}
