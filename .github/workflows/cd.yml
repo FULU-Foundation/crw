@@ -2,7 +2,7 @@ name: CD
 
 on:
   push:
-    branches: ['main']
+    branches: ['main', 'release']
 
 jobs:
   build_and_push:
@@ -19,10 +19,12 @@ jobs:
             submodules: recursive
         
       - name: Build container image
-        run: docker build -t registry.digitalocean.com/crw-wiki/wiki:$(echo $GITHUB_SHA) -t registry.digitalocean.com/crw-wiki/wiki:latest .
+        run: docker build -t registry.digitalocean.com/crw-wiki/wiki:${GITHUB_SHA} -t registry.digitalocean.com/crw-wiki/wiki:${GITHUB_REF_NAME} .
 
       - name: Log in
         run: doctl registry login --expiry-seconds 600
 
       - name: Push
-        run: docker push registry.digitalocean.com/crw-wiki/wiki:$(echo $GITHUB_SHA)
+        run: |
+          docker push registry.digitalocean.com/crw-wiki/wiki:${GITHUB_SHA}
+          docker push registry.digitalocean.com/crw-wiki/wiki:${GITHUB_REF_NAME}
