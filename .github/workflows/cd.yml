@@ -24,8 +24,8 @@ jobs:
         
       - name: Build container image
         run: |
-          docker build -t $IMAGE:${GITHUB_SHA} -t $IMAGE:${GITHUB_REF_NAME} .
+          docker build -t $IMAGE:${{ github.run_number }} -t $IMAGE:${GITHUB_REF_NAME} .
       - name: Push
         run: |
           docker push $IMAGE:${GITHUB_SHA}
-          docker push $IMAGE:${GITHUB_REF_NAME}
+          docker push $IMAGE:${{ github.run_number }}
