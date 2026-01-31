@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Consumer Rights Wiki Contributors"
+		]
+	},
+	"archivelinkhelper-desc": "Helps users create and insert archive.org links alongside external URLs to preserve evidence",
+	"archivelinkhelper-button-label": "Archive Link",
+	"archivelinkhelper-checking": "Checking archive.org for:",
+	"archivelinkhelper-found": "Archive found! Link inserted.",
+	"archivelinkhelper-not-found": "No archive found for this URL.",
+	"archivelinkhelper-dialog-title": "Create Archive Link",
+	"archivelinkhelper-dialog-no-archive": "No archive found for this URL.",
+	"archivelinkhelper-dialog-create": "Would you like to create one?",
+	"archivelinkhelper-archive-now": "Archive Now",
+	"archivelinkhelper-insert-placeholder": "Insert Placeholder",
+	"archivelinkhelper-cancel": "Cancel",
+	"archivelinkhelper-sending": "Sending archive request...",
+	"archivelinkhelper-waiting": "Waiting for archive.org to process...",
+	"archivelinkhelper-success": "Archive created successfully!",
+	"archivelinkhelper-timeout": "Archive is taking longer than expected. You can try again later or insert a placeholder link.",
+	"archivelinkhelper-prompt": "Enter a URL to archive and link:",
+	"archivelinkhelper-invalid-url": "Please enter a valid URL starting with http:// or https://"
+}

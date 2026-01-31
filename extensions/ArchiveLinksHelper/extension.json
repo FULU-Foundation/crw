@@ -1,0 +1,72 @@
+{
+	"name": "ArchiveLinkHelper",
+	"version": "1.0.0",
+	"author": [
+		"Consumer Rights Wiki Contributors"
+	],
+	"url": "https://github.com/FULU-Foundation/crw",
+	"descriptionmsg": "archivelinkhelper-desc",
+	"license-name": "GPL-3.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.39.0"
+	},
+	"MessagesDirs": {
+		"ArchiveLinkHelper": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.archiveLinkHelper": {
+			"scripts": [
+				"resources/ext.archivelinkhelper.js"
+			],
+			"dependencies": [
+				"mediawiki.api",
+				"mediawiki.util",
+				"mediawiki.notify",
+				"jquery.ui"
+			],
+			"messages": [
+				"archivelinkhelper-button-label",
+				"archivelinkhelper-checking",
+				"archivelinkhelper-found",
+				"archivelinkhelper-not-found",
+				"archivelinkhelper-dialog-title",
+				"archivelinkhelper-dialog-no-archive",
+				"archivelinkhelper-dialog-create",
+				"archivelinkhelper-archive-now",
+				"archivelinkhelper-insert-placeholder",
+				"archivelinkhelper-cancel",
+				"archivelinkhelper-sending",
+				"archivelinkhelper-waiting",
+				"archivelinkhelper-success",
+				"archivelinkhelper-timeout",
+				"archivelinkhelper-prompt",
+				"archivelinkhelper-invalid-url"
+			]
+		},
+		"ext.archiveLinkHelper.view": {
+			"scripts": [
+				"resources/ext.archivelinkhelper.view.js"
+			],
+			"styles": [
+				"resources/ext.archivelinkhelper.view.css"
+			],
+			"dependencies": [
+				"mediawiki.util"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "ArchiveLinkHelper"
+	},
+	"Hooks": {
+		"BeforePageDisplay": "ArchiveLinkHelperHooks::onBeforePageDisplay"
+	},
+	"AutoloadClasses": {
+		"ArchiveLinkHelperHooks": "includes/ArchiveLinkHelperHooks.php"
+	},
+	"manifest_version": 2
+}

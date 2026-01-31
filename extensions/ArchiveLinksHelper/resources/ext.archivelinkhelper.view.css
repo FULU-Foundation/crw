@@ -1,0 +1,41 @@
+/**
+ * ArchiveLinkHelper - View Mode Styles
+ *
+ * @license GPL-3.0-or-later
+ */
+
+.archive-indicator {
+	font-size: 0.85em;
+	margin-left: 3px;
+}
+
+.archive-link {
+	text-decoration: none;
+}
+
+.archive-link-exists {
+	color: #228b22;
+}
+
+.archive-link-exists:hover {
+	color: #1a6b1a;
+	text-decoration: underline;
+}
+
+.archive-link-missing {
+	color: #cc7000;
+}
+
+.archive-link-missing:hover {
+	color: #995400;
+	text-decoration: underline;
+}
+
+.archive-link-pending {
+	color: #666;
+	cursor: wait;
+}
+
+.archive-link-timeout {
+	color: #999;
+}

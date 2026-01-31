@@ -87,6 +87,7 @@ require_once './LocalSettings/extensions/CodeEditor.php';
 require_once './LocalSettings/extensions/NewUserMessage.php';
 require_once './LocalSettings/extensions/TwoColConflict.php';
 require_once './LocalSettings/extensions/CodeMirror.php';
+require_once './LocalSettings/extensions/ArchiveLinkHelper.php';
 
 
 # Customizations
