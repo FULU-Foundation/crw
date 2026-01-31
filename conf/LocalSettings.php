@@ -1,5 +1,6 @@
 <?php
 
+echo "Hello Staging";
 
 # Protect against web entry
 if ( !defined( 'MEDIAWIKI' ) ) {
