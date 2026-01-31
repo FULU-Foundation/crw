@@ -1,0 +1,13 @@
+diff --git a/FeatureManagerFactory.php b/FeatureManagerFactory.php
+--- a/FeatureManagerFactory.php
++++ b/FeatureManagerFactory.php
+@@ -181,7 +181,7 @@
+ 		$featureManager->registerFeature(
+ 			Constants::FEATURE_MAIN_MENU_PINNED,
+ 			[
+ 				Constants::REQUIREMENT_FULLY_INITIALISED,
+-				Constants::REQUIREMENT_LOGGED_IN,
++				// Constants::REQUIREMENT_LOGGED_IN,
+ 				Constants::REQUIREMENT_MAIN_MENU_PINNED
+ 			]
+ 		);
