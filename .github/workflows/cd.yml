@@ -5,7 +5,7 @@ on:
     branches: ['main', 'release']
     
 env:
-  IMAGE_NAME: ghcr.io/fulu-foundation/crw
+  IMAGE: ghcr.io/fulu-foundation/crw
   
 jobs:
   build_and_push:
