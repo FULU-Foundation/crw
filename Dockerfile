@@ -19,6 +19,9 @@ COPY ./skins/ /var/www/html/skins/
 COPY ./conf/LocalSettings.php /var/www/html/LocalSettings.php
 COPY ./conf/LocalSettings /var/www/html/LocalSettings
 
+# Copy PHP-FPM pool conf
+COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
+
 # Composer
 RUN apt update
 RUN apt install zip unzip
