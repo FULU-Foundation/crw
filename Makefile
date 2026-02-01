@@ -9,6 +9,12 @@ update:
 run-jobs:
 	sh scripts/run-jobs.sh
 	
+cirrus-config:
+	sh scripts/cirrus-config.sh
+
+cirrus-reindex:
+	sh scripts/cirrus-reindex.sh
+	
 run:
 	docker compose up --build
 

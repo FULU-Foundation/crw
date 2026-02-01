@@ -1,6 +1,5 @@
 <?php
 
-
 # Protect against web entry
 if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
@@ -88,6 +87,8 @@ require_once './LocalSettings/extensions/NewUserMessage.php';
 require_once './LocalSettings/extensions/TwoColConflict.php';
 require_once './LocalSettings/extensions/CodeMirror.php';
 
+require_once './LocalSettings/extensions/CirrusSearch.php';
+require_once './LocalSettings/extensions/Elastica.php';
 
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';

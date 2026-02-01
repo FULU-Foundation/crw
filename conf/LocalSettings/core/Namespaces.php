@@ -10,3 +10,9 @@ $wgNamespaceProtection[NS_PRIMARY] = ['edit-cat'];
 
 $wgExtraNamespaces[NS_PRIMARY] = 'Consumer_Rights_Wiki';
 $wgExtraNamespaces[NS_PRIMARY_TALK] = 'Consumer_Rights_Wiki_talk';
+
+define("NS_PROJECTS", 3004);
+define("NS_PROJECTS_TALK", 3005);
+
+$wgExtraNamespaces[NS_PROJECTS] = "Projects";
+$wgExtraNamespaces[NS_PROJECTS_TALK] = "Projects_talk";

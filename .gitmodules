@@ -179,3 +179,11 @@
 	path = extensions/CodeMirror
 	url = git@github.com:wikimedia/mediawiki-extensions-CodeMirror.git
 	branch = REL1_44
+[submodule "extensions/Elastica"]
+	path = extensions/Elastica
+	url = git@github.com:wikimedia/mediawiki-extensions-Elastica.git
+	branch = REL1_44
+[submodule "extensions/CirrusSearch"]
+	path = extensions/CirrusSearch
+	url = git@github.com:wikimedia/mediawiki-extensions-CirrusSearch.git
+	branch = REL1_44
