@@ -21,9 +21,5 @@ run:
 run-bg:
 	docker compose up --build -d
 
-build-deploy:
-	docker build . -t registry.digitalocean.com/crw-wiki/wiki:latest
-	docker push registry.digitalocean.com/crw-wiki/wiki:latest
-
 bash:
 	docker compose exec -i crw-local bash
