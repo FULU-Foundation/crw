@@ -90,6 +90,8 @@ require_once './LocalSettings/extensions/CodeMirror.php';
 require_once './LocalSettings/extensions/CirrusSearch.php';
 require_once './LocalSettings/extensions/Elastica.php';
 
+require_once './LocalSettings/extensions/SearchDigest.php';
+
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';
 
