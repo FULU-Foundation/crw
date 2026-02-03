@@ -187,3 +187,7 @@
 	path = extensions/CirrusSearch
 	url = git@github.com:wikimedia/mediawiki-extensions-CirrusSearch.git
 	branch = REL1_44
+[submodule "extensions/SearchDigest"]
+	path = extensions/SearchDigest
+	url = https://github.com/weirdgloop/mediawiki-extensions-SearchDigest.git
+	branch = REL1_43
