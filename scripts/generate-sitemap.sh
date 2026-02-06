@@ -1,0 +1,1 @@
+docker compose exec crw-local bash -c 'MW_CONFIG_FILE=/var/www/html/LocalSettings.php php /var/www/html/maintenance/run.php generateSitemap --fspath=/var/www/html/sitemap --identifier=localhost --urlpath=/sitemap --server="$FULL_URL" --skip-redirects'
