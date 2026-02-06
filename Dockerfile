@@ -9,6 +9,9 @@ FROM mediawiki:${mediawiki_version}
 # Create script directory
 RUN mkdir /wiki/
 
+# Create sitemaps directory
+RUN mkdir -p /var/www/html/sitemap && chown -R www-data:www-data /var/www/html/sitemap
+
 # Copy extensions to the image
 COPY ./extensions/ /var/www/html/extensions/
 

@@ -18,6 +18,9 @@ cirrus-reindex:
 meta:
 	sh scripts/wiki-meta.sh
 	
+sitemap:
+	sh scripts/generate-sitemap.sh
+	
 run:
 	docker compose up --build
 
