@@ -15,6 +15,9 @@ cirrus-config:
 cirrus-reindex:
 	sh scripts/cirrus-reindex.sh
 	
+meta:
+	sh scripts/wiki-meta.sh
+	
 run:
 	docker compose up --build
 
