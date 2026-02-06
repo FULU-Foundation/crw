@@ -198,4 +198,4 @@
 [submodule "extensions/TextExtracts"]
 	path = extensions/TextExtracts
 	url = git@github.com:wikimedia/mediawiki-extensions-TextExtracts.git
-	branch = wmf/1.44.0-wmf.28
+	branch = REL1_44
