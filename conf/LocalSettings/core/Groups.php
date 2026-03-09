@@ -34,6 +34,7 @@ $wgGroupPermissions['autoconfirmed']['move-subpages'] = true; // Allow moving pa
 $wgGroupPermissions['autoconfirmed']['movefile'] = true;      // Allow moving uploaded files.
 $wgGroupPermissions['autoconfirmed']['move-categorypages'] = true; // Allow moving category pages.
 $wgGroupPermissions['autoconfirmed']['usermerge'] = false;
+$wgGroupPermissions['autoconfirmed']['editsemiprotected'] = false; // Prevent editing of semi-protected pages.
 
 // Confirmed
 $wgGroupPermissions['confirmed'] = $wgGroupPermissions['autoconfirmed'];
@@ -43,6 +44,11 @@ $wgGroupPermissions['confirmed']['move'] = true;             // Allow moving nor
 $wgGroupPermissions['confirmed']['move-subpages'] = true;    // Allow moving pages along with subpages.
 $wgGroupPermissions['confirmed']['movefile'] = true;         // Allow moving uploaded files.
 $wgGroupPermissions['confirmed']['move-categorypages'] = true; // Allow moving category pages.
+
+// Super confirmed
+$wgGroupPermissions['superconfirmed']['delete'] = true;          // Delete pages.
+$wgGroupPermissions['superconfirmed']['editsemiprotected'] = true; // Edit semi-protected pages.
+// Additionally can now remove site-notices
 
 // Sysop
 $wgGroupPermissions['sysop']['runcargoqueries'] = true; # Allow administrators
@@ -69,7 +75,8 @@ $wgGroupPermissions['sysop']['editinterface'] = true;
 $wgGroupPermissions['sysop']['edit'] = true;
 $wgGroupPermissions['sysop']['edit-cat'] = true; //allow sysop to edit
 $wgGroupPermissions['sysop']['usermerge'] = false;
-
+$wgGroupPermissions['sysop']['edituserjson'] = false;
+$wgGroupPermissions['sysop']['editsitejson'] = false;
 
 // Super admin
 $wgGroupPermissions['superadmin']['block'] = true;               // Block and unblock users, including sysops.
