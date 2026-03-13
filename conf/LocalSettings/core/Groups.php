@@ -5,6 +5,7 @@ $wgGroupPermissions['*']['runcargoqueries'] = false;    # Prevent anonymous user
 $wgGroupPermissions['*']['skipcaptcha'] = false;             // Anonymous users must complete CAPTCHA.
 $wgGroupPermissions['*']['createpage'] = true;
 $wgGroupPermissions['*']['usermerge'] = false;
+$wgGroupPermissions['*']['editcontentmodel'] = false;        // Prevent anonymous users from changing content models.
 
 // Bot
 $wgGroupPermissions['bot']['usermerge'] = false;
@@ -21,6 +22,7 @@ $wgGroupPermissions['user']['move'] = false;                  // Prevent moving 
 $wgGroupPermissions['user']['move-subpages'] = false;         // Prevent moving pages along with subpages.
 $wgGroupPermissions['user']['movefile'] = false;              // Prevent moving uploaded files.
 $wgGroupPermissions['user']['move-categorypages'] = false;    // Prevent moving category pages.
+$wgGroupPermissions['user']['editcontentmodel'] = false;      // Prevent users from changing content models.
 
 // Automatically confirmed 
 $wgAutoConfirmAge = 86400*7; // seven days
@@ -34,6 +36,8 @@ $wgGroupPermissions['autoconfirmed']['move-subpages'] = true; // Allow moving pa
 $wgGroupPermissions['autoconfirmed']['movefile'] = true;      // Allow moving uploaded files.
 $wgGroupPermissions['autoconfirmed']['move-categorypages'] = true; // Allow moving category pages.
 $wgGroupPermissions['autoconfirmed']['usermerge'] = false;
+$wgGroupPermissions['autoconfirmed']['editsemiprotected'] = false; // Prevent editing of semi-protected pages.
+$wgGroupPermissions['autoconfirmed']['editcontentmodel'] = false;  // Prevent autoconfirmed users from changing content models.
 
 // Confirmed
 $wgGroupPermissions['confirmed'] = $wgGroupPermissions['autoconfirmed'];
@@ -43,6 +47,12 @@ $wgGroupPermissions['confirmed']['move'] = true;             // Allow moving nor
 $wgGroupPermissions['confirmed']['move-subpages'] = true;    // Allow moving pages along with subpages.
 $wgGroupPermissions['confirmed']['movefile'] = true;         // Allow moving uploaded files.
 $wgGroupPermissions['confirmed']['move-categorypages'] = true; // Allow moving category pages.
+$wgGroupPermissions['confirmed']['editcontentmodel'] = false; // Prevent confirmed users from changing content models.
+
+// Super confirmed
+$wgGroupPermissions['superconfirmed']['delete'] = true;          // Delete pages.
+$wgGroupPermissions['superconfirmed']['editsemiprotected'] = true; // Edit semi-protected pages.
+// Additionally can now remove site-notices
 
 // Sysop
 $wgGroupPermissions['sysop']['runcargoqueries'] = true; # Allow administrators
@@ -69,7 +79,9 @@ $wgGroupPermissions['sysop']['editinterface'] = true;
 $wgGroupPermissions['sysop']['edit'] = true;
 $wgGroupPermissions['sysop']['edit-cat'] = true; //allow sysop to edit
 $wgGroupPermissions['sysop']['usermerge'] = false;
-
+$wgGroupPermissions['sysop']['edituserjson'] = false;
+$wgGroupPermissions['sysop']['editsitejson'] = false;
+$wgGroupPermissions['sysop']['editcontentmodel'] = true;     // Allow sysops to change content models.
 
 // Super admin
 $wgGroupPermissions['superadmin']['block'] = true;               // Block and unblock users, including sysops.
@@ -90,12 +102,14 @@ $wgGroupPermissions['superadmin']['handle-pii'] = true; # Remove PII
 $wgGroupPermissions['superadmin']['blocksysop'] = true; # Custom logic to allow superadmins like dog or christoph who are trusted to block/ban normal sysops(mods) that get out of line
 $wgGroupPermissions['superadmin']['skipcaptcha'] = true;     // Superadmins are exempt from CAPTCHA.
 $wgGroupPermissions['superadmin']['usermerge'] = true;
+$wgGroupPermissions['superadmin']['editcontentmodel'] = true;    // Allow superadmins to change content models.
 
 // Interface admin
 $wgGroupPermissions['interface-admin']['editsitecss'] = true;  // Interface admins control site-wide CSS.
 $wgGroupPermissions['interface-admin']['gadgets-edit'] = true;
 $wgGroupPermissions['interface-admin']['gadgets-definition-edit'] = true;
 $wgGroupPermissions['interface-admin']['usermerge'] = false;
+$wgGroupPermissions['interface-admin']['editcontentmodel'] = true; // Allow interface admins to change content models.
 
 // Bureaucrat
 $wgGroupPermissions['bureaucrat']['usermerge'] = false;
