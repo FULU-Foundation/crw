@@ -51,6 +51,7 @@ $wgGroupPermissions['confirmed']['editcontentmodel'] = false; // Prevent confirm
 
 // Super confirmed
 $wgGroupPermissions['superconfirmed']['delete'] = true;          // Delete pages.
+$wgGroupPermissions['superconfirmed']['undelete'] = true;        // Undelete pages
 $wgGroupPermissions['superconfirmed']['editsemiprotected'] = true; // Edit semi-protected pages.
 // Additionally can now remove site-notices
 
