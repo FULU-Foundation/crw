@@ -3,3 +3,10 @@ data/db
 data/images/*
 data/semantics/*
 .idea
+
+# Local tooling and editor config
+CLAUDE.md
+.claudeignore
+.claude/
+scripts/prompt-runner.sh
+tmp/
