@@ -89,6 +89,7 @@ require_once './LocalSettings/extensions/CodeMirror.php';
 
 require_once './LocalSettings/extensions/WikiSEO.php';
 require_once './LocalSettings/extensions/TextExtracts.php';
+require_once './LocalSettings/extensions/Popups.php';
 
 require_once './LocalSettings/extensions/CirrusSearch.php';
 require_once './LocalSettings/extensions/Elastica.php';

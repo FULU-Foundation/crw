@@ -199,3 +199,7 @@
 	path = extensions/TextExtracts
 	url = git@github.com:wikimedia/mediawiki-extensions-TextExtracts.git
 	branch = REL1_44
+[submodule "extensions/Popups"]
+	path = extensions/Popups
+	url = git@github.com:wikimedia/mediawiki-extensions-Popups.git
+	branch = REL1_44
