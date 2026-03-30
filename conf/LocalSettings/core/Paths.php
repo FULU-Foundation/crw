@@ -31,8 +31,3 @@ $wgUploadDirectory = "/var/www/html/images/";
 # to /w/Main_Page. Eliminates the double 301 redirect chain that wastes
 # crawl budget and dilutes link equity on a new domain.
 $wgMainPageIsDomainRoot = true;
-
-# Restrict sitemap generation to main namespace (articles) only.
-# Non-content namespaces are noindexed via $wgNamespaceRobotPolicies in Security.php,
-# so including them in the sitemap would send contradictory signals to search engines.
-$wgSitemapNamespaces = [ 0 ];
