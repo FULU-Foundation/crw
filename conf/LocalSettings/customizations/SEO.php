@@ -4,6 +4,7 @@
 # This file contains BeforePageDisplay hooks that improve search engine
 # and social media handling of wiki pages.
 
+use MediaWiki\Category\Category;
 use MediaWiki\Output\OutputPage;
 
 # Add og:type meta tag to satisfy OpenGraph protocol requirements.
