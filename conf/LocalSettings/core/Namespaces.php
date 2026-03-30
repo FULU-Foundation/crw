@@ -16,3 +16,8 @@ define("NS_PROJECTS_TALK", 3005);
 
 $wgExtraNamespaces[NS_PROJECTS] = "Projects";
 $wgExtraNamespaces[NS_PROJECTS_TALK] = "Projects_talk";
+
+# Restrict sitemap generation to main namespace (articles) only.
+# Non-content namespaces are noindexed via $wgNamespaceRobotPolicies in Security.php,
+# so including them in the sitemap would send contradictory signals to search engines.
+$wgSitemapNamespaces = [ 0 ];

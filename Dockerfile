@@ -22,6 +22,9 @@ COPY ./skins/ /var/www/html/skins/
 COPY ./conf/LocalSettings.php /var/www/html/LocalSettings.php
 COPY ./conf/LocalSettings /var/www/html/LocalSettings
 
+# robots.txt — served directly by nginx, blocks crawling of MW infrastructure URLs
+COPY ./robots.txt /var/www/html/robots.txt
+
 # Copy PHP-FPM pool conf
 COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 

@@ -26,3 +26,8 @@ if(getenv("CANONICAL_URL")) {
 $wgResourceBasePath = $wgScriptPath;
 
 $wgUploadDirectory = "/var/www/html/images/";
+
+# Serve Main Page directly at the domain root (/) instead of redirecting
+# to /w/Main_Page. Eliminates the double 301 redirect chain that wastes
+# crawl budget and dilutes link equity on a new domain.
+$wgMainPageIsDomainRoot = true;

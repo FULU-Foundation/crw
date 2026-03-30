@@ -98,6 +98,7 @@ require_once './LocalSettings/extensions/SearchDigest.php';
 
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';
+require_once './LocalSettings/customizations/SEO.php';
 
 # Groups
 require_once './LocalSettings/core/Groups.php';
