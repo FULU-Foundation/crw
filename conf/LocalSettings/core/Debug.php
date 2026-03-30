@@ -3,6 +3,10 @@
 # Memory Limit
 ini_set('memory_limit', '512M'); // Increase memory limit to handle large operations, such as processing large images.
 
+# Suppress PHP deprecation notices — MW 1.44 core triggers E_DEPRECATED warnings
+# from internal skin methods that are not actionable by site operators.
+error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT );
+ini_set( 'display_errors', 0 );
 
 # Exception and Error Details
 $wgShowExceptionDetails = false;    // Display detailed exception information for easier troubleshooting.
