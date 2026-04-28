@@ -70,7 +70,7 @@ $wgGroupPermissions['sysop']['abusefilter-log'] = true;   # View logs of abuse f
 $wgGroupPermissions['sysop']['abusefilter-view'] = true;  # View the list of active abuse filters.
 $wgGroupPermissions['sysop']['abusefilter-privatedetails'] = true; # View private details in abuse filters.
 $wgGroupPermissions['sysop']['abusefilter-privatedetails-log'] = true; # View private logs of abuse filter activity.
-$wgGroupPermissions['sysop']['userrights'] = true;
+$wgGroupPermissions['sysop']['userrights'] = false; # See A/R Groups
 $wgGroupPermissions['sysop']['skipcaptcha'] = true;          // Sysops are exempt from CAPTCHA.
 $wgGroupPermissions['sysop']['sfsblock-bypass'] = true;
 $wgGroupPermissions['sysop']['abusefilter-modify'] = true;
@@ -83,6 +83,9 @@ $wgGroupPermissions['sysop']['usermerge'] = false;
 $wgGroupPermissions['sysop']['edituserjson'] = false;
 $wgGroupPermissions['sysop']['editsitejson'] = false;
 $wgGroupPermissions['sysop']['editcontentmodel'] = true;     // Allow sysops to change content models.
+
+$wgAddGroups['sysop'] = ['confirmed'];
+$wgRemoveGroups['sysop'] = ['confirmed'];
 
 // Super admin
 $wgGroupPermissions['superadmin']['block'] = true;               // Block and unblock users, including sysops.
