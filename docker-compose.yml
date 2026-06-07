@@ -28,6 +28,8 @@ services:
       - WIKI_CAPTCHA_SITE
       - REDIS_SERVER=crw-local-cache:6379
       - CITOID_URL=http://localhost:${CITOID_PORT}
+      - CLOUDFLARE_PURGE_ZONE_ID
+      - CLOUDFLARE_PURGE_TOKEN
     depends_on:
       crw-local-db:
         condition: service_started

@@ -44,6 +44,7 @@ require_once './LocalSettings/core/Security.php';
 require_once './LocalSettings/core/CDN.php';
 require_once './LocalSettings/core/Debug.php';
 require_once './LocalSettings/core/Sessions.php';
+require_once './LocalSettings/core/TempUser.php';
 
 # Extensions
 require_once './LocalSettings/extensions/Scribunto.php';
@@ -76,6 +77,7 @@ require_once './LocalSettings/extensions/UserMerge.php';
 require_once './LocalSettings/extensions/PageImages.php';
 require_once './LocalSettings/extensions/Cite.php';
 require_once './LocalSettings/extensions/Plausible.php';
+require_once './LocalSettings/extensions/CloudflarePurge.php';
 
 require_once './LocalSettings/extensions/Discord.php';
 require_once './LocalSettings/extensions/CRWHooks.php';
