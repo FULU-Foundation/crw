@@ -203,3 +203,7 @@
 	path = extensions/Popups
 	url = git@github.com:wikimedia/mediawiki-extensions-Popups.git
 	branch = REL1_44
+[submodule "extensions/CloudflarePurge"]
+	path = extensions/CloudflarePurge
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/CloudflarePurge
+	branch = REL1_44
