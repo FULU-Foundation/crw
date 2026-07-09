@@ -110,44 +110,6 @@ Reskin for SocialProfile
 	background-color: #2a4b8d;
 }
 
-.eye-container {
-	margin: 6px 0 0;
-	background-color: #72868f;
-	border-radius: 10px;
-	opacity: 1;
-	box-shadow: none;
-	transition: background-color 120ms ease, box-shadow 120ms ease;
-}
-
-div.eye-container[fieldkey] {
-	top: 0;
-}
-
-.eye-container:hover {
-	background-color: #5d6d74;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
-}
-
-.eye-container .title {
-	font-size: 11px;
-	font-weight: 600;
-}
-
-.eye-container .menu {
-	border-radius: 0 0 10px 10px;
-	overflow: hidden;
-}
-
-.eye-container .menu .item {
-	background-color: #72868f;
-	transition: background-color 120ms ease, color 120ms ease;
-}
-
-.eye-container .menu .item:hover {
-	background-color: #fff;
-	color: #5d6d74;
-}
-
 .profile-tab:has(> a[title="Special:UpdateProfile/custom"]) {
 	display: none;
 }
@@ -160,4 +122,64 @@ div.eye-container[fieldkey] {
 
 #profile-toggle-button:hover {
 	background-color: #2a4b8d;
+}
+
+.view-form {
+	color: #54595d;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.view-status {
+	background-color: #d5fdf4;
+	color: #14866d;
+	border-radius: 3px;
+	padding: 8px 12px;
+	margin-bottom: 12px;
+	font-weight: 600;
+}
+
+input.createbox,
+textarea.createbox {
+	border: 1px solid #a2a9b1;
+	border-radius: 3px;
+	padding: 5px 8px;
+	font: inherit;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+input[type="submit"].createbox {
+	background-color: #36c;
+	border: 0;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	padding: 8px 20px;
+}
+
+input[type="submit"].createbox:hover {
+	background-color: #2a4b8d;
+}
+
+input[type="button"].createbox {
+	background-color: #eaecf0;
+	border: 1px solid #a2a9b1;
+	color: #202122;
+	cursor: pointer;
+	padding: 8px 20px;
+}
+
+input[type="button"].createbox:hover {
+	background-color: #dadde3;
+}
+
+.Item {
+	padding: 8px 0;
+	border-bottom: 1px solid #eaecf0;
+}
+
+.mw-gift-manager-navigation {
+	margin-top: 16px;
+	font-size: 13px;
 }
