@@ -1,0 +1,22 @@
+From 7cbcffb5c46909214453ef7b00b96d35e8df4eba Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Thu, 9 Jul 2026 20:03:04 +0100
+Subject: [PATCH] Restrict Special:GiftManagerLogo to giftadmin
+
+---
+ UserGifts/includes/specials/SpecialGiftManagerLogo.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/UserGifts/includes/specials/SpecialGiftManagerLogo.php b/UserGifts/includes/specials/SpecialGiftManagerLogo.php
+index c7769723..0d9eb0a8 100644
+--- a/UserGifts/includes/specials/SpecialGiftManagerLogo.php
++++ b/UserGifts/includes/specials/SpecialGiftManagerLogo.php
+@@ -60,7 +60,7 @@ class GiftManagerLogo extends UnlistedSpecialPage {
+ 	public $gift_id;
+ 
+ 	public function __construct() {
+-		parent::__construct( 'GiftManagerLogo' );
++		parent::__construct( 'GiftManagerLogo', 'giftadmin' );
+ 	}
+ 
+ 	/**

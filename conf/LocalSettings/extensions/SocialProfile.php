@@ -2,9 +2,6 @@
 
 require_once "$IP/extensions/SocialProfile/SocialProfile.php";
 
-$wgUserProfileDisplay['avatar'] = true; // Profile pictures.
-$wgUserProfileDisplay['awards'] = true; // Achievement badges.
-$wgUserProfileDisplay['gifts'] = false; // User-to-user virtual gifts disabled.
 $wgUserProfileDisplay['custom'] = false; // Hides the "Custom information" section on profile pages.
 
 $wgUserBoard = false; // Message board disabled on profile pages.
@@ -20,10 +17,16 @@ $wgHooks['BeforePageDisplay'][] = function ( OutputPage $out, Skin $skin ) {
     $out->addInlineStyle( '.visualClear { clear: both; }' );
 };
 
+# Limit access to Special:GiveGift to users with the giftadmin permission.
+$wgHooks['SpecialPageBeforeExecute'][] = function ( SpecialPage $special, $subPage ) {
+    if ( $special->getName() === 'GiveGift' && !$special->getUser()->isAllowed( 'giftadmin' ) ) {
+        throw new PermissionsError( 'giftadmin' );
+    }
+};
+
 # Permissions for sysop users to manage SocialProfile extension
 $wgGroupPermissions['sysop']['editothersprofiles'] = true;
 $wgGroupPermissions['sysop']['updatepoints'] = true;
-$wgGroupPermissions['sysop']['generatetopusersreport'] = true;
 
 # Permissions for profile-managers to manage SocialProfile extension
 $wgExtensionFunctions[] = static function () {
@@ -34,9 +37,17 @@ $wgExtensionFunctions[] = static function () {
     $wgGroupPermissions['profile-manager']['populate-user-profiles'] = true;
     $wgGroupPermissions['profile-manager']['editothersprofiles'] = true;
     $wgGroupPermissions['profile-manager']['editothersprofiles-private'] = true;
-    # Remove special pages related to relationships
+    # Remove special pages
     unset( $wgSpecialPages['AddRelationship'] );
     unset( $wgSpecialPages['RemoveRelationship'] );
     unset( $wgSpecialPages['ViewRelationshipRequests'] );
     unset( $wgSpecialPages['ViewRelationships'] );
+    unset( $wgSpecialPages['UserActivity'] );
+    unset( $wgSpecialPages['GenerateTopUsersReport'] );
+    unset( $wgSpecialPages['TopUsers'] );
+    unset( $wgSpecialPages['TopFansByStatistic'] );
+    unset( $wgSpecialPages['TopUsersRecent'] );
+    unset( $wgSpecialPages['TopAwards'] );
+    unset( $wgSpecialPages['UserBoard'] );
+    unset( $wgSpecialPages['SendBoardBlast'] );
 };
