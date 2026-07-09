@@ -98,8 +98,13 @@ require_once './LocalSettings/extensions/Elastica.php';
 
 require_once './LocalSettings/extensions/SearchDigest.php';
 
+require_once './LocalSettings/extensions/SocialProfile.php';
+
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';
+require_once './LocalSettings/customizations/ConfirmLogout.php';
+require_once './LocalSettings/customizations/ArticleFeedback.php';
+require_once './LocalSettings/customizations/CustomStyles.php';
 
 # Groups
 require_once './LocalSettings/core/Groups.php';
