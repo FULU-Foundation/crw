@@ -159,6 +159,7 @@
 [submodule "extensions/CRWHooks"]
 	path = extensions/CRWHooks
 	url = https://github.com/codedbyjake/CRWHooks.git
+	branch = main
 
 [submodule "extensions/Citoid"]
 	path = extensions/Citoid
@@ -206,4 +207,8 @@
 [submodule "extensions/CloudflarePurge"]
 	path = extensions/CloudflarePurge
 	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/CloudflarePurge
+	branch = REL1_44
+[submodule "extensions/SocialProfile"]
+	path = extensions/SocialProfile
+	url = https://github.com/wikimedia/mediawiki-extensions-SocialProfile.git
 	branch = REL1_44

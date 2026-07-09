@@ -30,6 +30,9 @@ services:
       - CITOID_URL=http://localhost:${CITOID_PORT}
       - CLOUDFLARE_PURGE_ZONE_ID
       - CLOUDFLARE_PURGE_TOKEN
+      - ARTICLE_FEEDBACK_DISCORD_HOOK
+      - ARTICLE_FEEDBACK_DISCORD_GUILD_ID
+      - ARTICLE_FEEDBACK_DISCORD_CHANNEL_ID
     depends_on:
       crw-local-db:
         condition: service_started

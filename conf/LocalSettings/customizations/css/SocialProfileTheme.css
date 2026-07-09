@@ -1,0 +1,163 @@
+/* 
+Reskin for SocialProfile
+*/
+
+.profile-tab-bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin: 0 0 24px;
+	border-bottom: 1px solid #c8ccd1;
+	padding-bottom: 0;
+}
+
+.profile-tab,
+.profile-tab-on {
+	float: none;
+	height: auto;
+	min-width: 0;
+	margin: 0;
+	padding: 8px 16px;
+	border-radius: 4px 4px 0 0;
+	font-size: 14px;
+	transition: background-color 120ms ease;
+}
+
+.profile-tab {
+	background-color: #72868f;
+}
+
+.profile-tab:hover {
+	background-color: #5d6d74;
+}
+
+.profile-tab-on {
+	background-color: #36c;
+	font-weight: 600;
+}
+
+.profile-update-title {
+	font-size: 15px;
+	font-weight: 600;
+	color: #202122;
+	margin: 0 0 12px !important;
+	padding-bottom: 6px;
+	border-bottom: 1px solid #eaecf0;
+}
+
+.profile-info {
+	padding: 8px 0 25px;
+}
+
+.profile-update {
+	margin: 0 0 28px;
+}
+
+.profile-update-unit-left {
+	color: #54595d;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 30px;
+}
+
+.profile-update-unit {
+	width: 320px;
+}
+
+.profile-update-unit-small {
+	color: #72777d;
+	font-size: 11px;
+	line-height: 1.4;
+	margin-top: 4px;
+}
+
+.profile-update-unit input[type="text"],
+.profile-update-unit input[type="password"],
+.profile-update-unit textarea,
+.profile-update-unit select {
+	width: 100%;
+	max-width: 280px;
+	box-sizing: border-box;
+	padding: 5px 8px;
+	border: 1px solid #a2a9b1;
+	border-radius: 3px;
+	font: inherit;
+	font-size: 14px;
+}
+
+.profile-update-unit input:focus,
+.profile-update-unit textarea:focus,
+.profile-update-unit select:focus {
+	border-color: #36c;
+	outline: 2px solid rgba(51, 102, 204, .25);
+	outline-offset: 1px;
+}
+
+.profile-update-button,
+.site-button {
+	background-color: #36c;
+	border: 0;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 8px 20px;
+	cursor: pointer;
+}
+
+.profile-update-button:hover,
+.site-button:hover {
+	background-color: #2a4b8d;
+}
+
+.eye-container {
+	margin: 6px 0 0;
+	background-color: #72868f;
+	border-radius: 10px;
+	opacity: 1;
+	box-shadow: none;
+	transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+
+div.eye-container[fieldkey] {
+	top: 0;
+}
+
+.eye-container:hover {
+	background-color: #5d6d74;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+
+.eye-container .title {
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.eye-container .menu {
+	border-radius: 0 0 10px 10px;
+	overflow: hidden;
+}
+
+.eye-container .menu .item {
+	background-color: #72868f;
+	transition: background-color 120ms ease, color 120ms ease;
+}
+
+.eye-container .menu .item:hover {
+	background-color: #fff;
+	color: #5d6d74;
+}
+
+.profile-tab:has(> a[title="Special:UpdateProfile/custom"]) {
+	display: none;
+}
+
+#profile-toggle-button {
+	background-color: #36c;
+	border-radius: 3px;
+	transition: background-color 120ms ease;
+}
+
+#profile-toggle-button:hover {
+	background-color: #2a4b8d;
+}
