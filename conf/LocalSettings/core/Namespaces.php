@@ -7,6 +7,7 @@ define("NS_PRIMARY", 4);
 define("NS_PRIMARY_TALK", 5);
 
 $wgNamespaceProtection[NS_PRIMARY] = ['edit-cat'];
+$wgNamespaceProtection[NS_TEMPLATE] = ['edit-template'];
 
 $wgExtraNamespaces[NS_PRIMARY] = 'Consumer_Rights_Wiki';
 $wgExtraNamespaces[NS_PRIMARY_TALK] = 'Consumer_Rights_Wiki_talk';

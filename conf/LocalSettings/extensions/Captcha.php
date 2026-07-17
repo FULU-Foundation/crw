@@ -20,7 +20,7 @@ $wgCaptchaTriggers = [
     'createaccount' => true,  // CAPTCHA for account creation
     'badlogin' => true,       // CAPTCHA for failed login attempts
     'badloginperuser' => true, // CAPTCHA after repeated failed logins
-    'new-section' => true      // ✅ Force CAPTCHA for starting a new topic
+    'new-section' => true      // CAPTCHA for starting a new topic
 ];
 
 # Fix: Explicitly Apply CAPTCHA to Talk Pages
@@ -30,7 +30,6 @@ $wgCaptchaTriggersOnNamespace = [
     NS_PROJECT_TALK => true,          # Project Talk Pages
     NS_PRIMARY_TALK => true           # Custom namespace talk page
 ];
-
 
 # CAPTCHA Storage and Application
 $wgCaptchaWhitelist = [];                        // No whitelisted actions or users for CAPTCHA bypass.
