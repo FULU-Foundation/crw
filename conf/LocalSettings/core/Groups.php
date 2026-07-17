@@ -102,9 +102,6 @@ $wgGroupPermissions['sysop']['sitelockdown'] = true;          // Activate and de
 $wgAddGroups['sysop'] = ['confirmed'];
 $wgRemoveGroups['sysop'] = ['confirmed'];
 
-$wgAddGroups['sysop'] = ['confirmed'];
-$wgRemoveGroups['sysop'] = ['confirmed'];
-
 // Super admin
 $wgGroupPermissions['superadmin']['block'] = true;               // Block and unblock users, including sysops.
 $wgGroupPermissions['superadmin']['userrights'] = true;          // Manage roles and permissions for all users.
