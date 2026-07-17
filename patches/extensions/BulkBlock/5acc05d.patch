@@ -1,0 +1,40 @@
+From 5acc05dcf8e44eb116532a3405137942949b1364 Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Tue, 14 Jul 2026 12:05:00 +0100
+Subject: [PATCH] Fix deprecated SpecialPage restriction constructor param
+
+Use of MediaWiki\SpecialPage\SpecialPage constructor parameters
+$restriction, $listed, $function, $file and $includable was
+deprecated in MediaWiki 1.46.
+---
+ SpecialBulkBlock.php | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/SpecialBulkBlock.php b/SpecialBulkBlock.php
+index c6b788d..1312343 100644
+--- a/SpecialBulkBlock.php
++++ b/SpecialBulkBlock.php
+@@ -22,12 +22,19 @@ class SpecialBulkBlock extends FormSpecialPage {
+ 		UserFactory $userFactory,
+ 		UserNameUtils $userNameUtils
+ 	) {
+-		parent::__construct( 'BulkBlock', 'bulkblock' );
++		parent::__construct( 'BulkBlock' );
+ 		$this->language = $language;
+ 		$this->userFactory = $userFactory;
+ 		$this->userNameUtils = $userNameUtils;
+ 	}
+ 
++	/**
++	 * @inheritDoc
++	 */
++	public function getRestriction(): string {
++		return 'bulkblock';
++	}
++
+ 	/**
+ 	 * @inheritDoc
+ 	 */
+-- 
+2.43.0
+

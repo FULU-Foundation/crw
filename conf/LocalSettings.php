@@ -71,6 +71,8 @@ require_once './LocalSettings/extensions/Nuke.php';
 require_once './LocalSettings/extensions/StopForumSpam.php';
 require_once './LocalSettings/extensions/AbuseFilter.php';
 require_once './LocalSettings/extensions/SmiteSpam.php';
+require_once './LocalSettings/extensions/SpamBlacklist.php';
+require_once './LocalSettings/extensions/SiteLockdown.php';
 
 require_once './LocalSettings/extensions/EmbedVideo.php';
 require_once './LocalSettings/extensions/UserMerge.php';
@@ -80,7 +82,10 @@ require_once './LocalSettings/extensions/Plausible.php';
 require_once './LocalSettings/extensions/CloudflarePurge.php';
 
 require_once './LocalSettings/extensions/Discord.php';
-require_once './LocalSettings/extensions/CRWHooks.php';
+require_once './LocalSettings/extensions/ArticleFeedback.php';
+require_once './LocalSettings/extensions/ConfirmLogout.php';
+require_once './LocalSettings/extensions/Awards.php';
+require_once './LocalSettings/extensions/MassRollback.php';
 
 require_once './LocalSettings/extensions/WikiEditor.php';
 require_once './LocalSettings/extensions/Thanks.php';
@@ -100,6 +105,7 @@ require_once './LocalSettings/extensions/SearchDigest.php';
 
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';
+require_once './LocalSettings/customizations/CustomStyles.php';
 
 # Groups
 require_once './LocalSettings/core/Groups.php';

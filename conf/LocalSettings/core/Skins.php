@@ -18,6 +18,4 @@ $wgMinervaAdvancedMainMenu['base'] = true; // Advanced main menu
 # Default wide mode for all users
 $wgDefaultUserOptions['vector-limited-width'] = 0;
 # Enable sidebar
-# This must be disabled in FeatureManagerFactory.php
-# // Constants::REQUIREMENT_LOGGED_IN,
 $wgVectorDefaultSidebarVisibleForAnonymousUser = true;

@@ -1,0 +1,39 @@
+From 321a6a587c49f81f1861cd486aac9b57c2314c66 Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Tue, 14 Jul 2026 12:39:08 +0100
+Subject: [PATCH] Fix deprecated SpecialPage restriction constructor param
+
+Use of MediaWiki\SpecialPage\SpecialPage constructor parameters
+$restriction, $listed, $function, $file and $includable was
+deprecated in MediaWiki 1.46.
+---
+ src/SpecialSearchDigest.php | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/src/SpecialSearchDigest.php b/src/SpecialSearchDigest.php
+index 3ed334b..81cbf69 100644
+--- a/src/SpecialSearchDigest.php
++++ b/src/SpecialSearchDigest.php
+@@ -29,11 +29,18 @@ class SpecialSearchDigest extends QueryPage {
+ 	protected $blockedQueries = [];
+ 
+ 	function __construct() {
+-		parent::__construct( 'SearchDigest', 'searchdigest-reader' );
++		parent::__construct( 'SearchDigest' );
+ 		$this->linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+ 		$this->permManager = MediaWikiServices::getInstance()->getPermissionManager();
+ 	}
+ 
++	/**
++	 * @inheritDoc
++	 */
++	public function getRestriction(): string {
++		return 'searchdigest-reader';
++	}
++
+ 	protected function addSubtitle() {
+ 		$links = [ $this->linkRenderer->makePreloadedLink( Title::newFromText( 'SearchDigest', NS_SPECIAL ), $this->msg( 'searchdigest-nav-main' )->text() ) ];
+ 
+-- 
+2.43.0
+

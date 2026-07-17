@@ -1,0 +1,56 @@
+From d0443f748547c9f6bebee92c22b8d7f84bc4076d Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Tue, 14 Jul 2026 12:44:18 +0100
+Subject: [PATCH] Fix deprecated SpecialPage restriction constructor param
+
+Use of MediaWiki\SpecialPage\SpecialPage constructor parameters
+$restriction, $listed, $function, $file and $includable was
+deprecated in MediaWiki 1.46.
+---
+ includes/specials/SpecialSmiteSpam.php             | 9 ++++++++-
+ includes/specials/SpecialSmiteSpamTrustedUsers.php | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 2 deletions(-)
+
+diff --git a/includes/specials/SpecialSmiteSpam.php b/includes/specials/SpecialSmiteSpam.php
+index 4759c1a..468441e 100644
+--- a/includes/specials/SpecialSmiteSpam.php
++++ b/includes/specials/SpecialSmiteSpam.php
+@@ -8,7 +8,14 @@ use MediaWiki\Html\Html;
+ class SpecialSmiteSpam extends SpecialPage {
+ 
+ 	public function __construct() {
+-		parent::__construct( 'SmiteSpam', 'smitespam' );
++		parent::__construct( 'SmiteSpam' );
++	}
++
++	/**
++	 * @inheritDoc
++	 */
++	public function getRestriction(): string {
++		return 'smitespam';
+ 	}
+ 
+ 	/**
+diff --git a/includes/specials/SpecialSmiteSpamTrustedUsers.php b/includes/specials/SpecialSmiteSpamTrustedUsers.php
+index efc516a..8291c4c 100644
+--- a/includes/specials/SpecialSmiteSpamTrustedUsers.php
++++ b/includes/specials/SpecialSmiteSpamTrustedUsers.php
+@@ -3,7 +3,14 @@
+ class SpecialSmiteSpamTrustedUsers extends SpecialPage {
+ 
+ 	public function __construct() {
+-		parent::__construct( 'SmiteSpamTrustedUsers', 'smitespam' );
++		parent::__construct( 'SmiteSpamTrustedUsers' );
++	}
++
++	/**
++	 * @inheritDoc
++	 */
++	public function getRestriction(): string {
++		return 'smitespam';
+ 	}
+ 
+ 	/** @inheritDoc */
+-- 
+2.43.0
+

@@ -1,0 +1,31 @@
+From 3a343bbcf47713f0d7be545bac006715403a69e3 Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Mon, 13 Jul 2026 23:54:55 +0100
+Subject: [PATCH 1/2] SECURITY: Escape service name in "not recognized"
+ exception message
+
+Backport of the fix in 9215564b from upstream master, adapted.
+
+GHSA-c29q-5xm7-5p62, CVE-2026-55690.
+---
+ includes/EmbedService/EmbedServiceFactory.php | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/includes/EmbedService/EmbedServiceFactory.php b/includes/EmbedService/EmbedServiceFactory.php
+index 796950f..c278aff 100644
+--- a/includes/EmbedService/EmbedServiceFactory.php
++++ b/includes/EmbedService/EmbedServiceFactory.php
+@@ -247,7 +247,9 @@ final class EmbedServiceFactory {
+ 				return new Youku( $id );
+ 
+ 			default:
+-				throw new InvalidArgumentException( sprintf( 'VideoService "%s" not recognized.', $serviceName ) );
++				throw new InvalidArgumentException(
++					sprintf( 'VideoService "%s" not recognized.', htmlspecialchars( $serviceName ) )
++				);
+ 		}
+ 	}
+ 
+-- 
+2.43.0
+
