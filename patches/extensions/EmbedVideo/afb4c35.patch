@@ -1,0 +1,51 @@
+From afb4c358a4e191a655d9156bb73c0ff7c1dc94a3 Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Mon, 13 Jul 2026 23:55:03 +0100
+Subject: [PATCH 2/2] SECURITY: Escape attribute values in EmbedHtmlFormatter
+ output
+
+Backport of the fix in 37015633 from upstream master, adapted.
+
+GHSA-7h5p-637f-jfr7, CVE-2026-55691.
+GHSA-5c7p-g73q-rpg5, CVE-2026-55692 (consent enabled).
+GHSA-v65j-hff3-753c, CVE-2026-57440 (consent disabled).
+---
+ includes/EmbedService/EmbedHtmlFormatter.php | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/includes/EmbedService/EmbedHtmlFormatter.php b/includes/EmbedService/EmbedHtmlFormatter.php
+index 23958b3..ef36c3c 100644
+--- a/includes/EmbedService/EmbedHtmlFormatter.php
++++ b/includes/EmbedService/EmbedHtmlFormatter.php
+@@ -102,7 +102,7 @@ final class EmbedHtmlFormatter {
+ 			if ( $consent === true ) {
+ 				$iframeConfig = sprintf(
+ 					"data-mw-iframeconfig='%s'",
+-					$service->getIframeConfig( $width, $height )
++					htmlspecialchars( $service->getIframeConfig( $width, $height ), ENT_QUOTES )
+ 				);
+ 			}
+ 		} catch ( JsonException | ConfigException $e ) {
+@@ -136,8 +136,8 @@ final class EmbedHtmlFormatter {
+ 
+ 		return sprintf(
+ 			$template,
+-			$config['class'] ?? '',
+-			$config['service'] ?? '',
++			htmlspecialchars( $config['class'] ?? '', ENT_QUOTES ),
++			htmlspecialchars( $config['service'] ?? '', ENT_QUOTES ),
+ 			$iframeConfig,
+ 			$inlineStyles['container'],
+ 			$inlineStyles['wrapper'],
+@@ -184,7 +184,7 @@ final class EmbedHtmlFormatter {
+ 		$attributes[$srcType] = $service->getUrl();
+ 
+ 		$out = array_map( static function ( $key, $value ) {
+-			return sprintf( '%s="%s"', $key, $value );
++			return sprintf( '%s="%s"', $key, htmlspecialchars( (string)$value, ENT_QUOTES ) );
+ 		}, array_keys( $attributes ), $attributes );
+ 
+ 		return sprintf( '<iframe %s></iframe>', implode( ' ', $out ) );
+-- 
+2.43.0
+
