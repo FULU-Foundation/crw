@@ -1,7 +1,7 @@
 <?php
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
-$wgUseInstantCommons = false;
+$wgUseInstantCommons = true;
 
 # File upload settings
 $wgEnableUploads = true; // Enable file uploads to the wiki.
@@ -28,7 +28,6 @@ $wgGenerateThumbnailOnParse = true; // Ensures thumbnails are created during pag
 
 # Thumbnail generation and display
 $wgThumbnailScriptPath = "{$wgScriptPath}/thumb.php"; // MediaWiki script for dynamic thumbnail generation.
-$wgUseInstantCommons = false; // Disable integration with Wikimedia Commons for external files.
 $wgShowImageInline = true; // Allow large images to display inline without scaling.
 
 # Thumbnail and image size limits
@@ -44,7 +43,7 @@ $wgImageLimits = [
 $wgFileExtensions = array_merge($wgFileExtensions ?? [], [
     'png', 'gif', 'jpg', 'jpeg', 'webp', // Common image formats.
     'pdf', 'svg',                        // Document and vector formats.
-    'doc', 'docx', 'xls', 'xlsx',         // Office file formats.
+    'doc', 'docx', 'xls', 'xlsx', 'odt', 'ods', // Office file formats.
     'mp4', 'm4v', 'webm', 'mov', 'avi', 'mkv', 'flv', 'wmv' // Video formats.
 ]);
 
@@ -67,6 +66,9 @@ $wgHooks['UploadVerifyFile'][] = function ( $upload, $mime, &$error ) {
 $wgTrustedMediaFormats = array_merge($wgTrustedMediaFormats ?? [], [
     'image/jpeg', 'image/png', 'image/gif', 'image/webp', // Image MIME types.
     'application/pdf', 'image/svg+xml',                   // Document MIME types.
+    'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // Word MIME types.
+    'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Excel MIME types.
+    'application/vnd.oasis.opendocument.text', 'application/vnd.oasis.opendocument.spreadsheet', // OpenDocument MIME types.
     'video/mp4', 'video/webm', 'video/ogg' // Video MIME types.
 ]);
 

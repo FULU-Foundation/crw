@@ -23,6 +23,7 @@ $wgGroupPermissions['user']['move-subpages'] = false;         // Prevent moving 
 $wgGroupPermissions['user']['movefile'] = false;              // Prevent moving uploaded files.
 $wgGroupPermissions['user']['move-categorypages'] = false;    // Prevent moving category pages.
 $wgGroupPermissions['user']['editcontentmodel'] = false;      // Prevent users from changing content models.
+$wgGroupPermissions['user']['spamblacklistlog'] = false;      // Restrict the spam blacklist log to sysops.
 
 // Automatically confirmed 
 $wgAutoConfirmAge = 86400*7; // seven days
@@ -38,6 +39,9 @@ $wgGroupPermissions['autoconfirmed']['move-categorypages'] = true; // Allow movi
 $wgGroupPermissions['autoconfirmed']['usermerge'] = false;
 $wgGroupPermissions['autoconfirmed']['editsemiprotected'] = false; // Prevent editing of semi-protected pages.
 $wgGroupPermissions['autoconfirmed']['editcontentmodel'] = false;  // Prevent autoconfirmed users from changing content models.
+$wgGroupPermissions['autoconfirmed']['edit-template'] = true; // Allows autoconfirmed users to edit templates in the Template namespace (NS_TEMPLATE).
+$wgGroupPermissions['autoconfirmed']['sboverride'] = true; // Allow autoconfirmed users to bypass the spam blacklist.
+$wgGroupPermissions['autoconfirmed']['sitelockdown-exempt'] = true; // Keep editing during site lockdown.
 
 // Confirmed
 $wgGroupPermissions['confirmed'] = $wgGroupPermissions['autoconfirmed'];
@@ -48,11 +52,17 @@ $wgGroupPermissions['confirmed']['move-subpages'] = true;    // Allow moving pag
 $wgGroupPermissions['confirmed']['movefile'] = true;         // Allow moving uploaded files.
 $wgGroupPermissions['confirmed']['move-categorypages'] = true; // Allow moving category pages.
 $wgGroupPermissions['confirmed']['editcontentmodel'] = false; // Prevent confirmed users from changing content models.
+$wgGroupPermissions['confirmed']['sitelockdown-exempt'] = true; // Keep editing during site lockdown.
 
 // Super confirmed
 $wgGroupPermissions['superconfirmed']['delete'] = true;          // Delete pages.
 $wgGroupPermissions['superconfirmed']['undelete'] = true;        // Undelete pages
 $wgGroupPermissions['superconfirmed']['editsemiprotected'] = true; // Edit semi-protected pages.
+$wgGroupPermissions['superconfirmed']['sboverride'] = true; // Allow bypassing the spam blacklist.
+$wgGroupPermissions['superconfirmed']['sitelockdown-exempt'] = true; // Keep editing during site lockdown.
+$wgGroupPermissions['superconfirmed']['editcontentmodel'] = false; // Prevent superconfirmed users from changing content models.
+$wgGroupPermissions['superconfirmed']['sitelockdown-exempt'] = true; // Keep editing during site lockdown.
+
 // Additionally can now remove site-notices
 
 // Sysop
@@ -83,6 +93,11 @@ $wgGroupPermissions['sysop']['usermerge'] = false;
 $wgGroupPermissions['sysop']['edituserjson'] = false;
 $wgGroupPermissions['sysop']['editsitejson'] = false;
 $wgGroupPermissions['sysop']['editcontentmodel'] = true;     // Allow sysops to change content models.
+$wgGroupPermissions['sysop']['spamblacklistlog'] = true;     // View the spam blacklist log.
+$wgGroupPermissions['sysop']['manageawards'] = true;        // Issue and revoke awards.
+$wgGroupPermissions['sysop']['sboverride'] = true;            // Bypass the spam blacklist.
+$wgGroupPermissions['sysop']['sitelockdown-exempt'] = true;   // Keep editing during site lockdown.
+$wgGroupPermissions['sysop']['sitelockdown'] = true;          // Activate and deactivate site lockdown.
 
 $wgAddGroups['sysop'] = ['confirmed'];
 $wgRemoveGroups['sysop'] = ['confirmed'];
@@ -103,10 +118,16 @@ $wgGroupPermissions['superadmin']['abusefilter-view'] = true;    # View abuse fi
 $wgGroupPermissions['superadmin']['abusefilter-privatedetails'] = true; # View private abuse filter details.
 $wgGroupPermissions['superadmin']['abusefilter-privatedetails-log'] = true; # View private logs of abuse filter activity.
 $wgGroupPermissions['superadmin']['handle-pii'] = true; # Remove PII
-$wgGroupPermissions['superadmin']['blocksysop'] = true; # Custom logic to allow superadmins like dog or christoph who are trusted to block/ban normal sysops(mods) that get out of line
+$wgGroupPermissions['superadmin']['blocksysop'] = true; # Custom logic to allow superadmins to block/ban normal sysops
 $wgGroupPermissions['superadmin']['skipcaptcha'] = true;     // Superadmins are exempt from CAPTCHA.
 $wgGroupPermissions['superadmin']['usermerge'] = true;
 $wgGroupPermissions['superadmin']['editcontentmodel'] = true;    // Allow superadmins to change content models.
+$wgGroupPermissions['superadmin']['spamblacklistlog'] = true;    // View the spam blacklist log.
+$wgGroupPermissions['superadmin']['manageawards'] = true;        // Issue and revoke awards.
+$wgGroupPermissions['superadmin']['massrollback'] = true;        // Mass rollback a user's edits.
+$wgGroupPermissions['superadmin']['sboverride'] = true;          // Bypass the spam blacklist.
+$wgGroupPermissions['superadmin']['sitelockdown-exempt'] = true; // Keep editing during site lockdown.
+$wgGroupPermissions['superadmin']['sitelockdown'] = true;        // Activate and deactivate site lockdown.
 
 // Interface admin
 $wgGroupPermissions['interface-admin']['editsitecss'] = true;  // Interface admins control site-wide CSS.
