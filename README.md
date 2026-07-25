@@ -27,6 +27,10 @@ For Windows users we recommend using the Windows Subsystem for Linux (WSL).
     ```sh
     make init
     ```
+5. Run the update script (initialise all other tables)
+    ```sh
+    make update
+    ```
 
 ### Manual update
 Mediawiki requires you to run a update script occasionally (with changes to extensions or other database updates).
