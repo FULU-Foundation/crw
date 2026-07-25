@@ -1,5 +1,5 @@
 <?php
-
+// Enable automatic creation of temporary user accounts for anonymous users performing specific actions, such as editing.
 $wgAutoCreateTempUser = [
 	'known' => false,
 	'enabled' => true,

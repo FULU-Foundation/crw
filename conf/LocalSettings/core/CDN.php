@@ -4,18 +4,16 @@
 $wgUseCdn = true; // Allows MediaWiki to work with CDNs for caching and serving content.
 
 # Allow detection of private IPs.
-# Important for setups using Docker or internal proxies to ensure real client IPs are preserved.
 $wgUsePrivateIPs = true;
 
-# Trusted single proxy servers (empty here as we specify ranges below).
+# Trusted single proxy servers.
 $wgCdnServers = [];
 
 # Trusted proxy servers and IP ranges that should not be purged.
-# These ranges include local servers, Docker bridge networks, and Cloudflare's IP ranges.
 $wgCdnServersNoPurge = [
-    '172.18.0.0/16',    // Docker bridge network (required to avoid misidentifying all users as the Docker IP).
+    '172.18.0.0/16',    // Docker bridge network.
 
-    // Cloudflare IPv4 ranges (required if using Cloudflare as a CDN or proxy).
+    // Cloudflare IPv4 ranges.
     '173.245.48.0/20',
     '103.21.244.0/22',
     '103.22.200.0/22',
