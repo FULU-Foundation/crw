@@ -1,7 +1,9 @@
 <?php
 
+# Wiki name
 $wgSitename = "Consumer Rights Wiki";
 
+# Logo display settings
 $wgLogos = [
     '1x'   => '/images/logo/new_fixed_logo.png',
     'icon' => '/images/logo/new_fixed_logo.png',
@@ -10,6 +12,6 @@ $wgLogos = [
         'icon' => '/images/logo/135x135_inverse.png',
     ],
 ];
- 
-# favicon browser tab logo thing
+
+# Favicon
 $wgFavicon = "/images/favicon-96x96.png";

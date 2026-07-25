@@ -1,0 +1,92 @@
+# robots.txt for consumerrights.wiki
+
+User-agent: *
+Disallow: /index.php
+Disallow: /api.php
+Disallow: /rest.php/
+Disallow: /thumb.php
+Disallow: /w/Special:
+Disallow: /w/Special%3A
+Disallow: /*?action=
+Disallow: /*?*&action=
+Disallow: /*?feed=
+Disallow: /*?*&feed=
+Disallow: /*?from=
+Disallow: /*?*&from=
+Disallow: /*?mobileaction=
+Disallow: /*?*&mobileaction=
+Disallow: /*?oldid=
+Disallow: /*?*&oldid=
+Disallow: /*?printable=
+Disallow: /*?*&printable=
+Disallow: /*?redirect=
+Disallow: /*?*&redirect=
+Disallow: /*?uselang=
+Disallow: /*?*&uselang=
+Disallow: /*?useskin=
+Disallow: /*?*&useskin=
+Disallow: /*?veaction=
+Disallow: /*?*&veaction=
+Disallow: /*?filefrom=
+Disallow: /*?*&filefrom=
+Disallow: /*?fileuntil=
+Disallow: /*?*&fileuntil=
+Disallow: /*?diff=
+Disallow: /*?*&diff=
+Disallow: /*?curid=
+Disallow: /*?*&curid=
+Disallow: /*?search=
+Disallow: /*?*&search=
+Disallow: /*?section=
+Disallow: /*?*&section=
+Disallow: /*?limit=
+Disallow: /*?*&limit=
+Disallow: /*?pageuntil=
+Disallow: /*?*&pageuntil=
+Disallow: /*?pagefrom=
+Disallow: /*?*&pagefrom=
+Disallow: /*?navbox=
+Disallow: /*?*&navbox=
+
+##############
+## SEO bots ##
+##############
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+###############
+### AI bots ###
+###############
+User-agent: GPTBot
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: meta-externalagent
+User-agent: meta-webindexer
+User-agent: ClaudeBot
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /index.php
+Disallow: /api.php
+Disallow: /rest.php/
+Disallow: /thumb.php
+Disallow: /w/Special:
+Disallow: /w/Special%3A
+
+Sitemap: https://consumerrights.wiki/sitemap/sitemap-index-consumerrights.xml

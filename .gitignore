@@ -1,5 +1,4 @@
 .env
-data/db
-data/images/*
-data/semantics/*
+data/*
+!data/robots.txt
 .idea
