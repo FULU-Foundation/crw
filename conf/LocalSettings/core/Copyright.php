@@ -9,5 +9,4 @@ $wgRightsIcon = "{$wgScriptPath}/images/cc-by-sa.svg";                       // 
 $wgRightsPage = "Project:Copyright";                                         // Internal wiki page explaining the licensing terms.
 
 # Enable RDF metadata for the Creative Commons license.
-# This adds machine-readable metadata, improving integration with search engines and compliance tools.
 $wgEnableCreativeCommonsRdf = true;

@@ -10,7 +10,7 @@ $wgHCaptchaSiteKey = getenv('CAPTCHA_SITEKEY');
 $wgHCaptchaSecretKey = getenv('CAPTCHA_SECRETKEY');
 
 # Privacy Settings
-$wgHCaptchaSendRemoteIP = false; // Prevent user IPs from being sent to hCaptcha (enhances privacy).
+$wgHCaptchaSendRemoteIP = false; // Prevent user IPs from being sent to hCaptcha.
 
 # Ensure CAPTCHA applies to "new-section" (Talk pages)
 $wgCaptchaTriggers = [
@@ -34,7 +34,7 @@ $wgCaptchaTriggersOnNamespace = [
 # CAPTCHA Storage and Application
 $wgCaptchaWhitelist = [];                        // No whitelisted actions or users for CAPTCHA bypass.
 
-# 🛠 FIX: Ensure DiscussionTools properly handles CAPTCHA
+# FIX: Ensure DiscussionTools properly handles CAPTCHA
 $wgDiscussionToolsEnable = true; // Keep enabled
 $wgDiscussionToolsEnableTopicSubscription = true; // Allow users to subscribe to topics
 $wgVisualEditorParsoidAutoConfig = false; // Prevent conflicts with CAPTCHA handling

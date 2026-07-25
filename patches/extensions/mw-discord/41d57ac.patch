@@ -1,0 +1,32 @@
+From 41d57ac39a68f0259dd20b6f4b2b4b4b76d333cc Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Fri, 17 Jul 2026 21:57:48 +0100
+Subject: [PATCH] Disable user registration notifications to Discord
+
+---
+ src/DiscordHooks.php | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/src/DiscordHooks.php b/src/DiscordHooks.php
+index 4cc0257..e296386 100644
+--- a/src/DiscordHooks.php
++++ b/src/DiscordHooks.php
+@@ -256,14 +256,7 @@ class DiscordHooks implements
+ 	 * @return bool
+ 	 */
+ 	public function onLocalUserCreated( $user, $autocreated ): void {
+-		if ( $this->utils->isDisabled( null, $user ) ) {
+-			return;
+-		}
+-
+-		$this->utils->send(
+-			'user-registered',
+-			$this->utils->formatUser( $user )
+-		);
++		// User registration notifications are disabled on this wiki.
+ 	}
+ 
+ 	/**
+-- 
+2.43.0
+
