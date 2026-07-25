@@ -24,8 +24,10 @@ services:
       - ADMIN_PASS
       - FULL_URL=http://localhost:${WIKI_PORT}
       - MEDIAWIKI_SECRET
-      - WIKI_CAPTCHA_KEY
-      - WIKI_CAPTCHA_SITE
+      - CAPTCHA_SITEKEY
+      - CAPTCHA_SECRETKEY
+      - CAPTCHA_USE_HCAPTCHA
+      - DISCORD_HOOK
       - REDIS_SERVER=crw-local-cache:6379
       - CITOID_URL=http://localhost:${CITOID_PORT}
       - CLOUDFLARE_PURGE_ZONE_ID
@@ -33,6 +35,7 @@ services:
       - ARTICLE_FEEDBACK_DISCORD_HOOK
       - ARTICLE_FEEDBACK_DISCORD_GUILD_ID
       - ARTICLE_FEEDBACK_DISCORD_CHANNEL_ID
+      - PLAUSIBLE_API_KEY
     depends_on:
       crw-local-db:
         condition: service_started

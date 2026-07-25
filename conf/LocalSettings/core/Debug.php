@@ -11,7 +11,7 @@ $wgDevelopmentWarnings = false;     // Enable development-related warnings to id
 
 # ResourceLoader Debugging
 $wgResourceLoaderDebug = false; // Disable ResourceLoader debugging by default to reduce unnecessary logging.
-$wgResourceLoaderMaxage['versioned'] = 0; // Set maximum cache age for versioned resources to 0 (improves debugging accuracy).
+$wgResourceLoaderMaxage['versioned'] = 0; // Set maximum cache age for versioned resources to 0.
 
 # Main Debug Log File
 $wgDebugLogFile = "/var/log/mediawiki/debug.log"; // Central log file for general debugging information.

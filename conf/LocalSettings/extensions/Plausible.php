@@ -7,14 +7,13 @@ if(getenv('WIKI_ENV') != "Dev") {
 }
 # Core configuration for your self-hosted Plausible instance.
 # This ensures the extension knows where to send analytics events.
-$wgPlausibleDomain = "https://analytics.consumerrights.wiki";   // 🔐 Your Plausible base URL
-$wgPlausibleDomainKey = "consumerrights.wiki";                  // 🌐 Domain being tracked
+$wgPlausibleDomain = "https://analytics.consumerrights.wiki";   // Your Plausible base URL
+$wgPlausibleDomainKey = "consumerrights.wiki";                  // Domain being tracked
 
-# Optional API key for integration with PageViewInfo if used.
-$wgPlausibleApiKey = ""; // You can leave this blank unless using Lua analytics APIs
+$wgPlausibleApiKey = getenv( 'PLAUSIBLE_API_KEY' ); // UserImpact extension's view-stats panel.
 
 # Respect privacy by not tracking logged-in users.
-$wgPlausibleTrackLoggedIn = false;  // 🛡️ Do not track editors/admins
+$wgPlausibleTrackLoggedIn = false;  // Do not track editors/admins
 
 # Enable event tracking enhancements
 $wgPlausibleTrackOutboundLinks = true;    // Track external link clicks
@@ -22,7 +21,7 @@ $wgPlausibleTrackFileDownloads = true;    // Track downloads (PDFs, images, etc.
 $wgPlausibleEnableTaggedEvents = true;    // Track clicks via HTML class names
 $wgPlausibleHonorDNT = true;              // Respect browser's "Do Not Track" setting
 
-# Allow users to opt-out using <plausible-opt-out /> tag (adds compliance UI)
+# Allow users to opt-out using <plausible-opt-out /> tag
 $wgPlausibleEnableOptOutTag = true;
 
 # Track key MediaWiki UI actions

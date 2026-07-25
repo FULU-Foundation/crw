@@ -12,6 +12,9 @@ RUN mkdir /wiki/
 # Create sitemaps directory
 RUN mkdir -p /var/www/html/sitemap && chown -R www-data:www-data /var/www/html/sitemap
 
+# Create PHP-FPM log directory
+RUN mkdir -p /var/log/php-fpm && chown -R www-data:www-data /var/log/php-fpm
+
 # Copy extensions to the image
 COPY ./extensions/ /var/www/html/extensions/
 
@@ -21,6 +24,9 @@ COPY ./skins/ /var/www/html/skins/
 # Copy custom LocalSettings.php
 COPY ./conf/LocalSettings.php /var/www/html/LocalSettings.php
 COPY ./conf/LocalSettings /var/www/html/LocalSettings
+
+# Copy robots.txt
+COPY --chown=www-data:www-data ./data/robots.txt /var/www/html/robots.txt
 
 # Copy PHP-FPM pool conf
 COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
@@ -58,13 +64,16 @@ RUN mkdir /wiki/cron
 # Add cron files
 ADD cron/update_spamlist.sh /wiki/cron/update_spamlist.sh
 ADD cron/run_jobs.sh /wiki/cron/run_jobs.sh
+ADD cron/generate_sitemap.sh /wiki/cron/generate_sitemap.sh
 
 # Update permissions
 RUN chmod 0644 /wiki/cron/update_spamlist.sh
+RUN chmod 0644 /wiki/cron/generate_sitemap.sh
 
 # Update crontab
 RUN crontab -l | { cat; echo "0 0 * * * bash /wiki/cron/update_spamlist.sh"; } | crontab -
 RUN crontab -l | { cat; echo "0 * * * * bash /wiki/cron/run_jobs.sh"; } | crontab -
+RUN crontab -l | { cat; echo "0 3 * * * bash /wiki/cron/generate_sitemap.sh"; } | crontab -
 
 # Imagemagick
 RUN apt-get install -y imagemagick --no-install-recommends
