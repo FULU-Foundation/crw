@@ -1,0 +1,20 @@
+name: Feature request
+description: Suggest an improvement or new feature for the codebase/infrastructure
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is only for the codebase and associated infrastructure. If you want to suggest something to add to the wiki itself, use Discord or Zulip instead. For our browser extension, use [FULU-Foundation/CRW-Extension](https://github.com/FULU-Foundation/CRW-Extension) instead.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: false

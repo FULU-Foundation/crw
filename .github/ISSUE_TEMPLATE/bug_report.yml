@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a bug in the codebase, extensions, or infrastructure
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is only for bugs in the codebase and associated infrastructure. If you're using the wiki and something's not working, report it on the wiki's own [Bug reporting page](https://consumerrights.wiki/w/Consumer_Rights_Wiki_talk:Bugs) instead. For issues with our browser extension, use [FULU-Foundation/CRW-Extension](https://github.com/FULU-Foundation/CRW-Extension) instead.
+  - type: checkboxes
+    id: duplicates
+    attributes:
+      label: Check for duplicates
+      options:
+        - label: I searched existing issues and didn't find this already reported
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Inputs and outputs
+      description: What did you do, what did you expect to happen, and what actually happened?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Clear, step-by-step instructions so we can replicate it
+    validations:
+      required: true
+  - type: dropdown
+    id: hosting
+    attributes:
+      label: Where did this happen?
+      options:
+        - consumerrights.wiki (production)
+        - staging.consumerrights.wiki
+        - Self-hosted / local dev
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: System details
+      description: OS, browser, and platform
+      placeholder: "e.g. Windows 11, x86, Firefox 129"
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: MediaWiki/extension version (if self-hosted)
+      placeholder: "e.g. commit hash, or image tag main-63"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console errors, server logs, or screenshots
+      description: Browser console output, server-side logs, or screenshots
+    validations:
+      required: false
