@@ -19,11 +19,11 @@ class GenerateSitemapTest extends MaintenanceBaseTestCase {
 
 		$this->maintenance->setOption( 'fspath', $outputDir );
 		$this->maintenance->setOption( 'urlpath', '/sitemap' );
-		$this->maintenance->setOption( 'identifier', 'sitetests' );
+		$this->maintenance->setOption( 'identifier', 'crwtest' );
 		$this->maintenance->setOption( 'compress', 'no' );
 		$this->maintenance->execute();
 
-		$files = glob( $outputDir . '/sitemap-sitetests-*' );
+		$files = glob( $outputDir . '/sitemap-crwtest-*' );
 		$this->assertNotEmpty( $files, 'GenerateSitemap should write at least one sitemap file' );
 	}
 

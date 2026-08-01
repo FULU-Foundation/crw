@@ -6,6 +6,7 @@ use MediaWiki\Title\Title;
  * Test: upload a file and generate a thumbnail.
  *
  * @group Database
+ * @group Upload
  * @covers \LocalFile
  */
 class ThumbnailTest extends MediaWikiIntegrationTestCase {
@@ -17,11 +18,11 @@ class ThumbnailTest extends MediaWikiIntegrationTestCase {
 		$tmpFile = $this->getNewTempFile();
 		file_put_contents( $tmpFile, base64_decode( self::ONE_PIXEL_PNG_BASE64 ) );
 
-		$title = Title::makeTitle( NS_FILE, 'SiteTests_Thumbnail_' . wfRandomString( 8 ) . '.png' );
+		$title = Title::makeTitle( NS_FILE, 'CrwTest_Thumbnail_' . wfRandomString( 8 ) . '.png' );
 		$file = $this->getServiceContainer()->getRepoGroup()->getLocalRepo()->newFile( $title );
 		$uploader = $this->getTestUser()->getUser();
 
-		$status = $file->upload( $tmpFile, 'Test upload for site-tests', 'Test page text', 0, false, false, $uploader );
+		$status = $file->upload( $tmpFile, 'Test upload for crw tests', 'Test page text', 0, false, false, $uploader );
 		$this->assertTrue( $status->isGood(), 'Upload should succeed: ' . $status->getWikiText() );
 
 		$file = $this->getServiceContainer()->getRepoGroup()->getLocalRepo()->newFile( $title );
