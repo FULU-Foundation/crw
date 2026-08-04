@@ -7,11 +7,71 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      COMPOSE_PROJECT_NAME: crw
     steps:
-      - name: Checkout the repo 
+      - name: Checkout the repo
         uses: actions/checkout@v5
         with:
-            submodules: recursive
+          submodules: recursive
 
       - name: Build container image
-        run: docker build .
+        run: docker build -t crw-crw-local:latest .
+
+      - name: Create .env for CI
+        run: |
+          cat > .env <<'EOF'
+          DB_PORT=3306
+          DB_NAME=wiki
+          DB_USER=wikiuser
+          DB_PASSWORD=ci_test_password
+          WIKI_PORT=8080
+          CITOID_PORT=1970
+          ADMIN_USER=admin
+          ADMIN_PASS=ci_test_admin_password
+          MEDIAWIKI_SECRET=ci_test_secret
+          CANONICAL_URL=
+          CAPTCHA_USE_HCAPTCHA=false
+          CAPTCHA_SITEKEY=10000000-ffff-ffff-ffff-000000000001
+          CAPTCHA_SECRETKEY=0x0000000000000000000000000000000000000000
+          CLOUDFLARE_PURGE_ZONE_ID=
+          CLOUDFLARE_PURGE_TOKEN=
+          DISCORD_HOOK=
+          ARTICLE_FEEDBACK_DISCORD_HOOK=
+          ARTICLE_FEEDBACK_DISCORD_GUILD_ID=
+          ARTICLE_FEEDBACK_DISCORD_CHANNEL_ID=
+          PLAUSIBLE_API_KEY=
+          EOF
+
+      - name: Start the dev stack
+        run: docker compose up -d
+
+      - name: Wait for the database
+        run: |
+          for i in $(seq 1 30); do
+            if docker compose exec -T crw-local-db mariadb-admin ping -h 127.0.0.1 --silent 2>/dev/null; then
+              break
+            fi
+            sleep 2
+          done
+
+      - name: Initialise the database
+        run: make init
+
+      - name: Run the update script
+        run: make update
+
+      - name: Install dev dependencies
+        run: docker compose exec -T crw-local composer update
+
+      - name: Run Phan
+        continue-on-error: true
+        run: docker compose exec -T crw-local bash -c "MW_INSTALL_PATH=. vendor/bin/phan -d . --allow-polyfill-parser --long-progress-bar"
+
+      - name: Run integration tests
+        continue-on-error: true
+        run: docker compose exec -T crw-local composer phpunit -- tests/phpunit/crw/
+
+      - name: Tear down
+        if: always()
+        run: docker compose down -v

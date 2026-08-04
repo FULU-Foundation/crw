@@ -21,6 +21,13 @@ COPY ./extensions/ /var/www/html/extensions/
 # Copy skins to the image
 COPY ./skins/ /var/www/html/skins/
 
+# Copy tests
+COPY ./tests/ /var/www/html/tests/
+COPY ./phpunit.xml.template /var/www/html/phpunit.xml.template
+
+# Copy Phan
+COPY ./.phan/ /var/www/html/.phan/
+
 # Copy custom LocalSettings.php
 COPY ./conf/LocalSettings.php /var/www/html/LocalSettings.php
 COPY ./conf/LocalSettings /var/www/html/LocalSettings
@@ -105,3 +112,7 @@ RUN --mount=type=bind,source=patches,target=/wiki/patches,readonly \
 COPY entrypoint.sh /etc/entrypoint.sh
 RUN chmod +x /etc/entrypoint.sh
 ENTRYPOINT ["/etc/entrypoint.sh"]
+
+# Health check script
+COPY healthcheck.sh /etc/healthcheck.sh
+RUN chmod +x /etc/healthcheck.sh
