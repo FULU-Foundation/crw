@@ -1,0 +1,73 @@
+From 1cac5c33f73ae6a82a8e28125e5f86c0f169cd34 Mon Sep 17 00:00:00 2001
+From: MGChecker <hgasuser@gmail.com>
+Date: Thu, 07 May 2026 23:03:14 +0000
+Subject: [PATCH] Fix MediaHandler caching to not preserve language
+
+In the previous implementation, the language used in the first call
+of MediaHandlerFactory::getHandler was errorneously used
+instead of the language actually provided by later calls.
+To fix this, the most likely unnecessary caching has been removed.
+
+Bug: T425988
+Bug: T425740
+Bug: T425782
+Bug: T431182
+Change-Id: I7749f261365f46735c66a09ca02291a08db9c646
+(cherry picked from commit f8733dc456f6027779895d1725920a872cadacd5)
+---
+
+diff --git a/includes/Media/MediaHandlerFactory.php b/includes/Media/MediaHandlerFactory.php
+index d13931c..029e83c 100644
+--- a/includes/Media/MediaHandlerFactory.php
++++ b/includes/Media/MediaHandlerFactory.php
+@@ -44,13 +44,6 @@
+ 	/** @var array */
+ 	private $registry;
+ 
+-	/**
+-	 * Instance cache of MediaHandler objects by mimetype
+-	 *
+-	 * @var MediaHandler[]
+-	 */
+-	private $handlers;
+-
+ 	public function __construct(
+ 		private LanguageFactory $langFactory,
+ 		private LoggerInterface $logger,
+@@ -77,10 +70,6 @@
+ 		// phpcs:ignore MediaWiki.Usage.NullableType.ExplicitNullableTypes -- false positive
+ 		Language|string|null $lang = null
+ 	) {
+-		if ( isset( $this->handlers[$type] ) ) {
+-			return $this->handlers[$type];
+-		}
+-
+ 		$class = $this->getHandlerClass( $type );
+ 		if ( $class !== false ) {
+ 			/** @var MediaHandler $handler */
+@@ -91,13 +80,11 @@
+ 					[ 'class' => $class ]
+ 				);
+ 				$handler = false;
+-			} else {
+-				if ( $lang !== null ) {
+-					if ( !$lang instanceof Language ) {
+-						$lang = $this->langFactory->getLanguage( $lang );
+-					}
+-					$handler->setLanguage( $lang );
++			} elseif ( $lang !== null ) {
++				if ( !$lang instanceof Language ) {
++					$lang = $this->langFactory->getLanguage( $lang );
+ 				}
++				$handler->setLanguage( $lang );
+ 			}
+ 		} else {
+ 			$this->logger->debug(
+@@ -107,7 +94,6 @@
+ 			$handler = false;
+ 		}
+ 
+-		$this->handlers[$type] = $handler;
+ 		return $handler;
+ 	}
+ }
