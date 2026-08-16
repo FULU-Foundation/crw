@@ -6,7 +6,4 @@ wfLoadExtension( 'mw-discord' );
 $wgDiscordWebhookURL = getenv('DISCORD_HOOK');
 
 # Excluded Namespaces
-$wgDiscordDisabledNS = [
-    NS_USER,        // Exclude notifications for user pages.
-    NS_USER_TALK    // Exclude notifications for user talk pages.
-];
+$wgDiscordDisabledNS = [];
