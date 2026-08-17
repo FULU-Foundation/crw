@@ -10,7 +10,6 @@ $cfg['directory_list'] = array_merge(
 		'extensions/ConfirmLogout',
 		'extensions/MassRollback',
 		'extensions/Plausible/includes',
-		'extensions/SiteLockdown',
 		'extensions/UserImpact',
 		'LocalSettings',
 	]

@@ -1,0 +1,34 @@
+From f1a2b3c4d5e6f7890a1b2c3d4e5f6a7b8c9d0e1f Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Mon, 17 Aug 2026 18:42:00 +0100
+Subject: [PATCH] Fix deprecated SpecialPage restriction constructor param
+
+Use of MediaWiki\SpecialPage\SpecialPage constructor parameters
+$restriction, $listed, $function, $file and $includable was
+deprecated in MediaWiki 1.46.
+---
+ includes/ProtectSite.php | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/includes/ProtectSite.php b/includes/ProtectSite.php
+index 1a2b3c4..5d6e7f8 100644
+--- a/includes/ProtectSite.php
++++ b/includes/ProtectSite.php
+@@ -32,7 +32,14 @@ class ProtectSite extends FormSpecialPage {
+ 	 * Constructor
+ 	 */
+ 	public function __construct() {
+-		parent::__construct( 'ProtectSite'/*class*/, 'protectsite'/*restriction*/ );
++		parent::__construct( 'ProtectSite'/*class*/ );
++	}
++
++	/**
++	 * @inheritDoc
++	 */
++	public function getRestriction(): string {
++		return 'protectsite';
+ 	}
+
+ 	/** @inheritDoc */
+--
+2.43.0
