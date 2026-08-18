@@ -36,6 +36,7 @@ services:
       - ARTICLE_FEEDBACK_DISCORD_GUILD_ID
       - ARTICLE_FEEDBACK_DISCORD_CHANNEL_ID
       - PLAUSIBLE_API_KEY
+      - OATHAUTH_SECRET_KEY
     depends_on:
       crw-local-db:
         condition: service_started

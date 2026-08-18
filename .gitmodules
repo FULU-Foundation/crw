@@ -219,10 +219,6 @@
 	path = extensions/MassRollback
 	url = git@github.com:codedbyjake/MassRollback.git
 	branch = REL1_46
-[submodule "extensions/SiteLockdown"]
-	path = extensions/SiteLockdown
-	url = git@github.com:codedbyjake/SiteLockdown.git
-	branch = REL1_46
 [submodule "extensions/PageViewInfo"]
 	path = extensions/PageViewInfo
 	url = git@github.com:wikimedia/mediawiki-extensions-PageViewInfo.git
@@ -230,4 +226,9 @@
 [submodule "extensions/UserImpact"]
 	path = extensions/UserImpact
 	url = git@github.com:codedbyjake/UserImpact.git
+	branch = REL1_46
+[submodule "extensions/ProtectSite"]
+	path = extensions/ProtectSite
+	url = git@github.com:wikimedia/mediawiki-extensions-ProtectSite.git
+	branch = REL1_46
 	branch = REL1_46

@@ -72,7 +72,7 @@ require_once './LocalSettings/extensions/StopForumSpam.php';
 require_once './LocalSettings/extensions/AbuseFilter.php';
 require_once './LocalSettings/extensions/SmiteSpam.php';
 require_once './LocalSettings/extensions/SpamBlacklist.php';
-require_once './LocalSettings/extensions/SiteLockdown.php';
+require_once './LocalSettings/extensions/ProtectSite.php';
 
 require_once './LocalSettings/extensions/EmbedVideo.php';
 require_once './LocalSettings/extensions/UserMerge.php';
@@ -104,6 +104,8 @@ require_once './LocalSettings/extensions/CirrusSearch.php';
 require_once './LocalSettings/extensions/Elastica.php';
 
 require_once './LocalSettings/extensions/SearchDigest.php';
+
+require_once './LocalSettings/extensions/OATHAuth.php';
 
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';

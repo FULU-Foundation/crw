@@ -87,7 +87,7 @@ RUN apt-get install -y imagemagick --no-install-recommends
 
 # PHP Extensions
 RUN apt-get install -y libcurl4-openssl-dev
-RUN docker-php-ext-install -j "$(nproc)" curl
+RUN docker-php-ext-install -j "$(nproc)" curl bcmath
 RUN pecl install redis && docker-php-ext-enable redis
 
 # Image directory
@@ -112,7 +112,3 @@ RUN --mount=type=bind,source=patches,target=/wiki/patches,readonly \
 COPY entrypoint.sh /etc/entrypoint.sh
 RUN chmod +x /etc/entrypoint.sh
 ENTRYPOINT ["/etc/entrypoint.sh"]
-
-# Health check script
-COPY healthcheck.sh /etc/healthcheck.sh
-RUN chmod +x /etc/healthcheck.sh
