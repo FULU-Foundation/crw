@@ -235,3 +235,7 @@
 	path = extensions/AntiSpoof
 	url = git@github.com:wikimedia/mediawiki-extensions-AntiSpoof.git
 	branch = REL1_46
+[submodule "extensions/TorBlock"]
+	path = extensions/TorBlock
+	url = git@github.com:wikimedia/mediawiki-extensions-TorBlock.git
+	branch = REL1_46

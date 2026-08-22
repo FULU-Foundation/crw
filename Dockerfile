@@ -72,15 +72,18 @@ RUN mkdir /wiki/cron
 ADD cron/update_spamlist.sh /wiki/cron/update_spamlist.sh
 ADD cron/run_jobs.sh /wiki/cron/run_jobs.sh
 ADD cron/generate_sitemap.sh /wiki/cron/generate_sitemap.sh
+ADD cron/load_tor_nodes.sh /wiki/cron/load_tor_nodes.sh
 
 # Update permissions
 RUN chmod 0644 /wiki/cron/update_spamlist.sh
 RUN chmod 0644 /wiki/cron/generate_sitemap.sh
+RUN chmod 0644 /wiki/cron/load_tor_nodes.sh
 
 # Update crontab
 RUN crontab -l | { cat; echo "0 0 * * * bash /wiki/cron/update_spamlist.sh"; } | crontab -
 RUN crontab -l | { cat; echo "0 * * * * bash /wiki/cron/run_jobs.sh"; } | crontab -
 RUN crontab -l | { cat; echo "0 3 * * * bash /wiki/cron/generate_sitemap.sh"; } | crontab -
+RUN crontab -l | { cat; echo "0 1 * * * bash /wiki/cron/load_tor_nodes.sh"; } | crontab -
 
 # Imagemagick
 RUN apt-get install -y imagemagick --no-install-recommends
