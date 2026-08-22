@@ -106,6 +106,7 @@ require_once './LocalSettings/extensions/Elastica.php';
 require_once './LocalSettings/extensions/SearchDigest.php';
 
 require_once './LocalSettings/extensions/OATHAuth.php';
+require_once './LocalSettings/extensions/CheckUser.php';
 
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';

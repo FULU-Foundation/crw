@@ -231,4 +231,3 @@
 	path = extensions/ProtectSite
 	url = git@github.com:wikimedia/mediawiki-extensions-ProtectSite.git
 	branch = REL1_46
-	branch = REL1_46
