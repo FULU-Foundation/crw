@@ -24,6 +24,7 @@ $wgGroupPermissions['user']['movefile'] = false;              // Prevent moving 
 $wgGroupPermissions['user']['move-categorypages'] = false;    // Prevent moving category pages.
 $wgGroupPermissions['user']['editcontentmodel'] = false;      // Prevent users from changing content models.
 $wgGroupPermissions['user']['spamblacklistlog'] = false;      // Restrict the spam blacklist log to sysops.
+$wgGroupPermissions['user']['torunblocked'] = false;           // Override extension default. Blocked until AC.
 
 // Automatically confirmed 
 $wgAutoConfirmAge = 86400*7; // seven days
@@ -41,6 +42,7 @@ $wgGroupPermissions['autoconfirmed']['editsemiprotected'] = false; // Prevent ed
 $wgGroupPermissions['autoconfirmed']['editcontentmodel'] = false;  // Prevent autoconfirmed users from changing content models.
 $wgGroupPermissions['autoconfirmed']['edit-template'] = true; // Allows autoconfirmed users to edit templates in the Template namespace (NS_TEMPLATE).
 $wgGroupPermissions['autoconfirmed']['sboverride'] = true; // Allow autoconfirmed users to bypass the spam blacklist.
+$wgGroupPermissions['autoconfirmed']['torunblocked'] = true; // Allow bypassing Tor blocks.
 
 // Confirmed
 $wgGroupPermissions['confirmed'] = $wgGroupPermissions['autoconfirmed'];
@@ -58,6 +60,7 @@ $wgGroupPermissions['superconfirmed']['undelete'] = true;        // Undelete pag
 $wgGroupPermissions['superconfirmed']['editsemiprotected'] = true; // Edit semi-protected pages.
 $wgGroupPermissions['superconfirmed']['sboverride'] = true; // Allow bypassing the spam blacklist.
 $wgGroupPermissions['superconfirmed']['editcontentmodel'] = false; // Prevent superconfirmed users from changing content models.
+$wgGroupPermissions['superconfirmed']['torunblocked'] = true; // Allow bypassing Tor blocks.
 
 // Additionally can now remove site-notices
 
@@ -93,6 +96,7 @@ $wgGroupPermissions['sysop']['spamblacklistlog'] = true;     // View the spam bl
 $wgGroupPermissions['sysop']['manageawards'] = true;        // Issue and revoke awards.
 $wgGroupPermissions['sysop']['sboverride'] = true;            // Bypass the spam blacklist.
 $wgGroupPermissions['sysop']['protectsite'] = true;           // Activate and deactivate site protection.
+$wgGroupPermissions['sysop']['torunblocked'] = true;          // Allow bypassing Tor blocks.
 
 $wgAddGroups['sysop'] = ['confirmed'];
 $wgRemoveGroups['sysop'] = ['confirmed'];
@@ -122,6 +126,7 @@ $wgGroupPermissions['superadmin']['manageawards'] = true;        // Issue and re
 $wgGroupPermissions['superadmin']['massrollback'] = true;        // Mass rollback a user's edits.
 $wgGroupPermissions['superadmin']['sboverride'] = true;          // Bypass the spam blacklist.
 $wgGroupPermissions['superadmin']['protectsite'] = true;         // Activate and deactivate site protection.
+$wgGroupPermissions['superadmin']['torunblocked'] = true;        // Allow bypassing Tor blocks.
 $wgGroupPermissions['superadmin']['checkuser'] = true;            // Check IP addresses/usernames via CheckUser.
 $wgGroupPermissions['superadmin']['checkuser-log'] = true;        // View the CheckUser action log.
 $wgGroupPermissions['superadmin']['checkuser-temporary-account'] = true; // Reveal IPs behind temporary accounts.
