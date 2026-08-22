@@ -122,6 +122,10 @@ $wgGroupPermissions['superadmin']['manageawards'] = true;        // Issue and re
 $wgGroupPermissions['superadmin']['massrollback'] = true;        // Mass rollback a user's edits.
 $wgGroupPermissions['superadmin']['sboverride'] = true;          // Bypass the spam blacklist.
 $wgGroupPermissions['superadmin']['protectsite'] = true;         // Activate and deactivate site protection.
+$wgGroupPermissions['superadmin']['checkuser'] = true;            // Check IP addresses/usernames via CheckUser.
+$wgGroupPermissions['superadmin']['checkuser-log'] = true;        // View the CheckUser action log.
+$wgGroupPermissions['superadmin']['checkuser-temporary-account'] = true; // Reveal IPs behind temporary accounts.
+$wgGroupPermissions['superadmin']['checkuser-temporary-account-log'] = true; // View temporary account CheckUser log.
 
 // Interface admin
 $wgGroupPermissions['interface-admin']['editsitecss'] = true;  // Interface admins control site-wide CSS.

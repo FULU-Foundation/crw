@@ -231,4 +231,7 @@
 	path = extensions/ProtectSite
 	url = git@github.com:wikimedia/mediawiki-extensions-ProtectSite.git
 	branch = REL1_46
+[submodule "extensions/AntiSpoof"]
+	path = extensions/AntiSpoof
+	url = git@github.com:wikimedia/mediawiki-extensions-AntiSpoof.git
 	branch = REL1_46
