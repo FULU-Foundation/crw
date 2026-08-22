@@ -108,6 +108,7 @@ require_once './LocalSettings/extensions/SearchDigest.php';
 require_once './LocalSettings/extensions/OATHAuth.php';
 require_once './LocalSettings/extensions/CheckUser.php';
 require_once './LocalSettings/extensions/AntiSpoof.php';
+require_once './LocalSettings/extensions/TorBlock.php';
 
 # Customizations
 require_once './LocalSettings/customizations/Footer.php';
