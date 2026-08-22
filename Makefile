@@ -20,7 +20,10 @@ meta:
 	
 sitemap:
 	sh scripts/generate-sitemap.sh
-	
+
+batch-antispoof:
+	sh scripts/batch-antispoof.sh
+
 run:
 	docker compose up --build
 
