@@ -1,0 +1,49 @@
+# Bare-metal deployment, for running imgguard next to the wiki without Docker.
+#
+#   sudo cp imgguard.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now imgguard
+#   systemctl status imgguard
+#
+# Adjust User, Group and the paths to match where you cloned it. ./run.sh in a
+# terminal is fine for testing and is not a deployment: it dies with the shell.
+
+[Unit]
+Description=imgguard image safety classifier
+Documentation=https://github.com/FULU-Foundation/crw
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+User=imgguard
+Group=imgguard
+WorkingDirectory=/opt/imgguard
+ExecStart=/opt/imgguard/.venv/bin/uvicorn server:app --host 127.0.0.1 --port 8181 --log-level info
+
+Restart=always
+RestartSec=5
+
+# The service handles arbitrary user-supplied files and shells out to external
+# converters, so it gets locked down rather than trusted.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+RestrictRealtime=true
+LockPersonality=true
+SystemCallArchitectures=native
+ReadWritePaths=/opt/imgguard/models
+
+# Stops one runaway conversion taking the wiki down with it.
+MemoryMax=2G
+CPUQuota=200%
+
+[Install]
+WantedBy=multi-user.target

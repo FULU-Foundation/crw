@@ -1,4 +1,34 @@
 services:
+  crw-imgguard:
+    build:
+      context: ./imgguard
+      dockerfile: docker/Dockerfile
+    # In production, pull the published image instead of building:
+    #   image: ghcr.io/fulu-foundation/crw-imgguard:release
+    restart: unless-stopped
+    environment:
+      - IMGGUARD_HOST=0.0.0.0
+      - IMGGUARD_PORT=8181
+      # Must match $wgImgGuardAuthToken in
+      # conf/LocalSettings/extensions/ImgGuard.php
+      - IMGGUARD_AUTH_TOKEN
+      # The validated production threshold. Read imgguard/README.md before
+      # changing this; it was measured against the wiki's own corpus.
+      - IMGGUARD_SFW_MIN=0.50
+      # Keep the scanner off the wiki's cores during an upload burst.
+      - IMGGUARD_ORT_THREADS=2
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8181/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 40s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          # Headroom for a multi-page PDF render, not a target. The model
+          # itself is 28.5M parameters.
+          memory: 2G
   crw-local:
     build: .
     volumes:
@@ -37,11 +67,14 @@ services:
       - ARTICLE_FEEDBACK_DISCORD_CHANNEL_ID
       - PLAUSIBLE_API_KEY
       - OATHAUTH_SECRET_KEY
+      - IMGGUARD_AUTH_TOKEN
     depends_on:
       crw-local-db:
         condition: service_started
       crw-local-cache:
         condition: service_started
+      crw-imgguard:
+        condition: service_healthy
 
   crw-local-db:
     image: mariadb:lts

@@ -239,3 +239,7 @@
 	path = extensions/TorBlock
 	url = git@github.com:wikimedia/mediawiki-extensions-TorBlock.git
 	branch = REL1_46
+[submodule "extensions/ImgGuard"]
+	path = extensions/ImgGuard
+	url = https://github.com/Keith-Y-2/mediawiki-extension-ImgGuard.git
+	branch = main

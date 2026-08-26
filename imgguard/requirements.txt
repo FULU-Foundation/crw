@@ -1,0 +1,32 @@
+# Inference
+onnxruntime>=1.17.0
+numpy>=1.24.0
+Pillow>=10.1.0
+
+# Model fetching
+huggingface_hub>=0.23.0
+
+# Service
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# Corpus fetcher
+requests>=2.31.0
+
+# --- Format converters -----------------------------------------------------
+#
+# The wiki accepts SVG, PDF and Office documents, all of which can carry a
+# picture. Without these, those uploads come back "unsupported" and are
+# governed by policy rather than by the model - which for SVG, rendered inline
+# by MediaWiki, is a genuine gap.
+#
+# cairosvg needs libcairo2 on the system (apt install libcairo2).
+# A working `rsvg-convert` (apt install librsvg2-bin) is an acceptable
+# substitute; the scanner probes at startup and uses whichever it finds.
+cairosvg>=2.7.0
+
+# PyMuPDF renders every page. Without it the scanner falls back to pdftoppm
+# (apt install poppler-utils), and without either it falls back to ImageMagick,
+# which only manages page 1 - i.e. page 2 onwards goes unscanned.
+PyMuPDF>=1.24.0

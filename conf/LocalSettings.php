@@ -70,6 +70,10 @@ require_once './LocalSettings/extensions/Nuke.php';
 
 require_once './LocalSettings/extensions/StopForumSpam.php';
 require_once './LocalSettings/extensions/AbuseFilter.php';
+# ImgGuard must load AFTER AbuseFilter: MediaWiki runs same-hook handlers in
+# registration order, and if ImgGuard blocks first, AbuseFilter never sees the
+# upload and no filter consequence can fire.
+require_once './LocalSettings/extensions/ImgGuard.php';
 require_once './LocalSettings/extensions/SmiteSpam.php';
 require_once './LocalSettings/extensions/SpamBlacklist.php';
 require_once './LocalSettings/extensions/ProtectSite.php';

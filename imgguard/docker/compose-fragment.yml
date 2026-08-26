@@ -1,0 +1,56 @@
+# Add to the `services:` block of docker-compose.yml.
+#
+# THREE edits are needed, not one. Missing the third produces a 401 on every
+# scan, which fail-closed turns into "uploads temporarily unavailable" with no
+# other symptom:
+#
+#   1. paste the crw-imgguard service below into `services:`
+#   2. add crw-imgguard to crw-local's `depends_on`
+#   3. add IMGGUARD_AUTH_TOKEN to *crw-local's* `environment:` list as well --
+#      conf/LocalSettings/extensions/ImgGuard.php reads it with getenv(), so the
+#      wiki container needs it too, not just the scanner container. If only the
+#      scanner has it, the scanner demands a token MediaWiki never sends.
+#
+# NOTE ON CI: `docker compose up -d` in .github/workflows/ci.yml will build this
+# image, which installs onnxruntime and bakes in the model from HuggingFace --
+# roughly 3-5 minutes and an external network dependency on every PR. If that is
+# unwelcome, add `profiles: ["imgguard"]` to this service and set
+# `COMPOSE_PROFILES=imgguard` in the Makefile so it stays opt-in. Note that the
+# wiki tolerates the scanner being absent while $wgImgGuardEnforce is false:
+# monitor mode logs the failure and lets the upload through.
+
+  crw-imgguard:
+    build:
+      context: ./imgguard
+      dockerfile: docker/Dockerfile
+    # In production, pull the published image instead of building:
+    #   image: ghcr.io/fulu-foundation/crw-imgguard:release
+    restart: unless-stopped
+    environment:
+      - IMGGUARD_HOST=0.0.0.0
+      - IMGGUARD_PORT=8181
+      # Must match $wgImgGuardAuthToken in
+      # conf/LocalSettings/extensions/ImgGuard.php
+      - IMGGUARD_AUTH_TOKEN
+      # The validated production threshold. Read imgguard/README.md before
+      # changing this; it was measured against the wiki's own corpus.
+      - IMGGUARD_SFW_MIN=0.50
+      # Keep the scanner off the wiki's cores during an upload burst.
+      - IMGGUARD_ORT_THREADS=2
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8181/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 40s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          # Headroom for a multi-page PDF render, not a target. The model
+          # itself is 28.5M parameters.
+          memory: 2G
+
+# There are deliberately no `ports:` here. The scanner is reachable from the
+# wiki container over the compose network and from nowhere else. It has no
+# authentication beyond the shared token and it will classify anything posted
+# to it; it is not something to expose on a host port.
