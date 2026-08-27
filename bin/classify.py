@@ -22,8 +22,12 @@ def main():
     array = np.asarray(image, dtype=np.float32)
     array = array.transpose(2, 0, 1)[np.newaxis, :, :, :]
 
+    options = onnxruntime.SessionOptions()
+    options.intra_op_num_threads = 1
+    options.inter_op_num_threads = 1
+
     session = onnxruntime.InferenceSession(
-        model_path, providers=["CPUExecutionProvider"]
+        model_path, sess_options=options, providers=["CPUExecutionProvider"]
     )
     outputs = session.run(None, {"image": array})
     scores = outputs[0][0]
