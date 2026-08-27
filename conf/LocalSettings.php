@@ -86,7 +86,6 @@ require_once './LocalSettings/extensions/CloudflarePurge.php';
 require_once './LocalSettings/extensions/Discord.php';
 require_once './LocalSettings/extensions/ArticleFeedback.php';
 require_once './LocalSettings/extensions/ConfirmLogout.php';
-require_once './LocalSettings/extensions/Awards.php';
 require_once './LocalSettings/extensions/MassRollback.php';
 
 require_once './LocalSettings/extensions/WikiEditor.php';
