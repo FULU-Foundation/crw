@@ -47,6 +47,20 @@ $wgFileExtensions = array_merge($wgFileExtensions ?? [], [
     'mp4', 'm4v', 'webm', 'mov', 'avi', 'mkv', 'flv', 'wmv' // Video formats.
 ]);
 
+# Office formats sometimes get misdetected as epub since both are ZIP containers.
+$wgHooks['MimeMagicImproveFromExtension'][] = function ( $mimeAnalyzer, $ext, &$mime ) {
+    $officeZipTypes = [
+        'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'odt'  => 'application/vnd.oasis.opendocument.text',
+        'ods'  => 'application/vnd.oasis.opendocument.spreadsheet',
+    ];
+
+    if ( $mime === 'application/epub+zip' && isset( $officeZipTypes[strtolower( $ext )] ) ) {
+        $mime = $officeZipTypes[strtolower( $ext )];
+    }
+};
+
 # Allows only sysop users to upload video files
 $wgHooks['UploadVerifyFile'][] = function ( $upload, $mime, &$error ) {
     $context = RequestContext::getMain();
