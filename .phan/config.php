@@ -12,7 +12,6 @@ $cfg['directory_list'] = array_merge(
 		'extensions/ImgGuard',
 		'extensions/MassRollback',
 		'extensions/Plausible/includes',
-		'extensions/UserImpact',
 		'LocalSettings',
 	]
 );

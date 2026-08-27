@@ -223,10 +223,6 @@
 	path = extensions/PageViewInfo
 	url = git@github.com:wikimedia/mediawiki-extensions-PageViewInfo.git
 	branch = REL1_46
-[submodule "extensions/UserImpact"]
-	path = extensions/UserImpact
-	url = git@github.com:codedbyjake/UserImpact.git
-	branch = REL1_46
 [submodule "extensions/ProtectSite"]
 	path = extensions/ProtectSite
 	url = git@github.com:wikimedia/mediawiki-extensions-ProtectSite.git
