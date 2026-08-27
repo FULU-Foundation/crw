@@ -70,6 +70,7 @@ require_once './LocalSettings/extensions/Nuke.php';
 
 require_once './LocalSettings/extensions/StopForumSpam.php';
 require_once './LocalSettings/extensions/AbuseFilter.php';
+require_once './LocalSettings/extensions/ImgGuard.php';
 require_once './LocalSettings/extensions/SmiteSpam.php';
 require_once './LocalSettings/extensions/SpamBlacklist.php';
 require_once './LocalSettings/extensions/ProtectSite.php';
