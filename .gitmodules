@@ -235,3 +235,27 @@
 	path = extensions/ImgGuard
 	url = git@github.com:codedbyjake/ImgGuard.git
 	branch = REL1_46
+[submodule "extensions/TitleBlacklist"]
+	path = extensions/TitleBlacklist
+	url = git@github.com:wikimedia/mediawiki-extensions-TitleBlacklist.git
+	branch = REL1_46
+[submodule "extensions/CheckUser"]
+	path = extensions/CheckUser
+	url = git@github.com:wikimedia/mediawiki-extensions-CheckUser.git
+	branch = REL1_46
+[submodule "extensions/CodeEditor"]
+	path = extensions/CodeEditor
+	url = git@github.com:wikimedia/mediawiki-extensions-CodeEditor.git
+	branch = REL1_46
+[submodule "extensions/OATHAuth"]
+	path = extensions/OATHAuth
+	url = git@github.com:wikimedia/mediawiki-extensions-OATHAuth.git
+	branch = REL1_46
+[submodule "extensions/Thanks"]
+	path = extensions/Thanks
+	url = git@github.com:wikimedia/mediawiki-extensions-Thanks.git
+	branch = REL1_46
+[submodule "extensions/WikiEditor"]
+	path = extensions/WikiEditor
+	url = git@github.com:wikimedia/mediawiki-extensions-WikiEditor.git
+	branch = REL1_46

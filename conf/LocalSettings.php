@@ -73,6 +73,7 @@ require_once './LocalSettings/extensions/AbuseFilter.php';
 require_once './LocalSettings/extensions/ImgGuard.php';
 require_once './LocalSettings/extensions/SmiteSpam.php';
 require_once './LocalSettings/extensions/SpamBlacklist.php';
+require_once './LocalSettings/extensions/TitleBlacklist.php';
 require_once './LocalSettings/extensions/ProtectSite.php';
 
 require_once './LocalSettings/extensions/EmbedVideo.php';

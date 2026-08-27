@@ -94,6 +94,8 @@ $wgGroupPermissions['sysop']['editsitejson'] = false;
 $wgGroupPermissions['sysop']['editcontentmodel'] = true;     // Allow sysops to change content models.
 $wgGroupPermissions['sysop']['spamblacklistlog'] = true;     // View the spam blacklist log.
 $wgGroupPermissions['sysop']['sboverride'] = true;            // Bypass the spam blacklist.
+$wgGroupPermissions['sysop']['tboverride'] = true;            // Bypass the title blacklist.
+$wgGroupPermissions['sysop']['titleblacklistlog'] = true;     // View the title blacklist log.
 $wgGroupPermissions['sysop']['protectsite'] = true;           // Activate and deactivate site protection.
 $wgGroupPermissions['sysop']['torunblocked'] = true;          // Allow bypassing Tor blocks.
 
@@ -121,6 +123,8 @@ $wgGroupPermissions['superadmin']['skipcaptcha'] = true;     // Superadmins are 
 $wgGroupPermissions['superadmin']['usermerge'] = true;
 $wgGroupPermissions['superadmin']['editcontentmodel'] = true;    // Allow superadmins to change content models.
 $wgGroupPermissions['superadmin']['spamblacklistlog'] = true;    // View the spam blacklist log.
+$wgGroupPermissions['superadmin']['tboverride'] = true;          // Bypass the title blacklist.
+$wgGroupPermissions['superadmin']['titleblacklistlog'] = true;   // View the title blacklist log.
 $wgGroupPermissions['superadmin']['massrollback'] = true;        // Mass rollback a user's edits.
 $wgGroupPermissions['superadmin']['sboverride'] = true;          // Bypass the spam blacklist.
 $wgGroupPermissions['superadmin']['protectsite'] = true;         // Activate and deactivate site protection.
