@@ -7,12 +7,10 @@ $cfg['directory_list'] = array_merge(
 	[
 		'extensions/AbuseFilter',
 		'extensions/ArticleFeedback',
-		'extensions/Awards',
 		'extensions/ConfirmLogout',
 		'extensions/ImgGuard',
 		'extensions/MassRollback',
 		'extensions/Plausible/includes',
-		'extensions/UserImpact',
 		'LocalSettings',
 	]
 );

@@ -78,6 +78,8 @@ $wgStrictFileExtensions = true; // Strictly block unallowed file extensions.
 $wgMimeDetectorCommand = 'file -bi'; // Command to detect MIME types of uploaded files.
 $wgProhibitedFileExtensions = ['exe', 'scr', 'vbs', 'bat', 'cmd', 'sh', 'php', 'pl']; // Block dangerous file types.
 
+$wgRateLimits['upload']['user'] = [ 30, 60 ]; // 30 uploads per minute per user.
+
 # Image handling and display
 $wgShowArchiveThumbnails = true; // Allow thumbnails of archived images to display.
 $wgEnableAutoRotation = true; // Automatically rotate images based on EXIF data.
