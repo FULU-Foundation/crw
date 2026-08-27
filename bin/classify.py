@@ -18,7 +18,7 @@ def main():
     from PIL import Image
 
     image = Image.open(image_path)
-    image = image.convert("RGB").resize((IMAGE_SIZE, IMAGE_SIZE))
+    image = image.convert("RGB").resize((IMAGE_SIZE, IMAGE_SIZE), Image.BILINEAR)
     array = np.asarray(image, dtype=np.float32)
     array = array.transpose(2, 0, 1)[np.newaxis, :, :, :]
 
