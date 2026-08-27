@@ -211,10 +211,6 @@
 	path = extensions/ConfirmLogout
 	url = git@github.com:codedbyjake/ConfirmLogout.git
 	branch = REL1_46
-[submodule "extensions/Awards"]
-	path = extensions/Awards
-	url = git@github.com:codedbyjake/Awards.git
-	branch = REL1_46
 [submodule "extensions/MassRollback"]
 	path = extensions/MassRollback
 	url = git@github.com:codedbyjake/MassRollback.git
@@ -222,10 +218,6 @@
 [submodule "extensions/PageViewInfo"]
 	path = extensions/PageViewInfo
 	url = git@github.com:wikimedia/mediawiki-extensions-PageViewInfo.git
-	branch = REL1_46
-[submodule "extensions/UserImpact"]
-	path = extensions/UserImpact
-	url = git@github.com:codedbyjake/UserImpact.git
 	branch = REL1_46
 [submodule "extensions/ProtectSite"]
 	path = extensions/ProtectSite
@@ -238,4 +230,32 @@
 [submodule "extensions/TorBlock"]
 	path = extensions/TorBlock
 	url = git@github.com:wikimedia/mediawiki-extensions-TorBlock.git
+	branch = REL1_46
+[submodule "extensions/ImgGuard"]
+	path = extensions/ImgGuard
+	url = git@github.com:codedbyjake/ImgGuard.git
+	branch = REL1_46
+[submodule "extensions/TitleBlacklist"]
+	path = extensions/TitleBlacklist
+	url = git@github.com:wikimedia/mediawiki-extensions-TitleBlacklist.git
+	branch = REL1_46
+[submodule "extensions/CheckUser"]
+	path = extensions/CheckUser
+	url = git@github.com:wikimedia/mediawiki-extensions-CheckUser.git
+	branch = REL1_46
+[submodule "extensions/CodeEditor"]
+	path = extensions/CodeEditor
+	url = git@github.com:wikimedia/mediawiki-extensions-CodeEditor.git
+	branch = REL1_46
+[submodule "extensions/OATHAuth"]
+	path = extensions/OATHAuth
+	url = git@github.com:wikimedia/mediawiki-extensions-OATHAuth.git
+	branch = REL1_46
+[submodule "extensions/Thanks"]
+	path = extensions/Thanks
+	url = git@github.com:wikimedia/mediawiki-extensions-Thanks.git
+	branch = REL1_46
+[submodule "extensions/WikiEditor"]
+	path = extensions/WikiEditor
+	url = git@github.com:wikimedia/mediawiki-extensions-WikiEditor.git
 	branch = REL1_46

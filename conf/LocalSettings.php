@@ -70,8 +70,10 @@ require_once './LocalSettings/extensions/Nuke.php';
 
 require_once './LocalSettings/extensions/StopForumSpam.php';
 require_once './LocalSettings/extensions/AbuseFilter.php';
+require_once './LocalSettings/extensions/ImgGuard.php';
 require_once './LocalSettings/extensions/SmiteSpam.php';
 require_once './LocalSettings/extensions/SpamBlacklist.php';
+require_once './LocalSettings/extensions/TitleBlacklist.php';
 require_once './LocalSettings/extensions/ProtectSite.php';
 
 require_once './LocalSettings/extensions/EmbedVideo.php';
@@ -85,9 +87,7 @@ require_once './LocalSettings/extensions/CloudflarePurge.php';
 require_once './LocalSettings/extensions/Discord.php';
 require_once './LocalSettings/extensions/ArticleFeedback.php';
 require_once './LocalSettings/extensions/ConfirmLogout.php';
-require_once './LocalSettings/extensions/Awards.php';
 require_once './LocalSettings/extensions/MassRollback.php';
-require_once './LocalSettings/extensions/UserImpact.php';
 
 require_once './LocalSettings/extensions/WikiEditor.php';
 require_once './LocalSettings/extensions/Thanks.php';

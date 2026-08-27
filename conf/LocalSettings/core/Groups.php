@@ -93,8 +93,9 @@ $wgGroupPermissions['sysop']['edituserjson'] = false;
 $wgGroupPermissions['sysop']['editsitejson'] = false;
 $wgGroupPermissions['sysop']['editcontentmodel'] = true;     // Allow sysops to change content models.
 $wgGroupPermissions['sysop']['spamblacklistlog'] = true;     // View the spam blacklist log.
-$wgGroupPermissions['sysop']['manageawards'] = true;        // Issue and revoke awards.
 $wgGroupPermissions['sysop']['sboverride'] = true;            // Bypass the spam blacklist.
+$wgGroupPermissions['sysop']['tboverride'] = true;            // Bypass the title blacklist.
+$wgGroupPermissions['sysop']['titleblacklistlog'] = true;     // View the title blacklist log.
 $wgGroupPermissions['sysop']['protectsite'] = true;           // Activate and deactivate site protection.
 $wgGroupPermissions['sysop']['torunblocked'] = true;          // Allow bypassing Tor blocks.
 
@@ -122,7 +123,8 @@ $wgGroupPermissions['superadmin']['skipcaptcha'] = true;     // Superadmins are 
 $wgGroupPermissions['superadmin']['usermerge'] = true;
 $wgGroupPermissions['superadmin']['editcontentmodel'] = true;    // Allow superadmins to change content models.
 $wgGroupPermissions['superadmin']['spamblacklistlog'] = true;    // View the spam blacklist log.
-$wgGroupPermissions['superadmin']['manageawards'] = true;        // Issue and revoke awards.
+$wgGroupPermissions['superadmin']['tboverride'] = true;          // Bypass the title blacklist.
+$wgGroupPermissions['superadmin']['titleblacklistlog'] = true;   // View the title blacklist log.
 $wgGroupPermissions['superadmin']['massrollback'] = true;        // Mass rollback a user's edits.
 $wgGroupPermissions['superadmin']['sboverride'] = true;          // Bypass the spam blacklist.
 $wgGroupPermissions['superadmin']['protectsite'] = true;         // Activate and deactivate site protection.
@@ -131,6 +133,8 @@ $wgGroupPermissions['superadmin']['checkuser'] = true;            // Check IP ad
 $wgGroupPermissions['superadmin']['checkuser-log'] = true;        // View the CheckUser action log.
 $wgGroupPermissions['superadmin']['checkuser-temporary-account'] = true; // Reveal IPs behind temporary accounts.
 $wgGroupPermissions['superadmin']['checkuser-temporary-account-log'] = true; // View temporary account CheckUser log.
+$wgGroupPermissions['superadmin']['imgguard-bypass'] = true;     // Bypass ImgGuard upload screening.
+$wgGroupPermissions['superadmin']['imgguard-log'] = true;        // View the ImgGuard log.
 
 // Interface admin
 $wgGroupPermissions['interface-admin']['editsitecss'] = true;  // Interface admins control site-wide CSS.
