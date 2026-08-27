@@ -131,6 +131,8 @@ $wgGroupPermissions['superadmin']['checkuser'] = true;            // Check IP ad
 $wgGroupPermissions['superadmin']['checkuser-log'] = true;        // View the CheckUser action log.
 $wgGroupPermissions['superadmin']['checkuser-temporary-account'] = true; // Reveal IPs behind temporary accounts.
 $wgGroupPermissions['superadmin']['checkuser-temporary-account-log'] = true; // View temporary account CheckUser log.
+$wgGroupPermissions['superadmin']['imgguard-bypass'] = true;     // Bypass ImgGuard upload screening.
+$wgGroupPermissions['superadmin']['imgguard-viewlog'] = true;    // View the ImgGuard log.
 
 // Interface admin
 $wgGroupPermissions['interface-admin']['editsitecss'] = true;  // Interface admins control site-wide CSS.

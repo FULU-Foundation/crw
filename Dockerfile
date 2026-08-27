@@ -1,5 +1,6 @@
 ARG mediawiki_version=1.46.0-fpm
 ARG composer_version=2.7.1
+ARG imgguard_model_revision=main
 
 # Trick to allow for COPY from for composer image
 FROM composer:${composer_version} AS composer
@@ -87,6 +88,15 @@ RUN crontab -l | { cat; echo "0 1 * * * bash /wiki/cron/load_tor_nodes.sh"; } | 
 
 # Imagemagick
 RUN apt-get install -y imagemagick --no-install-recommends
+
+# ImgGuard upload classifier
+RUN apt-get install -y python3-pip curl --no-install-recommends
+RUN pip3 install --break-system-packages --no-cache-dir onnxruntime pillow
+RUN mkdir -p /wiki/imgguard
+COPY ./bin/classify.py /wiki/imgguard/classify.py
+ARG imgguard_model_revision
+RUN curl -fL -o /wiki/imgguard/model.onnx \
+    "https://huggingface.co/OwenElliott/image-safety-classifier-l/resolve/${imgguard_model_revision}/onnx/image-safety-classifier-l.onnx"
 
 # PHP Extensions
 RUN apt-get install -y libcurl4-openssl-dev
