@@ -62,6 +62,10 @@ $wgGroupPermissions['superconfirmed']['sboverride'] = true; // Allow bypassing t
 $wgGroupPermissions['superconfirmed']['editcontentmodel'] = false; // Prevent superconfirmed users from changing content models.
 $wgGroupPermissions['superconfirmed']['torunblocked'] = true; // Allow bypassing Tor blocks.
 
+$wgRestrictionLevels = [ '', 'superconfirmed', 'sysop' ]; // Protection levels available on Special:Protect.
+$wgGroupPermissions['superconfirmed']['superconfirmed'] = true; 
+$wgGroupPermissions['sysop']['superconfirmed'] = true;
+
 // Additionally can now remove site-notices
 
 // Sysop
