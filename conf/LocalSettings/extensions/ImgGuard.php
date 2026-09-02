@@ -5,4 +5,6 @@ wfLoadExtension( 'ImgGuard' );
 $wgImgGuardEnforce = true;
 $wgImgGuardFailClosed = true;
 $wgImgGuardSfwThreshold = 0.5;
-$wgRateLimits['imgguard']['user'] = [ 20, 600 ];
+$wgImgGuardScriptPath = '/var/www/html/extensions/ImgGuard/bin/classify.py';
+$wgImgGuardLogPasses = true;
+$wgImgGuardMaxConcurrent = 6;

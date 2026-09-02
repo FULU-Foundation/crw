@@ -217,7 +217,7 @@
 	branch = REL1_46
 [submodule "extensions/PageViewInfo"]
 	path = extensions/PageViewInfo
-	url = git@github.com:wikimedia/mediawiki-extensions-PageViewInfo.git
+	url = git@github.com:FULU-Foundation/mediawiki-extensions-PageViewInfo.git
 	branch = REL1_46
 [submodule "extensions/ProtectSite"]
 	path = extensions/ProtectSite

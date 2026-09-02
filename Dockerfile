@@ -91,9 +91,9 @@ RUN apt-get install -y imagemagick --no-install-recommends
 
 # ImgGuard upload classifier
 RUN apt-get install -y python3-pip curl --no-install-recommends
-RUN pip3 install --break-system-packages --no-cache-dir onnxruntime pillow
+RUN pip3 install --break-system-packages --no-cache-dir onnxruntime pillow defusedxml pypdfium2
+RUN apt-get install -y resvg librsvg2-bin poppler-utils djvulibre-bin ffmpeg --no-install-recommends
 RUN mkdir -p /wiki/imgguard
-COPY ./bin/classify.py /wiki/imgguard/classify.py
 ARG imgguard_model_revision
 RUN curl -fL -o /wiki/imgguard/model.onnx \
     "https://huggingface.co/OwenElliott/image-safety-classifier-l/resolve/${imgguard_model_revision}/onnx/image-safety-classifier-l.onnx"
