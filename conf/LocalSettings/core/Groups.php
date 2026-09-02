@@ -102,6 +102,7 @@ $wgGroupPermissions['sysop']['tboverride'] = true;            // Bypass the titl
 $wgGroupPermissions['sysop']['titleblacklistlog'] = true;     // View the title blacklist log.
 $wgGroupPermissions['sysop']['protectsite'] = true;           // Activate and deactivate site protection.
 $wgGroupPermissions['sysop']['torunblocked'] = true;          // Allow bypassing Tor blocks.
+$wgGroupPermissions['sysop']['upload-media'] = true;         // Upload audio and video files.
 
 $wgAddGroups['sysop'] = ['confirmed'];
 $wgRemoveGroups['sysop'] = ['confirmed'];
@@ -139,6 +140,7 @@ $wgGroupPermissions['superadmin']['checkuser-temporary-account'] = true; // Reve
 $wgGroupPermissions['superadmin']['checkuser-temporary-account-log'] = true; // View temporary account CheckUser log.
 $wgGroupPermissions['superadmin']['imgguard-bypass'] = true;     // Bypass ImgGuard upload screening.
 $wgGroupPermissions['superadmin']['imgguard-log'] = true;        // View the ImgGuard log.
+$wgGroupPermissions['superadmin']['upload-media'] = true;         // Upload audio and video files.
 
 // Interface admin
 $wgGroupPermissions['interface-admin']['editsitecss'] = true;  // Interface admins control site-wide CSS.
