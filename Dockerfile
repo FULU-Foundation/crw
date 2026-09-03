@@ -1,6 +1,6 @@
 ARG mediawiki_version=1.46.0-fpm
 ARG composer_version=2.7.1
-ARG imgguard_model_revision=main
+ARG imgguard_models_release=models-v1
 
 # Trick to allow for COPY from for composer image
 FROM composer:${composer_version} AS composer
@@ -92,11 +92,16 @@ RUN apt-get install -y imagemagick --no-install-recommends
 # ImgGuard upload classifier
 RUN apt-get install -y python3-pip curl --no-install-recommends
 RUN pip3 install --break-system-packages --no-cache-dir onnxruntime pillow defusedxml pypdfium2
-RUN apt-get install -y resvg librsvg2-bin poppler-utils djvulibre-bin ffmpeg --no-install-recommends
+RUN apt-get install -y resvg poppler-utils djvulibre-bin ffmpeg --no-install-recommends
 RUN mkdir -p /wiki/imgguard
-ARG imgguard_model_revision
-RUN curl -fL -o /wiki/imgguard/model.onnx \
-    "https://huggingface.co/OwenElliott/image-safety-classifier-l/resolve/${imgguard_model_revision}/onnx/image-safety-classifier-l.onnx"
+ARG imgguard_models_release
+RUN base="https://github.com/codedbyjake/ImgGuard/releases/download/${imgguard_models_release}" \
+    && curl -fL -o /wiki/imgguard/model.onnx "${base}/image-safety-classifier-l.onnx" \
+    && curl -fL -o /wiki/imgguard/mature.onnx "${base}/vit-mature-content-detection-int8.onnx" \
+    && printf '%s  %s\n' \
+        1430a5ec72b5f81165b19f352c7183765177b91723c4073df302231de3d91ff3 /wiki/imgguard/model.onnx \
+        dedb56114a357172399cb2db05a681733e00de0d0e4fd2a55d97a90a0d758a63 /wiki/imgguard/mature.onnx \
+       | sha256sum -c -
 
 # PHP Extensions
 RUN apt-get install -y libcurl4-openssl-dev
