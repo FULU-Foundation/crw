@@ -86,9 +86,6 @@ $wgGroupPermissions['sysop']['abusefilter-privatedetails-log'] = true; # View pr
 $wgGroupPermissions['sysop']['userrights'] = false; # See A/R Groups
 $wgGroupPermissions['sysop']['skipcaptcha'] = true;          // Sysops are exempt from CAPTCHA.
 $wgGroupPermissions['sysop']['sfsblock-bypass'] = true;
-$wgGroupPermissions['sysop']['abusefilter-modify'] = true;
-$wgGroupPermissions['sysop']['abusefilter-view'] = true;
-$wgGroupPermissions['sysop']['abusefilter-log'] = true;
 $wgGroupPermissions['sysop']['editinterface'] = true;
 $wgGroupPermissions['sysop']['edit'] = true;
 $wgGroupPermissions['sysop']['edit-cat'] = true; //allow sysop to edit
@@ -104,8 +101,8 @@ $wgGroupPermissions['sysop']['protectsite'] = true;           // Activate and de
 $wgGroupPermissions['sysop']['torunblocked'] = true;          // Allow bypassing Tor blocks.
 $wgGroupPermissions['sysop']['upload-media'] = true;         // Upload audio and video files.
 
-$wgAddGroups['sysop'] = ['confirmed'];
-$wgRemoveGroups['sysop'] = ['confirmed'];
+$wgAddGroups['sysop'] = ['confirmed', 'bot', 'screening-exempt'];
+$wgRemoveGroups['sysop'] = ['confirmed', 'bot', 'screening-exempt'];
 
 // Super admin
 $wgGroupPermissions['superadmin']['block'] = true;               // Block and unblock users, including sysops.
@@ -140,7 +137,11 @@ $wgGroupPermissions['superadmin']['checkuser-temporary-account'] = true; // Reve
 $wgGroupPermissions['superadmin']['checkuser-temporary-account-log'] = true; // View temporary account CheckUser log.
 $wgGroupPermissions['superadmin']['imgguard-bypass'] = true;     // Bypass ImgGuard upload screening.
 $wgGroupPermissions['superadmin']['imgguard-log'] = true;        // View the ImgGuard log.
+$wgGroupPermissions['superadmin']['imgguard-autoblock-exempt'] = true; // Never automatically blocked by ImgGuard.
 $wgGroupPermissions['superadmin']['upload-media'] = true;         // Upload audio and video files.
+
+// Screening exempt
+$wgGroupPermissions['screening-exempt']['imgguard-bypass'] = true; // Skip upload content screening.
 
 // Interface admin
 $wgGroupPermissions['interface-admin']['editsitecss'] = true;  // Interface admins control site-wide CSS.
