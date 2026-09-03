@@ -7,4 +7,6 @@ $wgImgGuardFailClosed = true;
 $wgImgGuardSfwThreshold = 0.5;
 $wgImgGuardScriptPath = '/var/www/html/extensions/ImgGuard/bin/classify.py';
 $wgImgGuardLogPasses = true;
-$wgImgGuardMaxConcurrent = 6;
+$wgImgGuardThreads = 4;
+$wgImgGuardMaxConcurrent = 3;
+$wgImgGuardAutoBlockEnabled = true;
