@@ -22,10 +22,6 @@ COPY ./extensions/ /var/www/html/extensions/
 # Copy skins to the image
 COPY ./skins/ /var/www/html/skins/
 
-# Copy tests
-COPY ./tests/ /var/www/html/tests/
-COPY ./phpunit.xml.template /var/www/html/phpunit.xml.template
-
 # Copy Phan
 COPY ./.phan/ /var/www/html/.phan/
 
