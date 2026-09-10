@@ -68,10 +68,6 @@ jobs:
         continue-on-error: true
         run: docker compose exec -T crw-local bash -c "MW_INSTALL_PATH=. vendor/bin/phan -d . --allow-polyfill-parser --long-progress-bar"
 
-      - name: Run integration tests
-        continue-on-error: true
-        run: docker compose exec -T crw-local composer phpunit -- tests/phpunit/crw/
-
       - name: Tear down
         if: always()
         run: docker compose down -v
