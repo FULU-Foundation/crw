@@ -31,6 +31,11 @@ For Windows users we recommend using the Windows Subsystem for Linux (WSL).
     ```sh
     make update
     ```
+6. Build the search index
+    ```sh
+    make cirrus-config
+    make cirrus-reindex
+    ```
 
 ### Manual update
 MediaWiki requires you to run an update script occasionally (with changes to extensions or other database updates).
@@ -58,7 +63,6 @@ crw/
 ├── patches/                # Build-time patches
 ├── scripts/                # Scripts invoked by the Makefile
 ├── skins/                  # MediaWiki skins
-├── tests/                  # Tests
 ├── docker-compose.yml      # Docker compose configuration for development
 └── Dockerfile              # Docker container build instructions
 ```

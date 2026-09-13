@@ -3,7 +3,7 @@
 # Database settings
 $wgDBtype = getenv('DB_TYPE');
 $wgDBserver = getenv('DB_SERVER');
-$wgDBname = getenv('DB_NAME');;
+$wgDBname = getenv('DB_NAME');
 $wgDBuser = getenv('DB_USER');
 $wgDBpassword = getenv('DB_PASSWORD');
 

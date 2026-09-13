@@ -31,9 +31,6 @@ $wgCaptchaTriggersOnNamespace = [
     NS_PRIMARY_TALK => true           # Custom namespace talk page
 ];
 
-# CAPTCHA Storage and Application
-$wgCaptchaWhitelist = [];                        // No whitelisted actions or users for CAPTCHA bypass.
-
 # FIX: Ensure DiscussionTools properly handles CAPTCHA
 $wgDiscussionToolsEnable = true; // Keep enabled
 $wgDiscussionToolsEnableTopicSubscription = true; // Allow users to subscribe to topics

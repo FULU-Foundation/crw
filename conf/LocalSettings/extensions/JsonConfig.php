@@ -9,7 +9,7 @@ $wgJsonConfigEnableLuaSupport = true;
 # Configure the tabular data namespace
 $wgJsonConfigModels['Tabular.JsonConfig'] = 'JsonConfig\JCTabularContent';
 $wgJsonConfigs['Tabular.JsonConfig'] = [
-    'namespace' => 486,    // Data namespace ID 
+    'namespace' => 486,    // Data namespace ID
     'nsName' => 'Data',    // Namespace name
     'pattern' => '/.\.tab$/',
     'license' => 'CC0-1.0',

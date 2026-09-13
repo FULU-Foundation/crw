@@ -23,4 +23,3 @@ $wgTemplateStylesEnableReview = true;  // Requires review before deployment
 
 # Debugging and Logging for TemplateStyles
 $wgDebugLogGroups['templatestyles'] = "/var/log/mediawiki/templatestyles.log";
-

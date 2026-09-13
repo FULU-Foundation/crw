@@ -23,10 +23,5 @@ $wgSMTP = [
     'password' => getenv("EMAIL_PASS")
 ];
 
-# Enable email functionality and user communication features.
-$wgEnableEmail = true;          // Activate email functionality.
-$wgEnableUserEmail = true;      // Allow users to email each other through the wiki.
-$wgEmailAuthentication = true;  // Require email authentication for account actions.
-
 # Enable HTML-formatted emails for better readability and design.
 $wgAllowHTMLEmail = true;
