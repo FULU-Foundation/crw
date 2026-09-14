@@ -28,7 +28,6 @@ $wgGenerateThumbnailOnParse = true; // Ensures thumbnails are created during pag
 
 # Thumbnail generation and display
 $wgThumbnailScriptPath = "{$wgScriptPath}/thumb.php"; // MediaWiki script for dynamic thumbnail generation.
-$wgShowImageInline = true; // Allow large images to display inline without scaling.
 
 # Thumbnail and image size limits
 $wgThumbLimits = [120, 150, 180, 200, 250, 300, 1024]; // Allowed thumbnail sizes.

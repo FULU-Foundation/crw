@@ -8,6 +8,3 @@ wfLoadExtension( 'Linter' );
 $wgParsoidSettings = [
     'linting' => true  // Enable linting in Parsoid.
 ];
-
-# Enable linting to work alongside DiscussionTools and Parsoid.
-$wgVisualEditorParsoidAutoConfig = false;

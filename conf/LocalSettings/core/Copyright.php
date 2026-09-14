@@ -7,6 +7,3 @@ $wgRightsText = "Creative Commons Attribution-ShareAlike 4.0 International";  //
 $wgRightsUrl = "https://creativecommons.org/licenses/by-sa/4.0/";            // URL linking to the full license details.
 $wgRightsIcon = "{$wgScriptPath}/images/cc-by-sa.svg";                       // Path to the license icon (e.g., Creative Commons logo).
 $wgRightsPage = "Project:Copyright";                                         // Internal wiki page explaining the licensing terms.
-
-# Enable RDF metadata for the Creative Commons license.
-$wgEnableCreativeCommonsRdf = true;
