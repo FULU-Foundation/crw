@@ -2,8 +2,6 @@
 
 # Load all supported skins for the wiki.
 wfLoadSkin( 'MinervaNeue' );  // Mobile-friendly skin for responsive design.
-wfLoadSkin( 'MonoBook' );     // Classic Wiki appearance.
-wfLoadSkin( 'Timeless' );     // Modern minimalist skin.
 wfLoadSkin( 'Vector' );       // Current Wikipedia-style skin.
 
 # Skin configuration.
