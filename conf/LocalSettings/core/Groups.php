@@ -26,7 +26,7 @@ $wgGroupPermissions['user']['editcontentmodel'] = false;      // Prevent users f
 $wgGroupPermissions['user']['spamblacklistlog'] = false;      // Restrict the spam blacklist log to sysops.
 $wgGroupPermissions['user']['torunblocked'] = false;           // Override extension default. Blocked until AC.
 
-// Automatically confirmed 
+// Automatically confirmed
 $wgAutoConfirmAge = 86400*7; // seven days
 $wgAutoConfirmCount = 10;
 
@@ -63,7 +63,7 @@ $wgGroupPermissions['superconfirmed']['editcontentmodel'] = false; // Prevent su
 $wgGroupPermissions['superconfirmed']['torunblocked'] = true; // Allow bypassing Tor blocks.
 
 $wgRestrictionLevels = [ '', 'superconfirmed', 'sysop' ]; // Protection levels available on Special:Protect.
-$wgGroupPermissions['superconfirmed']['superconfirmed'] = true; 
+$wgGroupPermissions['superconfirmed']['superconfirmed'] = true;
 $wgGroupPermissions['sysop']['superconfirmed'] = true;
 
 // Additionally can now remove site-notices

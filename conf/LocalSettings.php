@@ -16,11 +16,6 @@ $wgLanguageCode = "en";
 # Time zone
 $wgLocaltimezone = "UTC";
 
-## Set $wgCacheDirectory to a writable directory on the web server
-## to make your wiki go slightly faster. The directory should not
-## be publicly accessible from the web.
-#$wgCacheDirectory = "$IP/cache";
-
 $wgSecretKey = getenv("MEDIAWIKI_SECRET");
 
 # Changing this will log out all existing sessions.
@@ -30,89 +25,89 @@ $wgAuthenticationTokenVersion = "1";
 $wgDiff3 = "/usr/bin/diff3";
 
 # Core
-require_once './LocalSettings/core/Cache.php';
-require_once './LocalSettings/core/Logs.php';
-require_once './LocalSettings/core/Brand.php';
-require_once './LocalSettings/core/Paths.php';
-require_once './LocalSettings/core/Database.php';
-require_once './LocalSettings/core/Skins.php';
-require_once './LocalSettings/core/Namespaces.php';
-require_once './LocalSettings/core/Uploads.php';
-require_once './LocalSettings/core/Email.php';
-require_once './LocalSettings/core/Copyright.php';
-require_once './LocalSettings/core/Security.php';
-require_once './LocalSettings/core/CDN.php';
-require_once './LocalSettings/core/Debug.php';
-require_once './LocalSettings/core/Sessions.php';
-require_once './LocalSettings/core/TempUser.php';
+require_once __DIR__ . '/LocalSettings/core/Cache.php';
+require_once __DIR__ . '/LocalSettings/core/Logs.php';
+require_once __DIR__ . '/LocalSettings/core/Brand.php';
+require_once __DIR__ . '/LocalSettings/core/Paths.php';
+require_once __DIR__ . '/LocalSettings/core/Database.php';
+require_once __DIR__ . '/LocalSettings/core/Skins.php';
+require_once __DIR__ . '/LocalSettings/core/Namespaces.php';
+require_once __DIR__ . '/LocalSettings/core/Uploads.php';
+require_once __DIR__ . '/LocalSettings/core/Email.php';
+require_once __DIR__ . '/LocalSettings/core/Copyright.php';
+require_once __DIR__ . '/LocalSettings/core/Security.php';
+require_once __DIR__ . '/LocalSettings/core/CDN.php';
+require_once __DIR__ . '/LocalSettings/core/Debug.php';
+require_once __DIR__ . '/LocalSettings/core/Sessions.php';
+require_once __DIR__ . '/LocalSettings/core/TempUser.php';
 
 # Extensions
-require_once './LocalSettings/extensions/Scribunto.php';
-require_once './LocalSettings/extensions/TimezoneConverter.php';
-require_once './LocalSettings/extensions/ContributionScores.php';
-require_once './LocalSettings/extensions/Cargo.php';
-require_once './LocalSettings/extensions/MobileFrontend.php';
-require_once './LocalSettings/extensions/DarkMode.php';
-require_once './LocalSettings/extensions/VisualEditor.php';
-#require_once './LocalSettings/extensions/JsonConfig.php';
-require_once './LocalSettings/extensions/TemplateStyles.php';
-require_once './LocalSettings/extensions/Captcha.php';
-require_once './LocalSettings/extensions/CategoryTree.php';
-require_once './LocalSettings/extensions/DiscussionTools.php';
-require_once './LocalSettings/extensions/Echo.php';
-require_once './LocalSettings/extensions/ParserFunctions.php';
-require_once './LocalSettings/extensions/InputBox.php';
-require_once './LocalSettings/extensions/Linter.php';
-require_once './LocalSettings/extensions/PageForms.php';
+require_once __DIR__ . '/LocalSettings/extensions/Scribunto.php';
+require_once __DIR__ . '/LocalSettings/extensions/TimezoneConverter.php';
+require_once __DIR__ . '/LocalSettings/extensions/ContributionScores.php';
+require_once __DIR__ . '/LocalSettings/extensions/Cargo.php';
+require_once __DIR__ . '/LocalSettings/extensions/MobileFrontend.php';
+require_once __DIR__ . '/LocalSettings/extensions/DarkMode.php';
+require_once __DIR__ . '/LocalSettings/extensions/VisualEditor.php';
+#require_once __DIR__ . '/LocalSettings/extensions/JsonConfig.php';
+require_once __DIR__ . '/LocalSettings/extensions/TemplateStyles.php';
+require_once __DIR__ . '/LocalSettings/extensions/Captcha.php';
+require_once __DIR__ . '/LocalSettings/extensions/CategoryTree.php';
+require_once __DIR__ . '/LocalSettings/extensions/DiscussionTools.php';
+require_once __DIR__ . '/LocalSettings/extensions/Echo.php';
+require_once __DIR__ . '/LocalSettings/extensions/ParserFunctions.php';
+require_once __DIR__ . '/LocalSettings/extensions/InputBox.php';
+require_once __DIR__ . '/LocalSettings/extensions/Linter.php';
+require_once __DIR__ . '/LocalSettings/extensions/PageForms.php';
 
-require_once './LocalSettings/extensions/BulkBlock.php';
-require_once './LocalSettings/extensions/Nuke.php';
+require_once __DIR__ . '/LocalSettings/extensions/BulkBlock.php';
+require_once __DIR__ . '/LocalSettings/extensions/Nuke.php';
 
-require_once './LocalSettings/extensions/StopForumSpam.php';
-require_once './LocalSettings/extensions/AbuseFilter.php';
-require_once './LocalSettings/extensions/ImgGuard.php';
-require_once './LocalSettings/extensions/SmiteSpam.php';
-require_once './LocalSettings/extensions/SpamBlacklist.php';
-require_once './LocalSettings/extensions/TitleBlacklist.php';
-require_once './LocalSettings/extensions/ProtectSite.php';
+require_once __DIR__ . '/LocalSettings/extensions/StopForumSpam.php';
+require_once __DIR__ . '/LocalSettings/extensions/AbuseFilter.php';
+require_once __DIR__ . '/LocalSettings/extensions/ImgGuard.php';
+require_once __DIR__ . '/LocalSettings/extensions/SmiteSpam.php';
+require_once __DIR__ . '/LocalSettings/extensions/SpamBlacklist.php';
+require_once __DIR__ . '/LocalSettings/extensions/TitleBlacklist.php';
+require_once __DIR__ . '/LocalSettings/extensions/ProtectSite.php';
 
-require_once './LocalSettings/extensions/EmbedVideo.php';
-require_once './LocalSettings/extensions/UserMerge.php';
-require_once './LocalSettings/extensions/PageImages.php';
-require_once './LocalSettings/extensions/Cite.php';
-require_once './LocalSettings/extensions/PageViewInfo.php';
-require_once './LocalSettings/extensions/Plausible.php';
-require_once './LocalSettings/extensions/CloudflarePurge.php';
+require_once __DIR__ . '/LocalSettings/extensions/EmbedVideo.php';
+require_once __DIR__ . '/LocalSettings/extensions/UserMerge.php';
+require_once __DIR__ . '/LocalSettings/extensions/PageImages.php';
+require_once __DIR__ . '/LocalSettings/extensions/Cite.php';
+require_once __DIR__ . '/LocalSettings/extensions/PageViewInfo.php';
+require_once __DIR__ . '/LocalSettings/extensions/Plausible.php';
+require_once __DIR__ . '/LocalSettings/extensions/CloudflarePurge.php';
 
-require_once './LocalSettings/extensions/Discord.php';
-require_once './LocalSettings/extensions/ArticleFeedback.php';
-require_once './LocalSettings/extensions/ConfirmLogout.php';
-require_once './LocalSettings/extensions/MassRollback.php';
+require_once __DIR__ . '/LocalSettings/extensions/Discord.php';
+require_once __DIR__ . '/LocalSettings/extensions/ArticleFeedback.php';
+require_once __DIR__ . '/LocalSettings/extensions/ConfirmLogout.php';
+require_once __DIR__ . '/LocalSettings/extensions/MassRollback.php';
 
-require_once './LocalSettings/extensions/WikiEditor.php';
-require_once './LocalSettings/extensions/Thanks.php';
-require_once './LocalSettings/extensions/CodeEditor.php';
-require_once './LocalSettings/extensions/NewUserMessage.php';
-require_once './LocalSettings/extensions/TwoColConflict.php';
-require_once './LocalSettings/extensions/CodeMirror.php';
+require_once __DIR__ . '/LocalSettings/extensions/WikiEditor.php';
+require_once __DIR__ . '/LocalSettings/extensions/Thanks.php';
+require_once __DIR__ . '/LocalSettings/extensions/CodeEditor.php';
+require_once __DIR__ . '/LocalSettings/extensions/NewUserMessage.php';
+require_once __DIR__ . '/LocalSettings/extensions/TwoColConflict.php';
+require_once __DIR__ . '/LocalSettings/extensions/CodeMirror.php';
 
-require_once './LocalSettings/extensions/WikiSEO.php';
-require_once './LocalSettings/extensions/TextExtracts.php';
-require_once './LocalSettings/extensions/Popups.php';
+require_once __DIR__ . '/LocalSettings/extensions/WikiSEO.php';
+require_once __DIR__ . '/LocalSettings/extensions/TextExtracts.php';
+require_once __DIR__ . '/LocalSettings/extensions/Popups.php';
 
-require_once './LocalSettings/extensions/CirrusSearch.php';
-require_once './LocalSettings/extensions/Elastica.php';
+require_once __DIR__ . '/LocalSettings/extensions/CirrusSearch.php';
+require_once __DIR__ . '/LocalSettings/extensions/Elastica.php';
 
-require_once './LocalSettings/extensions/SearchDigest.php';
+require_once __DIR__ . '/LocalSettings/extensions/SearchDigest.php';
 
-require_once './LocalSettings/extensions/OATHAuth.php';
-require_once './LocalSettings/extensions/CheckUser.php';
-require_once './LocalSettings/extensions/AntiSpoof.php';
-require_once './LocalSettings/extensions/TorBlock.php';
+require_once __DIR__ . '/LocalSettings/extensions/OATHAuth.php';
+require_once __DIR__ . '/LocalSettings/extensions/CheckUser.php';
+require_once __DIR__ . '/LocalSettings/extensions/AntiSpoof.php';
+require_once __DIR__ . '/LocalSettings/extensions/TorBlock.php';
 
 # Customizations
-require_once './LocalSettings/customizations/Footer.php';
-require_once './LocalSettings/customizations/CustomStyles.php';
+require_once __DIR__ . '/LocalSettings/customizations/Footer.php';
+require_once __DIR__ . '/LocalSettings/customizations/CustomStyles.php';
 
 # Groups
-require_once './LocalSettings/core/Groups.php';
+require_once __DIR__ . '/LocalSettings/core/Groups.php';

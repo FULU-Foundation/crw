@@ -3,12 +3,9 @@ services:
     build: .
     volumes:
       - ./data/images:/var/www/html/images
-      # Extensions with customizations, others are copied on image build
       # Settings
       - ./conf/LocalSettings.php:/var/www/html/LocalSettings.php
       - ./conf/LocalSettings:/var/www/html/LocalSettings
-      # Semantics Configuration
-      - ./data/semantics:/var/www/html/semantics_config
       # Nginx configuration
       - ./conf/nginx.conf:/etc/nginx/sites-enabled/default
     ports:
@@ -23,12 +20,14 @@ services:
       - ADMIN_USER
       - ADMIN_PASS
       - FULL_URL=http://localhost:${WIKI_PORT}
+      - CANONICAL_URL
       - MEDIAWIKI_SECRET
       - CAPTCHA_SITEKEY
       - CAPTCHA_SECRETKEY
       - CAPTCHA_USE_HCAPTCHA
       - DISCORD_HOOK
       - REDIS_SERVER=crw-local-cache:6379
+      - SEARCH_SERVER=crw-local-opensearch:9200
       - CITOID_URL=http://localhost:${CITOID_PORT}
       - CLOUDFLARE_PURGE_ZONE_ID
       - CLOUDFLARE_PURGE_TOKEN
@@ -44,7 +43,7 @@ services:
         condition: service_started
 
   crw-local-db:
-    image: mariadb:lts
+    image: mariadb:11.8.9
     restart: always
     ports:
       - "${DB_PORT}:3306"
@@ -66,11 +65,12 @@ services:
       - "${CITOID_PORT}:1970"
 
   crw-local-opensearch:
-    image: opensearchproject/opensearch:1.3.20
+    image: docker-registry.wikimedia.org/repos/search-platform/cirrussearch-opensearch-image:v1.3.20-12
     restart: always
     environment:
       - discovery.type=single-node
-      - plugins.security.disabled=true
+      - DISABLE_SECURITY_PLUGIN=true
+      - DISABLE_INSTALL_DEMO_CONFIG=true
       - bootstrap.memory_lock=true
       - OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g # Set min and max JVM heap sizes to at least 50% of system RAM
     ulimits:
