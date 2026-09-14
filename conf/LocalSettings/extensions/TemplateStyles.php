@@ -18,8 +18,5 @@ $wgTemplateStylesNamespaces = [
     NS_HELP                   // Help documentation
 ];
 
-# Enforce moderation before publishing major template styles
-$wgTemplateStylesEnableReview = true;  // Requires review before deployment
-
 # Debugging and Logging for TemplateStyles
 $wgDebugLogGroups['templatestyles'] = "/var/log/mediawiki/templatestyles.log";

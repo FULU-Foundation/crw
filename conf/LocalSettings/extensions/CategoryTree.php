@@ -2,9 +2,7 @@
 
 # Enable CategoryTree
 wfLoadExtension( 'CategoryTree' );
-$wgCategoryTreeUseCache = true;
 $wgCategoryTreeAllowTag = true;
-$wgCategoryTreeDynamicTag = true;
 
 $wgCategoryTreeDefaultOptions = [
     'mode' => 'pages',          // Show both pages and subcategories

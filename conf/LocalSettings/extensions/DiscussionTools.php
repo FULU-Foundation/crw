@@ -4,12 +4,6 @@
 # This enhances discussion pages with reply and topic features.
 wfLoadExtension( 'DiscussionTools' );
 
-# Enable DiscussionTools on all talk pages.
-$wgDiscussionToolsEnable = true;
-
-# Enable linting to work alongside DiscussionTools and Parsoid.
-$wgVisualEditorParsoidAutoConfig = false;
-
 # Configure Parsoid settings for DiscussionTools and Linter.
 $wgVirtualRestConfig = [
     'modules' => [

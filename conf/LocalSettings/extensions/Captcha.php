@@ -30,8 +30,3 @@ $wgCaptchaTriggersOnNamespace = [
     NS_PROJECT_TALK => true,          # Project Talk Pages
     NS_PRIMARY_TALK => true           # Custom namespace talk page
 ];
-
-# FIX: Ensure DiscussionTools properly handles CAPTCHA
-$wgDiscussionToolsEnable = true; // Keep enabled
-$wgDiscussionToolsEnableTopicSubscription = true; // Allow users to subscribe to topics
-$wgVisualEditorParsoidAutoConfig = false; // Prevent conflicts with CAPTCHA handling

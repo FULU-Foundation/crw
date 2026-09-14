@@ -17,7 +17,6 @@ $wgJsonConfigs['Tabular.JsonConfig'] = [
 ];
 
 # Set up Commons connection for citation data
-$wgJsonConfigInterwikiPrefix = "commons";
 $wgJsonConfigs['Tabular.JsonConfig']['remote'] = [
     'url' => 'https://commons.wikimedia.org/w/api.php'
 ];
