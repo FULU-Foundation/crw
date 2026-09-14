@@ -3,5 +3,5 @@
 wfLoadExtension( 'WikiSEO' );
 
 $wgWikiSeoEnableAutoDescription = true;
-$wgWikiSeoTryCleanAutoDescription = true;
+$wgWikiSeoTryCleanAutoDescription = false;
 $wgWikiSeoDefaultLanguage = "en-us";

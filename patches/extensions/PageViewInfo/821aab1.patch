@@ -1,0 +1,28 @@
+From 821aab11771e0f69c7be0eecf62c7cd45a9aaf57 Mon Sep 17 00:00:00 2001
+From: Jake <jake@fulu.org>
+Date: Fri, 28 Aug 2026 15:15:49 +0100
+Subject: [PATCH] fix array_slice crash on missing pageview data
+
+---
+ includes/CachedPageViewService.php | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/includes/CachedPageViewService.php b/includes/CachedPageViewService.php
+index 31caa91..448e6f8 100644
+--- a/includes/CachedPageViewService.php
++++ b/includes/CachedPageViewService.php
+@@ -237,8 +237,9 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
+ 		// either by getMulti or getPageData) so we return a consecutive prefix of the
+ 		// requested titles and do not mess up continuation.
+ 		$holeIndex = array_search( false, array_values( $data ), true );
+-		$data = array_slice( $data, 0, $holeIndex ?: null, true );
+-		$statuses = array_slice( $statuses, 0, $holeIndex ?: null, true );
++		$sliceLength = $holeIndex !== false ? $holeIndex : null;
++		$data = array_slice( $data, 0, $sliceLength, true );
++		$statuses = array_slice( $statuses, 0, $sliceLength, true );
+ 
+ 		$status = StatusValue::newGood( $data );
+ 		array_walk( $statuses, [ $status, 'merge' ] );
+-- 
+2.43.0
+

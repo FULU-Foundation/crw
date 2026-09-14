@@ -24,5 +24,3 @@ if(getenv("CANONICAL_URL")) {
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
-
-$wgUploadDirectory = "/var/www/html/images/";

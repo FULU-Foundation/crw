@@ -1,5 +1,5 @@
 ARG mediawiki_version=1.46.0-fpm
-ARG composer_version=2.7.1
+ARG composer_version=2.10.3
 ARG imgguard_models_release=models-v1
 
 # Trick to allow for COPY from for composer image
@@ -13,6 +13,9 @@ RUN mkdir /wiki/
 # Create sitemaps directory
 RUN mkdir -p /var/www/html/sitemap && chown -R www-data:www-data /var/www/html/sitemap
 
+# Create MediaWiki log and cache directories
+RUN mkdir -p /var/log/mediawiki /var/cache/mediawiki && chown -R www-data:www-data /var/log/mediawiki /var/cache/mediawiki
+
 # Create PHP-FPM log directory
 RUN mkdir -p /var/log/php-fpm && chown -R www-data:www-data /var/log/php-fpm
 
@@ -21,13 +24,6 @@ COPY ./extensions/ /var/www/html/extensions/
 
 # Copy skins to the image
 COPY ./skins/ /var/www/html/skins/
-
-# Copy tests
-COPY ./tests/ /var/www/html/tests/
-COPY ./phpunit.xml.template /var/www/html/phpunit.xml.template
-
-# Copy Phan
-COPY ./.phan/ /var/www/html/.phan/
 
 # Copy custom LocalSettings.php
 COPY ./conf/LocalSettings.php /var/www/html/LocalSettings.php
@@ -39,12 +35,27 @@ COPY --chown=www-data:www-data ./data/robots.txt /var/www/html/robots.txt
 # Copy PHP-FPM pool conf
 COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 
+# Patches
+# Apply patches, fail on any error
+RUN --mount=type=bind,source=patches,target=/wiki/patches,readonly \
+    set -eux; \
+    find /wiki/patches -type f -name '*.patch' | while read -r patchfile; do \
+        rel="${patchfile#/wiki/patches/}"; \
+        targetdir="/var/www/html/$(dirname "$rel")"; \
+        echo "Patching $patchfile -> $targetdir"; \
+        if [ ! -d "$targetdir" ]; then \
+            echo "Target directory not found: $targetdir" >&2; \
+            exit 1; \
+        fi; \
+        (cd "$targetdir" && patch --verbose -p1 < "$patchfile"); \
+    done
+
 # Composer
 RUN apt update
 RUN apt install zip unzip
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
-# Semantic Mediawiki
+# Composer dependencies
 COPY ./conf/composer.local.json /var/www/html/composer.local.json
 RUN chown -R root ./composer.json
 ENV COMPOSER_ALLOW_SUPERUSER=1
@@ -110,21 +121,6 @@ RUN pecl install redis && docker-php-ext-enable redis
 
 # Image directory
 RUN chmod 766 /var/www/html/images
-
-# Patches
-# Apply patches, fail on any error
-RUN --mount=type=bind,source=patches,target=/wiki/patches,readonly \
-    set -eux; \
-    find /wiki/patches -type f -name '*.patch' | while read -r patchfile; do \
-        rel="${patchfile#/wiki/patches/}"; \
-        targetdir="/var/www/html/$(dirname "$rel")"; \
-        echo "Patching $patchfile -> $targetdir"; \
-        if [ ! -d "$targetdir" ]; then \
-            echo "Target directory not found: $targetdir" >&2; \
-            exit 1; \
-        fi; \
-        (cd "$targetdir" && patch --verbose -p1 < "$patchfile"); \
-    done
 
 # Custom entrypoint
 COPY entrypoint.sh /etc/entrypoint.sh

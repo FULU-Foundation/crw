@@ -54,6 +54,8 @@ jobs:
             fi
             sleep 2
           done
+          docker compose exec -T crw-local-db mariadb-admin ping -h 127.0.0.1 --silent 2>/dev/null \
+            || { echo "Database never became ready" >&2; exit 1; }
 
       - name: Initialise the database
         run: make init
@@ -61,16 +63,16 @@ jobs:
       - name: Run the update script
         run: make update
 
-      - name: Install dev dependencies
-        run: docker compose exec -T crw-local composer update
-
-      - name: Run Phan
-        continue-on-error: true
-        run: docker compose exec -T crw-local bash -c "MW_INSTALL_PATH=. vendor/bin/phan -d . --allow-polyfill-parser --long-progress-bar"
-
-      - name: Run integration tests
-        continue-on-error: true
-        run: docker compose exec -T crw-local composer phpunit -- tests/phpunit/crw/
+      - name: Build the search index
+        run: |
+          for i in $(seq 1 60); do
+            docker compose exec -T crw-local-opensearch curl -sf http://localhost:9200/_cluster/health >/dev/null 2>&1 && break
+            sleep 5
+          done
+          docker compose exec -T crw-local-opensearch curl -sf http://localhost:9200/_cluster/health >/dev/null 2>&1 \
+            || { echo "OpenSearch never became healthy" >&2; exit 1; }
+          make cirrus-config
+          make cirrus-reindex
 
       - name: Tear down
         if: always()

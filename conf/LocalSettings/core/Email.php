@@ -7,7 +7,6 @@ $wgEnableUserEmail = true; // Allow users to send emails to each other via the w
 # Administrative email addresses
 $wgEmergencyContact = 'wiki@rossmanngroup.com';
 $wgPasswordSender = 'wiki@rossmanngroup.com';
-$wgEmailFrom = 'wiki@rossmanngroup.com';
 
 # Email notification preferences
 $wgEnotifUserTalk = false; // Disable email notifications for user talk page changes.
@@ -22,11 +21,6 @@ $wgSMTP = [
     'username' => getenv("EMAIL_USER"),
     'password' => getenv("EMAIL_PASS")
 ];
-
-# Enable email functionality and user communication features.
-$wgEnableEmail = true;          // Activate email functionality.
-$wgEnableUserEmail = true;      // Allow users to email each other through the wiki.
-$wgEmailAuthentication = true;  // Require email authentication for account actions.
 
 # Enable HTML-formatted emails for better readability and design.
 $wgAllowHTMLEmail = true;
