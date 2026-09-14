@@ -10,4 +10,11 @@ $wgHooks['SkinAddFooterLinks'][] = function ( Skin $skin, string $key, array &$f
         # Add license notice
         $footerlinks['license-notice'] = $skin->msg( 'footer-license-notice' )->parse();
     }
+
+    if ( $key === 'places' ) {
+        # Add changelog and staff links
+        $linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+        $footerlinks['changelog'] = $linkRenderer->makeKnownLink( \MediaWiki\Title\Title::newFromText( 'Project:Changelog' ), 'Changelog' );
+        $footerlinks['staff'] = $linkRenderer->makeKnownLink( \MediaWiki\Title\Title::newFromText( 'Project:Staff' ), 'Staff' );
+    }
 };
