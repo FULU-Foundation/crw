@@ -24,7 +24,7 @@ if(getenv('WIKI_ENV') == "Dev") {
             'handlers' => [
                 'json' => [
                     'class' => Monolog\Handler\StreamHandler::class,
-                    'args'  => [ '/var/log/mediawiki/mediawiki-json.log', Monolog\Logger::INFO ],
+                    'args'  => [ '/var/log/mediawiki/mediawiki-json.log', Monolog\Logger::WARNING ],
                     'formatter' => 'json',
                 ],
             ],
