@@ -1,0 +1,43 @@
+From 0a44c5c9d8cb4c3d5c85d5698737278b8d7f7f7e Mon Sep 17 00:00:00 2001
+From: SomeRandomDeveloper <git@srd.dev>
+Date: Thu, 20 Aug 2026 01:31:13 +0200
+Subject: [PATCH] SECURITY: Don't decode HTML entities in formatted filter
+ values
+
+Also don't double escape messages.
+
+Bug: T435206
+Change-Id: I54f92fc45c4a6e43865bbb9ddb304304b0d2c480
+---
+ drilldown/CargoDrilldownPage.php | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drilldown/CargoDrilldownPage.php b/drilldown/CargoDrilldownPage.php
+index 3f2e5849..8629ffeb 100644
+--- a/drilldown/CargoDrilldownPage.php
++++ b/drilldown/CargoDrilldownPage.php
+@@ -346,10 +346,10 @@ END;
+ 		// If it's boolean, display something nicer than "0" or "1".
+ 		if ( $value === '_other' ) {
+ 			return Html::element( 'span', [ 'style' => 'font-style: italic;' ],
+-				$this->msg( 'htmlform-selectorother-other' )->escaped() );
++				$this->msg( 'htmlform-selectorother-other' )->text() );
+ 		} elseif ( $value === '_none' ) {
+ 			return Html::element( 'span', [ 'style' => 'font-style: italic;' ],
+-				$this->msg( 'powersearch-togglenone' )->escaped() );
++				$this->msg( 'powersearch-togglenone' )->text() );
+ 		} elseif ( $filter->fieldDescription->mType === 'Boolean' ) {
+ 			// Use existing MW messages for "Yes" and "No".
+ 			if ( $value == true ) {
+@@ -1247,7 +1247,7 @@ END;
+ 				}
+ 				array_splice( $temp_filters_array[$i]->values, $j, 0, $removed_values );
+ 				$appliedFiltersHTML .= "\n\t" . "<span class=\"drilldown-header-value\">" .
+-					html_entity_decode( $filter_text ) . '</span> <a href="' . $remove_filter_url . '" title="' .
++					$filter_text . '</span> <a href="' . $remove_filter_url . '" title="' .
+ 					$this->msg( 'cargo-drilldown-removefilter' )->escaped() . '"><img src="' .
+ 					$cgScriptPath . '/drilldown/resources/filter-x.png" /></a>';
+ 			}
+-- 
+2.43.0
+
