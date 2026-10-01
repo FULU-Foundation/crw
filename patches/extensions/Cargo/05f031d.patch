@@ -1,0 +1,27 @@
+From 05f031ddf225ef0b62b51f172aaca5b49f048848 Mon Sep 17 00:00:00 2001
+From: SomeRandomDeveloper <git@srd.dev>
+Date: Thu, 20 Aug 2026 01:40:49 +0200
+Subject: [PATCH] SECURITY: Escape exception messages in Special:CargoExport
+
+Bug: T435121
+Change-Id: I3b4e123ebd02f9180f95f350b370c7c4c573a86a
+---
+ includes/specials/CargoExport.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/includes/specials/CargoExport.php b/includes/specials/CargoExport.php
+index 00e9d6e0..b8a38f20 100644
+--- a/includes/specials/CargoExport.php
++++ b/includes/specials/CargoExport.php
+@@ -112,7 +112,7 @@ class CargoExport extends UnlistedSpecialPage {
+ 				}
+ 			}
+ 		} catch ( Exception $e ) {
+-			print $e->getMessage();
++			print htmlspecialchars( $e->getMessage() );
+ 		}
+ 	}
+ 
+-- 
+2.43.0
+

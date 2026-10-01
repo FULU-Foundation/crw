@@ -1,0 +1,48 @@
+From ad69dbbc2501bd7fb19b6c664df65e717c1c01c7 Mon Sep 17 00:00:00 2001
+From: Yaron Koren <yaron57@gmail.com>
+Date: Mon, 13 Jul 2026 16:43:16 +0000
+Subject: [PATCH] More escaping of field names in query display
+
+Change-Id: Ibee2c479617563000b40171504f6c1529bf765a5
+---
+ includes/CargoQueryDisplayer.php | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/includes/CargoQueryDisplayer.php b/includes/CargoQueryDisplayer.php
+index b31752c6..dfdaa480 100644
+--- a/includes/CargoQueryDisplayer.php
++++ b/includes/CargoQueryDisplayer.php
+@@ -211,7 +211,8 @@ class CargoQueryDisplayer {
+ 				}
+ 
+ 				if ( $text != '' ) {
+-					$formattedQueryResults[$rowNum][$fieldName] = $text;
++					$escapedFieldName = htmlspecialchars( $fieldName );
++					$formattedQueryResults[$rowNum][$escapedFieldName] = $text;
+ 				}
+ 			}
+ 		}
+@@ -415,6 +416,11 @@ class CargoQueryDisplayer {
+ 		}
+ 
+ 		$formattedQueryResults = $this->getFormattedQueryResults( $queryResults, true );
++		$fieldDescriptionsForDisplay = [];
++		foreach ( $this->mFieldDescriptions as $fieldName => $fieldDescription ) {
++			$escapedFieldName = htmlspecialchars( $fieldName );
++			$fieldDescriptionsForDisplay[$escapedFieldName] = $fieldDescription;
++		}
+ 		$text = '';
+ 
+ 		// If this is the 'template' format, let the formatter print
+@@ -428,7 +434,7 @@ class CargoQueryDisplayer {
+ 			$text .= CargoUtils::smartParse( $this->mDisplayParams['intro'], null );
+ 		}
+ 		try {
+-			$text .= $formatter->display( $queryResults, $formattedQueryResults, $this->mFieldDescriptions,
++			$text .= $formatter->display( $queryResults, $formattedQueryResults, $fieldDescriptionsForDisplay,
+ 				$this->mDisplayParams );
+ 		} catch ( Exception $e ) {
+ 			return CargoUtils::formatError( $e->getMessage() );
+-- 
+2.43.0
+

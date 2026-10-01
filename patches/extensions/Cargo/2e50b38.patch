@@ -1,0 +1,27 @@
+From 2e50b386814ad82e43092dd234910ea377b71410 Mon Sep 17 00:00:00 2001
+From: SomeRandomDeveloper <git@srd.dev>
+Date: Thu, 20 Aug 2026 01:19:18 +0200
+Subject: [PATCH] SECURITY: Escape Drilldown tab names
+
+Bug: T435207
+Change-Id: Ia2dcf14cab74618713f977169c258b31414f556e
+---
+ drilldown/CargoDrilldownPage.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drilldown/CargoDrilldownPage.php b/drilldown/CargoDrilldownPage.php
+index 8629ffeb..4651a79f 100644
+--- a/drilldown/CargoDrilldownPage.php
++++ b/drilldown/CargoDrilldownPage.php
+@@ -2074,7 +2074,7 @@ END;
+ 					'role' => 'presentation',
+ 					'class' => ( $this->curTabName == $drilldownTabName )
+ 						? 'selected' : null,
+-				], Html::rawElement( 'a', [
++				], Html::element( 'a', [
+ 					'role' => 'tab',
+ 					'href' => $tabUrl,
+ 				], ucfirst( str_replace( '_', ' ', $drilldownTabName ) ) ) );
+-- 
+2.43.0
+

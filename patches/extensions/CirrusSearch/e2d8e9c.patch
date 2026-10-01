@@ -1,0 +1,90 @@
+From e2d8e9c3e7c90a49be304e5db8824ae3c3599899 Mon Sep 17 00:00:00 2001
+From: Randall Scout <rscout@wikimedia.org>
+Date: Wed, 23 Sep 2026 15:57:18 -0400
+Subject: [PATCH] Improve output formatting in ExplainPrinter
+
+Bug: T435234
+Change-Id: I4b5b414a5af08178dd205d52e83b60972702f595
+---
+ includes/ExplainPrinter.php | 53 ++++++++++++++++++++++++-------------
+ 1 file changed, 34 insertions(+), 19 deletions(-)
+
+diff --git a/includes/ExplainPrinter.php b/includes/ExplainPrinter.php
+index 10fe5be39..495fae3a7 100644
+--- a/includes/ExplainPrinter.php
++++ b/includes/ExplainPrinter.php
+@@ -3,6 +3,7 @@
+ namespace CirrusSearch;
+ 
+ use LuceneExplain\ExplainFactory;
++use MediaWiki\Html\Html;
+ 
+ /**
+  * Formats the result of elasticsearch explain to a (slightly) more
+@@ -34,30 +35,44 @@ class ExplainPrinter {
+ 			$queryResult = [ $queryResult ];
+ 		}
+ 		foreach ( $queryResult as $qr ) {
+-			$result[] = "<div><h2>{$qr['description']} on {$qr['path']}</h2></div>";
++			$result[] = Html::rawElement( 'div', [],
++				Html::element( 'h2', [], "{$qr['description']} on {$qr['path']}" ) );
+ 			foreach ( $qr['result']['hits']['hits'] as $hit ) {
+ 				$explain = $this->processExplain( $hit['_explanation'] );
+-				$result[] =
+-					"<div>" .
+-						"<h3>" . htmlentities( $hit['_source']['title'] ) . "</h3>" .
+-						( isset( $hit['highlight']['text'][0] ) ? "<div>" . $hit['highlight']['text'][0] . "</div>" : "" ) .
+-						"<table>" .
+-							"<tr>" .
+-								"<td>article id</td>" .
+-								"<td>" . htmlentities( $hit['_id'] ) . "</td>" .
+-							"</tr><tr>" .
+-								"<td>ES score</td>" .
+-								"<td>" . htmlentities( $hit['_score'] ) . "</td>" .
+-							"</tr><tr>" .
+-								"<td>ES explain</td>" .
+-								"<td><pre>" . htmlentities( $explain ) . "</pre></td>" .
+-							"</tr>" .
+-						"</table>" .
+-					"</div>";
++				$result[] = Html::rawElement( 'div', [],
++					Html::element( 'h3', [], $hit['_source']['title'] ) .
++					// The raw response highlights with private use markers rather than
++					// html, so the snippet is page text and escapes like any other.
++					( isset( $hit['highlight']['text'][0] )
++						? Html::element( 'div', [], $hit['highlight']['text'][0] )
++						: '' ) .
++					Html::rawElement( 'table', [],
++						$this->row( 'article id', $hit['_id'] ) .
++						$this->row( 'ES score', (string)$hit['_score'] ) .
++						Html::rawElement( 'tr', [],
++							Html::element( 'td', [], 'ES explain' ) .
++							Html::rawElement( 'td', [], Html::element( 'pre', [], $explain ) )
++						)
++					)
++				);
+ 			}
+ 		}
+ 
+-		return "<div>" . implode( '', $result ) . "</div>";
++		return Html::rawElement( 'div', [], implode( '', $result ) );
++	}
++
++	/**
++	 * A label/value table row.
++	 *
++	 * @param string $label
++	 * @param string $value
++	 * @return string
++	 */
++	private function row( string $label, string $value ): string {
++		return Html::rawElement( 'tr', [],
++			Html::element( 'td', [], $label ) .
++			Html::element( 'td', [], $value )
++		);
+ 	}
+ 
+ 	private function formatText( array $explanation, string $indent = "" ): string {
+-- 
+2.43.0
+

@@ -1,0 +1,28 @@
+From ae2d8fcf22242cb9467624443df08b4630110821 Mon Sep 17 00:00:00 2001
+From: SomeRandomDeveloper <git@srd.dev>
+Date: Thu, 20 Aug 2026 01:51:39 +0200
+Subject: [PATCH] SECURITY: Escape display of fulltext search term in
+ Special:Drilldown
+
+Bug: T434977
+Change-Id: Ib715f03fc421931ac2fc75091c06176961ae9224
+---
+ drilldown/CargoDrilldownPage.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drilldown/CargoDrilldownPage.php b/drilldown/CargoDrilldownPage.php
+index 69ec1e45..3f2e5849 100644
+--- a/drilldown/CargoDrilldownPage.php
++++ b/drilldown/CargoDrilldownPage.php
+@@ -1176,7 +1176,7 @@ END;
+ 					( $this->drilldownTabsParams ) ? [ 'tab' => $this->curTabName ] :
+ 					[ 'format' => $this->format, 'formatBy' => $this->formatBy ] );
+ 			$appliedFiltersHTML .= "\n\t" . '<span class="drilldown-header-value">~ \'' .
+-				$this->fullTextSearchTerm .
++				htmlspecialchars( $this->fullTextSearchTerm ) .
+ 				'\'</span> <a href="' . $remove_filter_url . '" title="' .
+ 				$this->msg( 'cargo-drilldown-removefilter' )->escaped() . '"><img src="' .
+ 				$cgScriptPath . '/drilldown/resources/filter-x.png" /></a> ';
+-- 
+2.43.0
+

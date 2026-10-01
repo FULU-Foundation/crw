@@ -1,0 +1,41 @@
+From 4c8a81e26cef93e1ddb91d61e3b07b43e64027a4 Mon Sep 17 00:00:00 2001
+From: SomeRandomDeveloper <git@srd.dev>
+Date: Mon, 24 Aug 2026 14:48:09 +0000
+Subject: [PATCH] SECURITY: Escape field aliases in the exhibit format
+
+Bug: T434784
+Change-Id: I97486aa29ebe2f45b9179efec5ccccc3ccac4277
+---
+ includes/formats/CargoExhibitFormat.php | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/includes/formats/CargoExhibitFormat.php b/includes/formats/CargoExhibitFormat.php
+index a469a96d..9f5975de 100644
+--- a/includes/formats/CargoExhibitFormat.php
++++ b/includes/formats/CargoExhibitFormat.php
+@@ -157,8 +157,20 @@ class CargoExhibitFormat extends CargoDeferredFormat {
+ 		foreach ( $fieldList as $field ) {
+ 			if ( $field != "label" && strpos( $field, '__' ) === false &&
+ 			strpos( $field, '  ' ) === false ) {
+-				$th = "<strong>" . ucfirst( $field ) . "</strong>";
+-				$lensBody .= "<tr data-ex-if-exists=\".$field\"><td>$th</td><td data-ex-content=\".$field\"></td></tr>";
++				$th = Html::element( 'strong', [], ucfirst( $field ) );
++				$lensBody = Html::rawElement(
++					'tr',
++					[
++						'data-ex-if-exists' => ".$field",
++					],
++					Html::rawElement( 'td', [], $th ) . Html::element(
++						'td',
++						[
++							'data-ex-content' => ".$field",
++						],
++						$field
++					)
++				);
+ 			}
+ 		}
+ 		$tableAttrs = [
+-- 
+2.43.0
+
