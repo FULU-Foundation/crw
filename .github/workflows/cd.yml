@@ -17,6 +17,9 @@ jobs:
       - name: Log in to registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
+      - name: Use the GitHub mirror for VisualEditor
+        run: git config --global url."https://github.com/wikimedia/VisualEditor.git".insteadOf "https://gerrit.wikimedia.org/r/VisualEditor/VisualEditor.git"
+
       - name: Checkout the repo
         uses: actions/checkout@v5
         with:

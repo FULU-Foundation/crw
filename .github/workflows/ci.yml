@@ -10,6 +10,9 @@ jobs:
     env:
       COMPOSE_PROJECT_NAME: crw
     steps:
+      - name: Use the GitHub mirror for VisualEditor
+        run: git config --global url."https://github.com/wikimedia/VisualEditor.git".insteadOf "https://gerrit.wikimedia.org/r/VisualEditor/VisualEditor.git"
+
       - name: Checkout the repo
         uses: actions/checkout@v5
         with:
