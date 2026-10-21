@@ -1,4 +1,4 @@
-ARG mediawiki_version=1.46.0-fpm
+ARG mediawiki_version=1.46.2-fpm
 ARG composer_version=2.10.3
 ARG imgguard_models_release=models-v1
 
