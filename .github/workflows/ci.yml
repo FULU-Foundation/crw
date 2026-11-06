@@ -77,6 +77,11 @@ jobs:
           make cirrus-config
           make cirrus-reindex
 
+      - name: Publish content and check diff
+        run: |
+          make content-publish
+          make content-diff
+
       - name: Tear down
         if: always()
         run: docker compose down -v

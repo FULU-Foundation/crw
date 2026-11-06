@@ -1,0 +1,33 @@
+{| class="wikitable crw-menu"
+|-
+! Getting started !! Browse !! Topics !! Community
+|-
+|
+<div class="crw-menu-item">[[Mission statement|Mission statement]]</div>
+<div class="crw-menu-item">[[Consumer Rights Wiki:How to help|How to help]]</div>
+<div class="crw-menu-item">[[Consumer Rights Wiki:Write your first article!|Write your first article]]</div>
+<div class="crw-menu-item">[[Consumer Rights Wiki:Editorial guidelines|Editorial guidelines]]</div>
+<div class="crw-menu-item">[[Consumer Rights Wiki:Style guide|Style guide]]</div>
+<div class="crw-menu-item">[[Help:FAQ|FAQ]]</div>
+|
+<div class="crw-menu-item">[[List of companies|Companies]]</div>
+<div class="crw-menu-item">[[:Category:Products|Products]]</div>
+<div class="crw-menu-item">[[:Category:Software|Software]]</div>
+<div class="crw-menu-item">[[:Category:Services|Services]]</div>
+<div class="crw-menu-item">[[:Category:Incidents|Incidents]]</div>
+<div class="crw-menu-item">[[:Category:Legislation|Legislation]]</div>
+|
+<div class="crw-menu-item">[[Right to repair|Right to repair]]</div>
+<div class="crw-menu-item">[[Planned obsolescence|Planned obsolescence]]</div>
+<div class="crw-menu-item">[[Digital rights management|Digital rights management]]</div>
+<div class="crw-menu-item">[[Dark patterns|Dark patterns]]</div>
+<div class="crw-menu-item">[[Forced arbitration|Forced arbitration]]</div>
+<div class="crw-menu-item">[[:Category:Common terms|Common terms]]</div>
+|
+<div class="crw-menu-item">[[Consumer Rights Wiki:Announcements|Announcements]]</div>
+<div class="crw-menu-item">[[Special:RecentChanges|Recent changes]]</div>
+<div class="crw-menu-item">[[Article suggestions|Article suggestions]]</div>
+<div class="crw-menu-item">[[Consumer Rights Wiki:Task Center|Task Center]]</div>
+<div class="crw-menu-item">[[Consumer Rights Wiki:Moderators' noticeboard|Moderators' noticeboard]]</div>
+<div class="crw-menu-item">[[Consumer Rights Wiki:Rules|Rules]]</div>
+|}

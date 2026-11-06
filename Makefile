@@ -21,6 +21,15 @@ meta:
 sitemap:
 	sh scripts/generate-sitemap.sh
 
+content-build:
+	sh scripts/content-build.sh
+
+content-diff:
+	sh scripts/content-diff.sh
+
+content-publish:
+	sh scripts/content-publish.sh
+
 batch-antispoof:
 	sh scripts/batch-antispoof.sh
 

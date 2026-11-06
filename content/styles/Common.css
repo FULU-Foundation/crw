@@ -1,0 +1,841 @@
+body {
+  font-family:"Gill Sans Nova",Ubuntu,Calibri,"DejaVu Sans",source-sans-pro,Helvetica,sans-serif;
+  font-size:1.2rem;
+}
+
+#mw-page-base,
+#mw-head-base {
+	background: none;
+}
+
+.vector-page-titlebar::after {
+  display: none;
+}
+
+@media (hover: hover) {
+  #learn-more-toggle:hover {
+    text-decoration: underline;
+  }
+}
+
+.mw-parser-output :is(h1,h2,h3,h4,h5,h6) {
+    min-width: 1em; 
+}
+
+.mw-logo-container::before {
+	font-weight: bold;
+	content: "Consumer Rights Wiki";
+}
+
+.mw-logo-wordmark{
+  display: none;
+}
+
+.mw-parser-output p {
+    overflow-wrap: anywhere;
+}
+
+li#footer-info-license-notice,
+li#footer-info-privacy-notice{
+  display: none;
+}
+
+.cat-but-grid{
+
+}
+
+.cat-but-grid a{
+  text-decoration: none;
+}
+
+.cat-but{
+
+}
+
+.cat-but:active{
+  border-color: var( --color-base--active, #404244 ) !important;
+}
+
+@media screen {
+  html.skin-theme-clientpref-night .cat-but:active{
+    border: 2px solid var( --color-base--hover, #404244 ) !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html.skin-theme-clientpref-os .cat-but:active {
+    border: 2px solid var( --color-base--hover, #404244 ) !important;
+  }
+}
+
+@media (hover: hover) {
+  .cat-but:hover{
+    border-color: var( --color-base--hover, #404244 ) !important;
+    transform: scale(1.03);
+    }
+  
+  html.skin-theme-clientpref-night .cat-but:hover{
+    border: 2px solid var( --color-base--hover, #404244 ) !important;
+  }
+}
+
+@media (hover: hover) and (prefers-color-scheme: dark) {
+  html.skin-theme-clientpref-os .cat-but:hover{
+    border: 2px solid var( --color-base--hover, #404244 ) !important;
+  }
+}
+
+table.cargoTable.noMerge tr:nth-child(2n+1) {
+  background: var(--background-color-base, #fff);
+}
+
+table.cargoTable.noMerge tr:nth-child(2n) {
+  background: var(--background-color-base, #fff);
+}
+
+.select2-container--default .select2-selection--multiple {
+  background-color: var(--background-color-base, #fff);
+  border: 1px solid var(--border-color-base, #a2a9b1);
+  transition-property: border-color;
+  transition-duration: 250ms;
+}
+
+.select2-container--default .select2-selection--multiple:hover {
+  border-color: var(--border-color-interactive, #72777d);
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: var(--border-color-progressive--focus, #36c);
+  border-width: 2px;
+  box-shadow: inset 0 0 0 1px var(--box-shadow-color-progressive--focus, #36c);
+}
+
+.select2-dropdown {
+  background-color: var(--background-color-base, #fff);
+  border: 1px solid var(--border-color-base, #a2a9b1);
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: var(--background-color-base, #fff);
+}
+
+.select2-container--default .select2-results__option[aria-selected="true"] {
+  background-color: var(--background-color-notice-subtle, #eaecf0);
+}
+
+.pf-select2-dropdown .select2-results__options .select2-results__option--highlighted {
+  background-color: #2A4B8D;
+}
+
+.cat-mw-box{
+  border: 1px solid var(--border-color-base, #a2a9b1);
+  border-radius: 0.3rem;
+  margin-bottom:2rem;
+}
+
+.cat-mw-box-header{
+  font-size:1.5rem;
+  line-height: 1.65rem;
+  background:rgba(0,0,0,0.03);
+  padding:0.2rem 1rem;
+}
+
+.cat-mw-box-body{
+  padding:0.2rem 1rem;
+}
+
+.infobox {
+  color: var(--color-base, #202122);
+  background-color: var(--background-color-interactive-subtle, #f8f9fa);
+  border: 1px solid #aaa;
+  float: right;
+  clear: right;
+  margin: 0 0 1em 1em;
+  padding: 0.5em;
+  width: 24em;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.infobox-title {
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 0.2em solid #ccc;
+  padding-bottom: .25em;
+}
+
+.infobox-image{
+  display: flex;
+  aspect-ratio: 2 / 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.infobox-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen {
+  html.skin-theme-clientpref-night .infobox-image{
+    background-color:#909590; 
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html.skin-theme-clientpref-os .infobox-image{
+    background-color:#909590; 
+  }
+}
+
+.infobox-table{
+  width:100%;
+  table-layout:fixed;
+}
+
+.infobox-table td{
+  word-wrap:break-word;
+  text-align: left;
+}
+
+.infobox-table th{
+  text-align: left;
+}
+
+.infobox-table-caption{
+  border-bottom: 0.1em solid #ccc;
+  font-size:125%;
+}
+
+@media (max-width: 640px) {
+  .infobox {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: 0 0 1em 0;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+}
+
+.mainpage-contents .mw-contributions-list li{
+  padding-bottom: 0.5rem;
+  margin: 0;
+}
+
+.mainpage-contents a.mw-newpages-time,
+.mainpage-contents span.mw-newpages-length,
+.mainpage-contents  span.comment,
+.mainpage-contents span.mw-usertoollinks,
+.mainpage-contents span.mw-tag-markers { display: none;}
+
+.cat-image-fullwidth img {
+	max-width: 100%;
+	height: auto;
+}
+
+.warningbox {
+	max-width: 60em;
+	margin: 0.4em 0 0.2em;
+	padding: 0.6em 0.9em;
+	border: 1px solid #fc3;
+	background: #fef6e7;
+	color: #202122;
+	line-height: 1.5;
+}
+.rubric {
+	max-width: 60em;
+	margin: 0.4em 0 0.2em;
+	padding: 0.4em 0.75em;
+	border-left: 3px solid #c8ccd1;
+	background: #f8f9fa;
+	color: #54595d;
+	font-size: 0.92em;
+	line-height: 1.5;
+}
+.wikitable.sortable td[data-sort-value] {
+	white-space: nowrap;
+}
+
+/* BEGIN crw-gallery */
+/* Click-through screenshot viewer. Master copy: wiki-config/mediawiki-common-crw-gallery.css,
+   deployed to MediaWiki:Common.css. Script: wiki-config/mediawiki-common-crw-gallery.js.
+   Markup: <div class="crw-gallery"><gallery class="noviewer" caption="...">...</gallery></div> */
+
+.crw-gallery {
+	--crw-stage-h: clamp( 240px, min( 62vh, 78vw ), 760px );
+	margin: 1em 0 1.5em;
+	clear: both;
+}
+
+/* Without JavaScript (or if the script fails): one swipeable row, never a grid. */
+.client-nojs .crw-gallery ul.gallery,
+.crw-gallery.crw-gallery-failed ul.gallery,
+.client-js .crw-gallery:not( .crw-gallery-ready ) ul.gallery {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 8px;
+	margin: 0;
+	padding: 4px 2px 12px;
+	overflow-x: auto;
+	scroll-snap-type: x proximity;
+	overscroll-behavior-x: contain;
+}
+.client-nojs .crw-gallery ul.gallery > li.gallerycaption,
+.crw-gallery.crw-gallery-failed ul.gallery > li.gallerycaption,
+.client-js .crw-gallery:not( .crw-gallery-ready ) ul.gallery > li.gallerycaption {
+	display: none;
+}
+.client-nojs .crw-gallery li.gallerybox,
+.crw-gallery.crw-gallery-failed li.gallerybox,
+.client-js .crw-gallery:not( .crw-gallery-ready ) li.gallerybox {
+	flex: 0 0 auto;
+	margin: 0;
+	scroll-snap-align: start;
+}
+
+/* With JavaScript, before the viewer is built: reserve its space instead of painting
+   43 thumbnails. If the script never finishes, the row appears after 10 seconds. */
+.client-js .crw-gallery:not( .crw-gallery-ready ):not( .crw-gallery-failed ) {
+	min-height: calc( var( --crw-stage-h ) + 244px );
+	border: 1px solid var( --border-color-base, #a2a9b1 );
+	border-radius: 8px;
+	background: var( --background-color-neutral-subtle, #f8f9fa );
+}
+.client-js .crw-gallery:not( .crw-gallery-ready ):not( .crw-gallery-failed ) > ul.gallery {
+	position: absolute;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	pointer-events: none;
+	animation: crw-gallery-reveal 0s 10s forwards;
+}
+@keyframes crw-gallery-reveal {
+	to {
+		position: static;
+		height: auto;
+		overflow-x: auto;
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+.crw-gallery.crw-gallery-ready > ul.gallery {
+	display: none !important;
+}
+
+/* ------------------------------------------------------------ inline viewer */
+.crw-gv {
+	border: 1px solid var( --border-color-base, #a2a9b1 );
+	border-radius: 8px;
+	background: var( --background-color-base, #fff );
+	color: var( --color-base, #202122 );
+	overflow: hidden;
+}
+.crw-gv-head {
+	padding: 10px 14px;
+	border-bottom: 1px solid var( --border-color-subtle, #c8ccd1 );
+	font-weight: 600;
+	line-height: 1.35;
+}
+.crw-gv-stage {
+	position: relative;
+	height: var( --crw-stage-h );
+	background: var( --background-color-neutral-subtle, #f8f9fa );
+}
+.crw-gv-track {
+	display: flex;
+	height: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-snap-type: x mandatory;
+	overscroll-behavior-x: contain;
+	scrollbar-width: none;
+	outline: none;
+}
+.crw-gv-track::-webkit-scrollbar {
+	display: none;
+}
+.crw-gv-track:focus-visible {
+	box-shadow: inset 0 0 0 3px var( --outline-color-progressive--focus, #36c );
+}
+.crw-gv-slide {
+	flex: 0 0 100%;
+	height: 100%;
+	margin: 0;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+}
+/* The bottom padding is a strip for the "Click to enlarge" hint, so the hint never
+   covers text in the screenshot. */
+.crw-gv-open {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 12px 72px 38px;
+	border: 0;
+	background: none;
+	color: inherit;
+	font: inherit;
+	cursor: zoom-in;
+	-webkit-tap-highlight-color: transparent;
+}
+.crw-gv-img {
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	background: #fff;
+	box-shadow: 0 1px 6px rgba( 0, 0, 0, 0.28 );
+	user-select: none;
+	-webkit-user-select: none;
+}
+.crw-gv-open-hint {
+	position: absolute;
+	left: 50%;
+	bottom: 6px;
+	transform: translateX( -50% );
+	white-space: nowrap;
+	padding: 3px 12px;
+	border-radius: 999px;
+	background: rgba( 0, 0, 0, 0.72 );
+	color: #fff;
+	font-size: 13px;
+	font-weight: 600;
+	opacity: 0;
+	transition: opacity 0.15s;
+	pointer-events: none;
+}
+.crw-gv-open:hover .crw-gv-open-hint,
+.crw-gv-open:focus-visible .crw-gv-open-hint {
+	opacity: 1;
+}
+.crw-gv-open:focus-visible {
+	outline: none;
+	box-shadow: inset 0 0 0 3px var( --outline-color-progressive--focus, #36c );
+}
+.crw-gv-arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	width: 52px;
+	height: 80px;
+	margin-top: -40px;
+	padding: 0 0 6px;
+	border: 0;
+	border-radius: 10px;
+	background: rgba( 32, 33, 34, 0.74 );
+	color: #fff;
+	font-size: 44px;
+	line-height: 1;
+	cursor: pointer;
+}
+.crw-gv-arrow:hover:not( :disabled ) {
+	background: rgba( 32, 33, 34, 0.92 );
+}
+.crw-gv-arrow:focus-visible {
+	outline: 3px solid var( --outline-color-progressive--focus, #36c );
+	outline-offset: 2px;
+}
+.crw-gv-arrow:disabled {
+	opacity: 0.25;
+	cursor: default;
+}
+.crw-gv-arrow-prev {
+	left: 10px;
+}
+.crw-gv-arrow-next {
+	right: 10px;
+}
+.crw-gv-bar {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 10px;
+	border-top: 1px solid var( --border-color-subtle, #c8ccd1 );
+}
+.crw-gv-count {
+	flex: 1;
+	min-width: 0;
+	text-align: center;
+	white-space: nowrap;
+}
+.crw-gv-count strong {
+	font-size: 1.15em;
+}
+.crw-gv-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	box-sizing: border-box;
+	min-width: 44px;
+	min-height: 44px;
+	margin: 0;
+	padding: 0 16px;
+	border: 1px solid var( --border-color-interactive, #72777d );
+	border-radius: 6px;
+	background: var( --background-color-interactive-subtle, #f8f9fa );
+	color: var( --color-base, #202122 );
+	font: inherit;
+	font-weight: 600;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.crw-gv-btn span[ aria-hidden ] {
+	font-size: 1.4em;
+	line-height: 1;
+}
+.crw-gv-btn:hover:not( :disabled ) {
+	background: var( --background-color-interactive-subtle--hover, #eaecf0 );
+}
+.crw-gv-btn-next {
+	border-color: var( --border-color-progressive, #36c );
+	background: var( --background-color-progressive, #36c );
+	color: var( --color-inverted-fixed, #fff );
+}
+.crw-gv-btn-next:hover:not( :disabled ) {
+	background: var( --background-color-progressive--hover, #447ff5 );
+}
+.crw-gv-btn:focus-visible {
+	outline: 3px solid var( --outline-color-progressive--focus, #36c );
+	outline-offset: 2px;
+}
+.crw-gv-btn:disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+/* Four corner brackets: the usual "expand to full screen" icon. */
+.crw-gv-full-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background:
+		linear-gradient( currentColor, currentColor ) left top / 6px 2px no-repeat,
+		linear-gradient( currentColor, currentColor ) left top / 2px 6px no-repeat,
+		linear-gradient( currentColor, currentColor ) right top / 6px 2px no-repeat,
+		linear-gradient( currentColor, currentColor ) right top / 2px 6px no-repeat,
+		linear-gradient( currentColor, currentColor ) left bottom / 6px 2px no-repeat,
+		linear-gradient( currentColor, currentColor ) left bottom / 2px 6px no-repeat,
+		linear-gradient( currentColor, currentColor ) right bottom / 6px 2px no-repeat,
+		linear-gradient( currentColor, currentColor ) right bottom / 2px 6px no-repeat;
+}
+.crw-gv-caption {
+	min-height: 2.8em;
+	padding: 4px 14px 10px;
+	text-align: center;
+	line-height: 1.4;
+}
+.crw-gv-strip {
+	display: flex;
+	gap: 6px;
+	padding: 10px 10px 12px;
+	border-top: 1px solid var( --border-color-subtle, #c8ccd1 );
+	overflow-x: auto;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: x proximity;
+	scrollbar-width: thin;
+}
+.crw-gv-thumb {
+	position: relative;
+	flex: 0 0 auto;
+	box-sizing: border-box;
+	width: 88px;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	border: 2px solid var( --border-color-subtle, #c8ccd1 );
+	border-radius: 6px;
+	background: var( --background-color-neutral, #eaecf0 );
+	overflow: hidden;
+	cursor: pointer;
+	scroll-snap-align: center;
+}
+.crw-gv-thumb img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top left;
+	opacity: 0.7;
+}
+.crw-gv-thumb:hover img,
+.crw-gv-thumb[ aria-current='true' ] img {
+	opacity: 1;
+}
+.crw-gv-thumb[ aria-current='true' ] {
+	border: 3px solid var( --border-color-progressive--focus, #36c );
+}
+.crw-gv-thumb:focus-visible {
+	outline: 3px solid var( --outline-color-progressive--focus, #36c );
+	outline-offset: 1px;
+}
+.crw-gv-thumb-num {
+	position: absolute;
+	left: 3px;
+	bottom: 3px;
+	min-width: 16px;
+	padding: 0 5px;
+	border-radius: 4px;
+	background: rgba( 0, 0, 0, 0.78 );
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 18px;
+	text-align: center;
+}
+
+@media ( max-width: 640px ), ( hover: none ) {
+	.crw-gv-arrow {
+		display: none;
+	}
+	.crw-gv-open {
+		padding: 8px 8px 36px;
+	}
+}
+@media ( hover: none ) {
+	.crw-gv-open-hint {
+		padding: 3px 10px;
+		font-size: 12px;
+		opacity: 0.88;
+	}
+}
+@media ( max-width: 560px ) {
+	.client-js .crw-gallery:not( .crw-gallery-ready ):not( .crw-gallery-failed ) {
+		min-height: calc( var( --crw-stage-h ) + 300px );
+	}
+	.crw-gv-head {
+		padding: 8px 10px;
+		font-size: 0.9em;
+	}
+	.crw-gv-bar {
+		gap: 6px;
+		padding: 8px;
+	}
+	.crw-gv-btn {
+		padding: 0 12px;
+	}
+	.crw-gv-count-word,
+	.crw-gv-full-text {
+		display: none;
+	}
+}
+
+/* ------------------------------------------------------- full-screen viewer */
+html.crw-lb-open {
+	overflow: hidden;
+}
+.crw-lb {
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #0c0c0d;
+	color: #f2f2f2;
+	overflow: hidden;
+	font-family: inherit;
+}
+.crw-lb-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: calc( 8px + env( safe-area-inset-top ) ) 10px 8px;
+	background: linear-gradient( rgba( 0, 0, 0, 0.8 ), rgba( 0, 0, 0, 0 ) );
+}
+.crw-lb-count {
+	flex: 1;
+	padding-left: 6px;
+	font-size: 17px;
+	font-weight: 700;
+}
+.crw-lb-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	min-width: 44px;
+	min-height: 44px;
+	padding: 0 14px;
+	border: 1px solid rgba( 255, 255, 255, 0.38 );
+	border-radius: 6px;
+	background: rgba( 255, 255, 255, 0.1 );
+	color: #fff !important;
+	font-size: 15px;
+	font-weight: 600;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+.crw-lb-btn:hover {
+	background: rgba( 255, 255, 255, 0.24 );
+}
+.crw-lb-btn:focus-visible,
+.crw-lb-arrow:focus-visible {
+	outline: 3px solid #7fb0ff;
+	outline-offset: 2px;
+}
+.crw-lb-close {
+	padding: 0;
+	font-size: 20px;
+}
+.crw-lb-track {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-snap-type: x mandatory;
+	overscroll-behavior: contain;
+	scrollbar-width: none;
+}
+.crw-lb-track::-webkit-scrollbar {
+	display: none;
+}
+.crw-lb-track.is-locked {
+	overflow-x: hidden;
+}
+.crw-lb-slide {
+	display: flex;
+	flex: 0 0 100%;
+	height: 100%;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+}
+.crw-lb-box {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	min-width: 0;
+	padding: calc( 64px + env( safe-area-inset-top ) ) 80px calc( 90px + env( safe-area-inset-bottom ) );
+	overflow: hidden;
+}
+/* The DarkMode extension inverts the whole page (a filter on <html>) and then inverts
+   every img back. The viewer keeps its own dark colours: when the page is inverted the
+   script adds crw-lb-counter-invert to undo the page filter, and its images never flip. */
+.crw-lb.crw-lb-counter-invert {
+	filter: invert( 1 ) hue-rotate( 180deg );
+}
+html .crw-lb img.crw-lb-img {
+	filter: none !important;
+}
+.crw-lb-img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	background: #fff;
+	cursor: zoom-in;
+	user-select: none;
+	-webkit-user-select: none;
+}
+.crw-lb-box.is-zoomed {
+	display: block;
+	padding: calc( 64px + env( safe-area-inset-top ) ) 0 calc( 90px + env( safe-area-inset-bottom ) );
+	overflow: auto;
+	overscroll-behavior: contain;
+}
+.crw-lb-box.is-zoomed .crw-lb-img {
+	max-width: none;
+	max-height: none;
+	margin: 0 auto;
+	cursor: zoom-out;
+}
+.crw-lb-arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 3;
+	width: 60px;
+	height: 96px;
+	margin-top: -48px;
+	padding: 0 0 8px;
+	border: 0;
+	border-radius: 12px;
+	background: rgba( 255, 255, 255, 0.14 );
+	color: #fff;
+	font-size: 52px;
+	line-height: 1;
+	cursor: pointer;
+}
+.crw-lb-arrow:hover:not( :disabled ) {
+	background: rgba( 255, 255, 255, 0.28 );
+}
+.crw-lb-arrow:disabled {
+	opacity: 0.2;
+	cursor: default;
+}
+.crw-lb-prev {
+	left: 10px;
+}
+.crw-lb-next {
+	right: 10px;
+}
+.crw-lb-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	padding: 18px 16px calc( 14px + env( safe-area-inset-bottom ) );
+	background: linear-gradient( rgba( 0, 0, 0, 0 ), rgba( 0, 0, 0, 0.85 ) 35% );
+	font-size: 16px;
+	line-height: 1.45;
+	text-align: center;
+}
+.crw-lb-caption a,
+.crw-lb-caption a:visited {
+	color: #a8c8ff;
+}
+@media ( max-width: 640px ) {
+	.crw-lb-box {
+		padding: calc( 60px + env( safe-area-inset-top ) ) 4px calc( 132px + env( safe-area-inset-bottom ) );
+	}
+	.crw-lb-box.is-zoomed {
+		padding-bottom: calc( 132px + env( safe-area-inset-bottom ) );
+	}
+	.crw-lb-arrow {
+		top: auto;
+		bottom: calc( 10px + env( safe-area-inset-bottom ) );
+		width: 56px;
+		height: 56px;
+		margin-top: 0;
+		padding: 0 0 5px;
+		font-size: 38px;
+	}
+	.crw-lb-caption {
+		padding: 16px 72px calc( 12px + env( safe-area-inset-bottom ) );
+		font-size: 14px;
+	}
+	.crw-lb-top .crw-lb-orig {
+		display: none;
+	}
+}
+@media ( prefers-reduced-motion: reduce ) {
+	.crw-gv-track,
+	.crw-gv-strip,
+	.crw-lb-track {
+		scroll-behavior: auto;
+	}
+	.crw-gv-open-hint {
+		transition: none;
+	}
+}
+/* END crw-gallery */
