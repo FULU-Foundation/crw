@@ -2,3 +2,4 @@
 data/*
 !data/robots.txt
 .idea
+content/.build

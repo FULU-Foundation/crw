@@ -1,0 +1,21 @@
+* navigation
+** Main_Page|mainpage-description
+** Category:Wiki_root|Categories
+** randompage-url|randompage
+** Special:ContributionScores|Top Contributors
+* contribute
+** Consumer_Rights_Wiki:Create_page|Create a page
+** How_to_help| How to help
+** Consumer_Rights_Wiki:Wiki policy index|Wiki policy
+** Article_suggestions|Article suggestion list
+** Category:Articles_in_need_of_additional_work|Articles in need of work
+** Projects:Hub|Projects hub
+* help
+** Help:FAQ|Frequently asked questions
+** Consumer Rights Wiki talk:Moderators' noticeboard|Moderators' noticeboard 
+** Consumer Rights Wiki talk:Bugs|Report a bug
+* Support the wiki
+** https://buy.stripe.com/cNi9ASahn2ozbiJblj1Fe00|Donate
+* SEARCH
+* TOOLBOX
+* LANGUAGES

@@ -1,0 +1,153 @@
+@use "sass:meta";
+
+@include meta.load-css("theme/base");
+
+#mw-page-base,
+#mw-head-base { background: none; }
+
+#p-logo { margin-left: 12px; width: auto; }
+
+.mw-wiki-logo {
+  height: 135px !important;
+  width: 135px !important;
+  margin: 0.5rem auto;
+}
+
+.create-page .input-wrapper {
+  margin-left: -1rem !important;
+  margin-right: -1rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+#p-personal .vector-menu-content-list > li,
+#p-personal .vector-menu-content-list > li a,
+#p-personal .vector-menu-content-list > li a:visited { color: #ffffff; }
+#p-personal .vector-menu-content-list > li a:hover { color: #ffffff; text-decoration: underline; }
+#pt-anonuserpage { color: #c9d6ea; }
+.vector-user-menu-legacy #pt-anonuserpage,
+.vector-user-menu-legacy #pt-userpage a { background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 448 512%22%3E%3Cpath fill=%22%23ffffff%22 d=%22M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z%22/%3E%3C/svg%3E"); }
+#p-personal .mw-echo-notifications-badge { filter: invert(1) hue-rotate(180deg); }
+#p-personal .mw-echo-notifications-badge::after { filter: invert(1) hue-rotate(180deg); }
+#p-personal .mw-echo-notifications-badge { transform: translateY(3px); }
+.vector-user-menu-legacy #pt-userpage a { background-position: left 0.47em; }
+.vector-menu-tabs-legacy .crw-feedback-icon { top: -1.4px; }
+.vector-menu-tabs .mw-watchlink.icon a::before { top: calc(1.07692308em + 3.6px); }
+
+.vector-menu-tabs-legacy,
+.vector-menu-tabs-legacy .mw-list-item,
+.vector-menu-tabs-legacy .mw-list-item a,
+.vector-menu-tabs-legacy .selected,
+.vector-menu-tabs-legacy .selected a { background-image: none; }
+
+.vector-menu-tabs-legacy .mw-list-item { background-color: transparent; }
+.vector-menu-tabs-legacy .mw-list-item a,
+.vector-menu-tabs-legacy .mw-list-item a:visited,
+.vector-menu-tabs-legacy #ca-give-feedback a,
+.vector-menu-tabs-legacy #ca-give-feedback a:visited { color: #ffffff; }
+.vector-menu-tabs-legacy .mw-list-item a:hover,
+.vector-menu-tabs-legacy #ca-give-feedback a:hover { color: #ffffff; text-decoration: underline; }
+.vector-menu-tabs-legacy .mw-list-item.new a,
+.vector-menu-tabs-legacy .mw-list-item.new a:visited { color: rgba(255, 255, 255, 0.7); }
+
+#left-navigation .vector-menu-tabs-legacy { padding-left: 0; }
+.vector-menu-tabs-legacy .selected { background-color: transparent; }
+.vector-menu-tabs-legacy .selected a { background: linear-gradient(var(--crw-panel), var(--crw-panel)) left bottom / 100% calc(100% - 0.77em) no-repeat; }
+.vector-menu-tabs-legacy .selected a,
+.vector-menu-tabs-legacy .selected a:visited { color: var(--crw-text); }
+.vector-menu-tabs-legacy .selected a:hover { color: var(--crw-blue); }
+
+.vector-menu-dropdown .vector-menu-heading { color: #ffffff; }
+.vector-menu-dropdown .vector-menu-heading::after { filter: brightness(0) invert(1); }
+.vector-menu-dropdown .vector-menu-content { background-color: #ffffff; border: 1px solid var(--crw-cell-border); }
+
+#searchInput { background-color: #ffffff; border-color: transparent; }
+
+#mw-panel { display: flex; flex-direction: column; width: 12em; }
+.mw-body,
+#footer,
+#left-navigation,
+#mw-head-base { margin-left: 13em; }
+
+#mw-panel #p-tb { order: 1; }
+#mw-panel #p-help,
+#mw-panel #p-Support_the_wiki,
+#mw-panel #p-crw-extension,
+#mw-panel #p-lang { order: 2; }
+
+#mw-panel .vector-menu-portal {
+  background-color: var(--crw-panel);
+  margin: 0 0 0 12px;
+  padding: 4px 12px 8px;
+}
+
+#mw-panel #p-navigation { padding-top: 14px; }
+
+#mw-panel .vector-menu-portal .vector-menu-heading {
+  background-color: rgba(31, 79, 150, 0.09);
+  background-image: none;
+  color: var(--crw-navy);
+  display: block;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 10px 0 6px;
+  padding: 5px 8px;
+}
+
+#mw-panel #p-navigation .vector-menu-heading { display: none; }
+#mw-panel #p-crw-recentchanges .vector-menu-heading { align-items: center; display: flex; justify-content: space-between; }
+#mw-panel #p-crw-recentchanges .crw-rc-dot { display: block; flex: 0 0 auto; margin-right: 2px; }
+
+#mw-panel .vector-menu-portal .vector-menu-content { margin-left: 0; padding-top: 0; }
+#mw-panel .vector-menu-portal .vector-menu-content li { line-height: 1.3; padding: 3px 0 3px 4px; }
+
+#mw-panel .mw-list-item a,
+#mw-panel .mw-list-item a:visited { color: var(--crw-text); }
+#mw-panel .mw-list-item a:hover { color: var(--crw-blue); text-decoration: underline; }
+
+#mw-panel .mw-list-item > a::before {
+  -webkit-mask: var(--crw-icon) no-repeat center / contain;
+  background-color: var(--crw-blue);
+  content: "";
+  display: inline-block;
+  height: 0.95em;
+  margin-right: 0.6em;
+  mask: var(--crw-icon) no-repeat center / contain;
+  vertical-align: -0.12em;
+  width: 1.05em;
+}
+
+#mw-panel #p-crw-recentchanges .mw-list-item > a::before { display: none; }
+#mw-panel #p-crw-recentchanges .vector-menu-content { font-size: 1em; }
+#mw-panel #p-crw-recentchanges .vector-menu-heading { font-size: 0.8em; }
+#mw-panel #p-crw-recentchanges .crw-rc-more { font-size: 0.75em; padding: 2px 0 0 4px; }
+#mw-panel #p-crw-recentchanges .crw-rc-more a,
+#mw-panel #p-crw-recentchanges .crw-rc-more a:visited { color: var(--crw-text); }
+#mw-panel #p-crw-extension .vector-menu-content { font-size: 0.75em; }
+
+.page-Main_Page #firstHeading { border-bottom: 0; margin: 0; padding: 0; }
+
+#content {
+  -webkit-backdrop-filter: blur(10px) saturate(1.15);
+  backdrop-filter: blur(10px) saturate(1.15);
+  background-color: var(--crw-panel);
+  border: 1px solid var(--crw-edge);
+  box-shadow: 0 18px 50px rgba(3, 12, 30, 0.45);
+}
+
+#footer {
+  background-color: var(--crw-bar);
+  color: #aab4c3;
+  display: flow-root;
+  margin-top: 0;
+  padding: 1.25em 1.5em 2em;
+  position: relative;
+}
+
+#footer ul li { color: #aab4c3; }
+
+#footer a,
+#footer a:visited,
+#footer a:hover { color: #ffffff; }
+
+@include meta.load-css("theme/icons");

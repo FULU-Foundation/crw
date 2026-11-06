@@ -1,0 +1,36 @@
+__NOTOC__
+<div class="crw-hero">
+[[File:CRW Main Logo Inverse.png|center|110px|link=]]
+<div class="crw-hero-title">Welcome to the [[Mission_statement|Consumer Rights Wiki]]</div>
+<div class="crw-hero-sub">We currently have [[Special:Statistics|{{NUMBEROFARTICLES}} articles]] documenting anti-consumer practices, written by [[Special:ActiveUsers|{{NUMBEROFACTIVEUSERS}} active contributors]].</div>
+<div class="crw-hero-join">
+<div class="crw-hero-join-head">Join the community</div>
+<div class="crw-hero-join-text">Talk with other contributors, get help with your first article and follow what we're working on.</div>
+<div class="crw-hero-actions">[https://discord.gg/8w5rSNAXRf <span class="crw-hero-btn crw-hero-btn-discord"><span class="crw-icon crw-icon-discord"></span>Join us on Discord</span>] [https://zulip.consumerrights.wiki <span class="crw-hero-btn crw-hero-btn-zulip"><span class="crw-icon crw-icon-zulip"></span>Join us on Zulip</span>]</div>
+</div>
+</div>
+{| class="wikitable" style="width: 100%;"
+|-
+! About
+|-
+|
+The Consumer Rights Wiki is creating the internet's largest dedicated repository of information on anti-consumer practices, one edit at a time. It documents right-to-repair restrictions, planned obsolescence, subscription traps, dark patterns and digital rights issues.
+
+You don't need an account to read or edit. [[Special:CreateAccount|Creating one]] keeps all your edits under one identity.
+|-
+| style="vertical-align: top;" |
+{{Mainmenu}}
+|}
+{| class="wikitable" style="width: 100%;"
+|-
+! Featured Articles
+|-
+|
+{{Main Page/Featured}}
+|}
+{{DISPLAYTITLE:<span style="position:absolute;clip:rect(1px,1px,1px,1px);">{{FULLPAGENAME}}</span>}}
+{{#seo:
+|title=Consumer Rights Wiki - Anti-Consumer Practices Database
+|description=The community-built wiki documenting anti-ownership, anti-consumer practices ranging from right-to-repair restrictions, planned obsolescence, subscription traps, & digital rights issues.
+|keywords=consumer rights, anti-consumer, right to repair, corporate accountability, planned obsolescence, subscription traps, dark patterns, digital rights
+}}

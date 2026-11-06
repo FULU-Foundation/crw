@@ -57,6 +57,7 @@ crw/
 ├── conf/                   # Software configuration files
 │   ├── LocalSettings.php   # Main MediaWiki configuration file
 │   └── LocalSettings/      # Additional MediaWiki configuration
+├── content/                # Styles, templates and pages published to the wiki
 ├── cron/                   # Scheduled maintenance scripts
 ├── data/                   # Static assets served by the wiki
 ├── extensions/             # MediaWiki extensions (Git submodules)

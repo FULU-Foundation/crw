@@ -1,0 +1,148 @@
+@use "sass:meta";
+
+@include meta.load-css("theme/base");
+@include meta.load-css("theme/icons");
+
+.create-page .input-wrapper {
+  margin-left: -16px !important;
+  margin-right: -16px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+body { overflow-x: clip; }
+
+.content figure[typeof~='mw:File/Thumb'],
+.content figure[typeof~='mw:File/Frame'] { box-sizing: border-box; max-width: 100%; }
+
+.content figure[typeof~='mw:File/Thumb'] > figcaption,
+.content figure[typeof~='mw:File/Frame'] > figcaption { color: var(--crw-navy); padding: 7px 9px 8px; }
+
+#mw-mf-page-center,
+.mw-body,
+#content { background-color: #f3f6fb; }
+
+.header-container.header-chrome {
+  background-color: var(--crw-bar);
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+.minerva-header .branding-box a,
+.minerva-header .branding-box a:visited,
+.minerva-header .branding-box span { color: #ffffff; }
+
+.minerva-header .minerva-icon { background-color: #ffffff; }
+
+.minerva-header .cdx-button.cdx-button--weight-quiet:hover,
+.minerva-header .cdx-button--fake-button.cdx-button--weight-quiet:hover,
+.minerva-header label.cdx-button:hover { background-color: rgba(255, 255, 255, 0.12); mix-blend-mode: normal; }
+
+.minerva-header .cdx-search-input__input-wrapper .cdx-text-input__input { border-color: transparent; }
+
+.minerva__tab-container .minerva__tab.selected { border-bottom-color: var(--crw-navy); }
+.minerva__tab-container .minerva__tab.selected .minerva__tab-text { color: var(--crw-navy); }
+
+.page-actions-menu .minerva-icon { background-color: var(--crw-navy); }
+.page-actions-menu .minerva-icon--language { background-color: var(--crw-muted); }
+
+#mw-mf-page-left { background-color: #f3f6fb; }
+#mw-mf-page-left .toggle-list__list { border-bottom: 1px solid var(--crw-border); margin: 0; padding: 6px 0; }
+#mw-mf-page-left .toggle-list__list .toggle-list-item { background-color: transparent; border: 0; }
+#mw-mf-page-left .hlist { border-bottom: 0; }
+#mw-mf-page-left #p-crw-donate { border-bottom: 0; list-style: none; padding: 14px 16px 6px; }
+#mw-mf-page-left #p-crw-donate li { list-style: none; margin: 0; }
+
+#mw-mf-page-left #p-crw-donate a,
+#mw-mf-page-left #p-crw-donate a:visited {
+  align-items: center;
+  background-color: #1dfdc0;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  color: #0b0e14;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+#mw-mf-page-left #p-crw-donate a::before {
+  -webkit-mask: var(--crw-icon) no-repeat center / contain;
+  background-color: #0b0e14;
+  content: "";
+  height: 1em;
+  margin-right: 0.5em;
+  mask: var(--crw-icon) no-repeat center / contain;
+  width: 1em;
+}
+#mw-mf-page-left .toggle-list-item__label,
+#mw-mf-page-left .toggle-list-item__anchor { color: var(--crw-text); }
+#mw-mf-page-left .minerva-icon { background-color: var(--crw-blue); }
+
+.toggle-list__list--drop-down { border: 1px solid var(--crw-cell-border); box-shadow: 0 8px 24px rgba(3, 12, 30, 0.18); }
+.toggle-list__list--drop-down .toggle-list-item__anchor,
+.toggle-list__list--drop-down .toggle-list-item__label { color: var(--crw-text); }
+.toggle-list__list--drop-down .minerva-icon { background-color: var(--crw-blue); }
+
+.minerva-footer .last-modified-bar,
+.minerva-footer .last-modified-bar.active { background-color: var(--crw-bar); border-bottom: 1px solid rgba(255, 255, 255, 0.14); color: #c9d6ea; }
+.minerva-footer .last-modified-bar .last-modified-bar__text,
+.minerva-footer .last-modified-bar .last-modified-text-accent { color: #c9d6ea; }
+.minerva-footer .last-modified-bar .minerva-icon { background-color: #c9d6ea; }
+.minerva-footer .last-modified-bar:hover .last-modified-bar__text { color: #ffffff; }
+
+.minerva-footer {
+  background-color: var(--crw-bar);
+  border-top: 0;
+  color: #aab4c3;
+}
+
+.minerva-footer .footer-content { padding-bottom: 24px; padding-top: 16px; }
+.minerva-footer .footer-info,
+.minerva-footer .footer-info li { color: #aab4c3; }
+
+.minerva-footer a,
+.minerva-footer a:visited { color: #ffffff; }
+
+.minerva-footer .hlist-separated li::after,
+.minerva-footer .hlist li::after { color: #aab4c3; }
+
+.minerva-footer .minerva-footer-logo { align-items: flex-start; color: #ffffff; display: flex; flex-direction: column; gap: 14px; }
+.minerva-footer .footer-icons { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+.minerva-footer .footer-icons li { margin: 0; }
+.minerva-footer .footer-icons a { background-color: #ffffff; padding: 4px; }
+.minerva-footer .footer-icons img { height: 31px; width: auto; }
+
+.content table.crw-menu {
+  display: block;
+  overflow: visible;
+  width: 100% !important;
+}
+
+.content table.crw-menu > tbody {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.content table.crw-menu > tbody > tr { display: contents; }
+.content table.crw-menu > tbody > tr > th:nth-child(1) { grid-area: 1 / 1; }
+.content table.crw-menu > tbody > tr > th:nth-child(2) { grid-area: 1 / 2; }
+.content table.crw-menu > tbody > tr > td:nth-child(1) { grid-area: 2 / 1; }
+.content table.crw-menu > tbody > tr > td:nth-child(2) { grid-area: 2 / 2; }
+.content table.crw-menu > tbody > tr > th:nth-child(3) { grid-area: 3 / 1; }
+.content table.crw-menu > tbody > tr > th:nth-child(4) { grid-area: 3 / 2; }
+.content table.crw-menu > tbody > tr > td:nth-child(3) { grid-area: 4 / 1; }
+.content table.crw-menu > tbody > tr > td:nth-child(4) { grid-area: 4 / 2; }
+
+.crw-feat-row { display: none; }
+.crw-feat-grid,
+.crw-feat-stack { grid-auto-rows: auto; }
+.crw-feat-stack .crw-feat { flex-direction: column; }
+.crw-feat-stack .crw-feat-img { aspect-ratio: 16 / 9; flex: none; min-height: 0; }
+.content .crw-feat .crw-feat-img a > img { height: 100% !important; }
+
+.crw-hero-actions { align-items: stretch; flex-direction: column; margin-left: auto; margin-right: auto; max-width: 280px; }
+.crw-hero-btn { justify-content: center; width: 100%; box-sizing: border-box; }
+.crw-hero { padding: 24px 16px 22px; }
+.crw-hero-title { font-size: 21px; }

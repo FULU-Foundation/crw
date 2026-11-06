@@ -1,0 +1,7 @@
+<includeonly><div class="crw-feat crw-feat-{{{size|small}}}">
+<div class="crw-feat-img {{#ifeq:{{{fit|}}}|contain|crw-feat-contain}}">[[File:{{{image}}}|{{#ifeq:{{{size|small}}}|lead|720px|420px}}|link={{{page}}}|alt=]]</div>
+<div class="crw-feat-body">{{#if:{{{tag|}}}|<span class="crw-feat-tag">{{{tag}}}</span>}}<span class="crw-feat-title">[[{{{page}}}|{{{title|{{{page}}}}}}]]</span><span class="crw-feat-desc">{{{desc|}}}</span>{{#ifeq:{{{size|small}}}|lead|<span class="crw-feat-more">[[{{{page}}}|Read article]]</span>}}</div>
+</div></includeonly><noinclude>
+Parameters: page, image, desc, tag, title (optional), size (lead, side or small), fit (contain for logos).
+[[Category:Templates]]
+</noinclude>

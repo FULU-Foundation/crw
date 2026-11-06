@@ -18,3 +18,5 @@ $wgHooks['SkinAddFooterLinks'][] = function ( Skin $skin, string $key, array &$f
         $footerlinks['staff'] = $linkRenderer->makeKnownLink( \MediaWiki\Title\Title::newFromText( 'Project:Staff' ), 'Staff' );
     }
 };
+
+$wgFooterIcons['project']['fulu'] = [ 'src' => '/images/f/f2/FULU_project_badge.svg', 'url' => 'https://fulu.org', 'alt' => 'A project of FULU', 'width' => 100, 'height' => 31 ];
