@@ -126,11 +126,6 @@
 	url = git@github.com:wikimedia/mediawiki-extensions-BulkBlock.git
 	branch = REL1_46
 
-[submodule "extensions/DarkMode"]
-	path = extensions/DarkMode
-	url = git@github.com:wikimedia/mediawiki-extensions-DarkMode.git
-	branch = REL1_46
-
 [submodule "extensions/MobileFrontend"]
 	path = extensions/MobileFrontend
 	url = git@github.com:wikimedia/mediawiki-extensions-MobileFrontend.git

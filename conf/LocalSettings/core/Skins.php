@@ -13,5 +13,14 @@ $wgDefaultMobileSkin = 'minerva'; // Use Minerva for mobile devices
 
 $wgMinervaAdvancedMainMenu['base'] = true; // Advanced main menu
 
-# Default wide mode for all users
-$wgDefaultUserOptions['vector-limited-width'] = 0;
+$wgDefaultUserOptions['vector-limited-width'] = 1;
+
+$wgVectorMaxWidthOptions = [ 'exclude' => [ 'mainpage' => false, 'querystring' => [], 'namespaces' => [] ], 'include' => [] ];
+$wgVectorFontSizeConfigurableOptions = [ 'exclude' => [ 'mainpage' => true, 'querystring' => [ 'title' => '.*' ] ], 'include' => [] ];
+$wgVectorNightModeOptions = [ 'exclude' => [ 'mainpage' => true, 'querystring' => [ 'title' => '.*' ] ], 'include' => [] ];
+
+$wgHiddenPrefs[] = 'vector-limited-width';
+$wgHiddenPrefs[] = 'vector-font-size';
+$wgHiddenPrefs[] = 'vector-theme';
+
+$wgAllowSiteCSSOnRestrictedPages = true;

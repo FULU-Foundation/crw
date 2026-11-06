@@ -1,0 +1,78 @@
+name: Content
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: content
+
+env:
+  WIKI_API: https://consumerrights.wiki/api.php
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v5
+
+      - name: Build content
+        run: sh scripts/content-build.sh
+
+      - name: Publish content
+        shell: bash
+        env:
+          WIKI_BOT_USER: ${{ secrets.WIKI_BOT_USER }}
+          WIKI_BOT_PASSWORD: ${{ secrets.WIKI_BOT_PASSWORD }}
+        run: |
+          if [ -z "$WIKI_BOT_USER" ] || [ -z "$WIKI_BOT_PASSWORD" ]; then
+            echo "::notice::WIKI_BOT_USER and WIKI_BOT_PASSWORD are not set, skipping publish"
+            exit 0
+          fi
+
+          jar=$(mktemp)
+          api() {
+            curl -sS --fail -A "ConsumerRightsWikiContent (https://github.com/FULU-Foundation/crw)" \
+              -b "$jar" -c "$jar" -d format=json -d formatversion=2 "$@" "$WIKI_API"
+          }
+
+          # Log in
+          token=$(api -d action=query -d meta=tokens -d type=login | jq -r '.query.tokens.logintoken')
+          login=$(api -d action=login --data-urlencode "lgname=$WIKI_BOT_USER" \
+            --data-urlencode "lgpassword=$WIKI_BOT_PASSWORD" --data-urlencode "lgtoken=$token")
+          if [ "$(echo "$login" | jq -r '.login.result')" != "Success" ]; then
+            echo "::error::Login failed: $(echo "$login" | jq -r '.login.reason // .login.result')"
+            exit 1
+          fi
+          csrf=$(api -d action=query -d meta=tokens | jq -r '.query.tokens.csrftoken')
+
+          # Publish changed pages
+          published=0
+          failed=0
+          while IFS="$(printf '\t')" read -r path page; do
+            built="content/.build/$(echo "$path" | tr '/' '_')"
+            case "$path" in *.scss) built="$built.css" ;; esac
+
+            live=$(api -d action=query -d prop=revisions -d rvprop=content -d rvslots=main \
+              --data-urlencode "titles=$page" | jq -r '.query.pages[0].revisions[0].slots.main.content // ""')
+
+            if [ "$(printf '%s' "$live" | sed -e 's/[[:space:]]*$//')" = "$(sed -e 's/[[:space:]]*$//' "$built")" ]; then
+              continue
+            fi
+
+            result=$(api -d action=edit -d bot=1 -d assert=bot --data-urlencode "title=$page" \
+              --data-urlencode "summary=Published from content/$path" \
+              --data-urlencode "text@$built" --data-urlencode "token=$csrf")
+            if [ "$(echo "$result" | jq -r '.edit.result // empty')" = "Success" ]; then
+              echo "  published $page"
+              published=$((published + 1))
+            else
+              echo "::error::Failed to publish $page: $(echo "$result" | jq -r '.error.info // .')"
+              failed=$((failed + 1))
+            fi
+          done < <(jq -r '(.styles + .raw)[] | "\(.path)\t\(.page)"' content/config.json)
+
+          echo "Published $published page(s), $failed failed."
+          [ "$failed" -eq 0 ]

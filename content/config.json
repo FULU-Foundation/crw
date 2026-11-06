@@ -1,0 +1,54 @@
+{
+    "styles": [
+        {
+            "path": "styles/Vector2022.scss",
+            "page": "MediaWiki:Vector-2022.css"
+        },
+        {
+            "path": "styles/Vector.scss",
+            "page": "MediaWiki:Vector.css"
+        },
+        {
+            "path": "styles/Minerva.scss",
+            "page": "MediaWiki:Minerva.css"
+        }
+    ],
+    "raw": [
+        {
+            "path": "pages/main.wiki",
+            "page": "Main Page"
+        },
+        {
+            "path": "templates/Mainmenu.wiki",
+            "page": "Template:Mainmenu"
+        },
+        {
+            "path": "templates/FeaturedArticleCard.wiki",
+            "page": "Template:Featured article card"
+        },
+        {
+            "path": "scripts/Common.js",
+            "page": "MediaWiki:Common.js"
+        },
+        {
+            "path": "styles/Common.css",
+            "page": "MediaWiki:Common.css"
+        },
+        {
+            "path": "other/Sidebar.wiki",
+            "page": "MediaWiki:Sidebar"
+        },
+        {
+            "path": "other/Aboutsite.wiki",
+            "page": "MediaWiki:Aboutsite"
+        },
+        {
+            "path": "other/Portal.wiki",
+            "page": "MediaWiki:Portal"
+        },
+        {
+            "path": "other/tooltips/Donate.wiki",
+            "page": "MediaWiki:Tooltip-n-Donate"
+        }
+    ]
+}

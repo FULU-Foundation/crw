@@ -1,0 +1,12 @@
+diff --git a/FeatureManagerFactory.php b/FeatureManagerFactory.php
+--- a/FeatureManagerFactory.php
++++ b/FeatureManagerFactory.php
+@@ -155,7 +155,7 @@
+ 			Constants::FEATURE_PAGE_TOOLS_PINNED,
+ 			[
+ 				Constants::REQUIREMENT_FULLY_INITIALISED,
+-				Constants::REQUIREMENT_LOGGED_IN,
++				// Constants::REQUIREMENT_LOGGED_IN,
+ 				Constants::REQUIREMENT_PAGE_TOOLS_PINNED
+ 			]
+ 		);

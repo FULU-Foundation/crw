@@ -47,7 +47,6 @@ require_once __DIR__ . '/LocalSettings/extensions/TimezoneConverter.php';
 require_once __DIR__ . '/LocalSettings/extensions/ContributionScores.php';
 require_once __DIR__ . '/LocalSettings/extensions/Cargo.php';
 require_once __DIR__ . '/LocalSettings/extensions/MobileFrontend.php';
-require_once __DIR__ . '/LocalSettings/extensions/DarkMode.php';
 require_once __DIR__ . '/LocalSettings/extensions/VisualEditor.php';
 #require_once __DIR__ . '/LocalSettings/extensions/JsonConfig.php';
 require_once __DIR__ . '/LocalSettings/extensions/TemplateStyles.php';
