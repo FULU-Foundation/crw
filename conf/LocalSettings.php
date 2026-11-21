@@ -80,7 +80,6 @@ require_once __DIR__ . '/LocalSettings/extensions/CloudflarePurge.php';
 
 require_once __DIR__ . '/LocalSettings/extensions/Discord.php';
 require_once __DIR__ . '/LocalSettings/extensions/ArticleFeedback.php';
-require_once __DIR__ . '/LocalSettings/extensions/ConfirmLogout.php';
 require_once __DIR__ . '/LocalSettings/extensions/MassRollback.php';
 
 require_once __DIR__ . '/LocalSettings/extensions/WikiEditor.php';
@@ -107,6 +106,7 @@ require_once __DIR__ . '/LocalSettings/extensions/TorBlock.php';
 # Customizations
 require_once __DIR__ . '/LocalSettings/customizations/Footer.php';
 require_once __DIR__ . '/LocalSettings/customizations/CustomStyles.php';
+require_once __DIR__ . '/LocalSettings/customizations/ConfirmLogout.php';
 
 # Groups
 require_once __DIR__ . '/LocalSettings/core/Groups.php';
