@@ -1,0 +1,58 @@
+diff --git a/extension.json b/extension.json
+index 4f56d22..17081fe 100644
+--- a/extension.json
++++ b/extension.json
+@@ -31,6 +31,11 @@
+ 				"Redirect fixer"
+ 			]
+ 		},
++		"NoBots": {
++			"description": "Whether notifications should not be sent for actions by bots.",
++			"public": true,
++			"value": true
++		},
+ 		"Emojis": {
+ 			"description": "Mapping of MediaWiki hook names to Discord emojis to use in notifications.",
+ 			"public": true,
+diff --git a/src/DiscordUtils.php b/src/DiscordUtils.php
+index a38f0d8..b549532 100644
+--- a/src/DiscordUtils.php
++++ b/src/DiscordUtils.php
+@@ -53,7 +53,7 @@ class DiscordUtils {
+ 			if ( in_array( $user->getName(), $disabledUsers ) ) {
+ 				return true;
+ 			}
+-			if ( $this->userFactory->newFromUserIdentity( $user )->isBot() ) {
++			if ( $this->config->getNoBots() && $this->userFactory->newFromUserIdentity( $user )->isBot() ) {
+ 				return true;
+ 			}
+ 		}
+diff --git a/src/ExtensionConfig.php b/src/ExtensionConfig.php
+index 178ba7b..b4b6ae5 100644
+--- a/src/ExtensionConfig.php
++++ b/src/ExtensionConfig.php
+@@ -14,11 +14,13 @@ class ExtensionConfig {
+ 	public const WEBHOOK_URL = 'DiscordWebhookURL';
+ 	public const DISABLED_NAMESPACES = 'DiscordDisabledNS';
+ 	public const DISABLED_USERS = 'DiscordDisabledUsers';
++	public const NO_BOTS = 'DiscordNoBots';
+ 	public const EMOJIS = 'DiscordEmojis';
+ 	public const CONSTRUCTOR_OPTIONS = [
+ 		self::WEBHOOK_URL,
+ 		self::DISABLED_NAMESPACES,
+ 		self::DISABLED_USERS,
++		self::NO_BOTS,
+ 		self::EMOJIS,
+ 	];
+ 
+@@ -61,6 +63,10 @@ class ExtensionConfig {
+ 		return [];
+ 	}
+ 
++	public function getNoBots(): bool {
++		return (bool)$this->options->get( self::NO_BOTS );
++	}
++
+ 	public function getEmoji( string $emoji ): string|null {
+ 		return $this->options->get( self::EMOJIS )[$emoji] ?? null;
+ 	}

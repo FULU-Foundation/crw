@@ -202,10 +202,6 @@
 	path = extensions/ArticleFeedback
 	url = git@github.com:codedbyjake/ArticleFeedback.git
 	branch = REL1_46
-[submodule "extensions/ConfirmLogout"]
-	path = extensions/ConfirmLogout
-	url = git@github.com:codedbyjake/ConfirmLogout.git
-	branch = REL1_46
 [submodule "extensions/MassRollback"]
 	path = extensions/MassRollback
 	url = git@github.com:codedbyjake/MassRollback.git
