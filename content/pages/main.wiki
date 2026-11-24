@@ -14,12 +14,12 @@ __NOTOC__
 ! About
 |-
 |
-The Consumer Rights Wiki is creating the internet's largest dedicated repository of information on anti-consumer practices, one edit at a time. It documents right-to-repair restrictions, planned obsolescence, subscription traps, dark patterns and digital rights issues.
+The Consumer Rights Wiki is creating a comprehensive repository of information on anti-consumer practices, one edit at a time. We document both traditional issues such as product safety scandals along with modern problems like subscription traps, dark patterns, and the existing and proposed laws that govern them across the globe.
 
-You don't need an account to read or edit. [[Special:CreateAccount|Creating one]] keeps all your edits under one identity.
+You don't need an account to read or edit, but [[Special:CreateAccount|creating one]] lets you organize your edits, and more easily interact with the community!
 |-
 | style="vertical-align: top;" |
-{{Mainmenu}}
+{{Main Page/Menu}}
 |}
 {| class="wikitable" style="width: 100%;"
 |-
