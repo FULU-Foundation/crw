@@ -9,3 +9,4 @@ $wgDiscordWebhookURL = getenv('DISCORD_HOOK');
 $wgDiscordDisabledNS = [];
 
 $wgDiscordNoBots = false;
+$wgDiscordDisabledUsers = [ 'New user message' ];

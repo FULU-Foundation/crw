@@ -19,8 +19,8 @@
             "page": "Main Page"
         },
         {
-            "path": "templates/Mainmenu.wiki",
-            "page": "Template:Mainmenu"
+            "path": "templates/MainPageMenu.wiki",
+            "page": "Template:Main Page/Menu"
         },
         {
             "path": "templates/FeaturedArticleCard.wiki",

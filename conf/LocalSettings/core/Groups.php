@@ -159,3 +159,7 @@ $wgProtectSiteExempt = [ 'autoconfirmed', 'confirmed', 'superconfirmed', 'sysop'
 
 // Suppress
 $wgGroupPermissions['suppress']['usermerge'] = false;
+
+$wgGrantPermissions['editpage']['edit-template'] = true;
+$wgGrantPermissions['editpage']['edit-cat'] = true;
+$wgGroupPermissions['bot']['edit-template'] = true;
